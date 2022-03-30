@@ -14,7 +14,6 @@ var pageList = [
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function parallaxScroll(evt) {
-    console.log(pageList[0].classList);
   if (isFirefox) {
     //Set delta for Firefox
     delta = evt.detail * (-120);
@@ -46,7 +45,6 @@ function parallaxScroll(evt) {
       slideDurationTimeout(slideDurationSetting);
     }
   }
-  console.log(pageList[0].classList);
 }
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //

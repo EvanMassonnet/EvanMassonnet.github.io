@@ -274,9 +274,24 @@ ul {
     left: 0;
     right: 0;
     bottom: 0;
-    
   }
 
+  .background:first-child {
+    background-image: url(https://i.postimg.cc/kXq9Qmnj/bgd1.jpg);
+    transform: translateY(-15vh);
+  }
+  .background:first-child .content-wrapper {
+    transform: translateY(15vh);
+  }
+  .background:nth-child(2) {
+    background-color: #c40f0f;
+  }
+  .background:nth-child(3) {
+    background-color: green;
+  }
+  .background:nth-child(4) {
+    background-color: blue;
+  }
 
   .background:nth-child(1) {
     z-index: 3;
