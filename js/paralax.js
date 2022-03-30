@@ -5,10 +5,16 @@ var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(nav
 var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
 var slideDurationSetting = 600; //Amount of time for which slide is "locked"
 var currentSlideNumber = 0;
-var totalSlideNumber = $(".background").length;
+//var totalSlideNumber = $(".background").length;
+
+var pageList = [
+    document.getElementById( 'page_1' ),
+    document.getElementById( 'page_2' ),
+]
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function parallaxScroll(evt) {
+    console.log(pageList[0].classList);
   if (isFirefox) {
     //Set delta for Firefox
     delta = evt.detail * (-120);
@@ -24,7 +30,7 @@ function parallaxScroll(evt) {
     if (delta <= -scrollSensitivitySetting) {
       //Down scroll
       ticking = true;
-      if (currentSlideNumber !== totalSlideNumber - 1) {
+      if (currentSlideNumber !== pageList.length - 1) {
         currentSlideNumber++;
         nextItem();
       }
@@ -40,6 +46,7 @@ function parallaxScroll(evt) {
       slideDurationTimeout(slideDurationSetting);
     }
   }
+  console.log(pageList[0].classList);
 }
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
@@ -51,15 +58,19 @@ function slideDurationTimeout(slideDuration) {
 
 // ------------- ADD EVENT LISTENER ------------- //
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-window.addEventListener(mousewheelEvent, _.throttle(parallaxScroll, 60), false);
+window.addEventListener(mousewheelEvent, parallaxScroll);
 
 // ------------- SLIDE MOTION ------------- //
 function nextItem() {
-  var $previousSlide = $(".background").eq(currentSlideNumber - 1);
-  $previousSlide.removeClass("up-scroll").addClass("down-scroll");
+  //var $previousSlide = $(".background").eq(currentSlideNumber - 1);
+  var previousSlide = pageList[currentSlideNumber - 1];
+  previousSlide.classList.remove("up-scroll");
+  previousSlide.classList.add("down-scroll");
 }
 
 function previousItem() {
-  var $currentSlide = $(".background").eq(currentSlideNumber);
-  $currentSlide.removeClass("down-scroll").addClass("up-scroll");
+  //var $currentSlide = $(".background").eq(currentSlideNumber);
+  var currentSlide = pageList[currentSlideNumber];
+  currentSlide.classList.remove("down-scroll");
+  currentSlide.classList.add("up-scroll");
 }
