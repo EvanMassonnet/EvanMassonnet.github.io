@@ -279,46 +279,12 @@ var sketch = Sketch.create({
 
   draw: function() {
 
-    /*var h = settings.colour.h * 0.95;
-    var s = settings.colour.s * 100 * 0.95;
-    var v = settings.colour.v * 100 * 0.95;
-    var w = v + ( settings.darkTheme ? -10 : 10 );*/
-
-    /*this.beginPath();
-    //this.arc( center.x, center.y, radius + settings.thickness, 0, TWO_PI );
-    this.lineWidth = settings.headRadius * 0.3;
-    this.globalAlpha = 0.2;
-    this.strokeStyle = 'hsl(' + h + ',' + s + '%,' + w + '%)';
-    this.stroke();*/
-
     this.globalAlpha = 1.0;
 
     for ( var i = 0, n = settings.tentacles; i < n; i++ ) {
       tentacles[i].draw( this );
     }
-
-    /*this.beginPath();
-    //this.arc( center.x, center.y, radius + settings.thickness, 0, TWO_PI );
-    this.fillStyle = 'hsl(' + h + ',' + s + '%,' + v + '%)';
-    this.fill();*/
   },
-
-  /*mousedown: function() {
-    
-    if ( demo ) {
-
-      demo = false;
-      settings.interactive = true;
-      interactiveGUI.updateDisplay();
-
-      if ( !modified ) {
-        settings.length = 60;
-        settings.gravity = 0.1;
-        settings.wind = 0.0;
-      }
-    }
-	this.test();
-  },*/
   
   test: function(){
 	  console.log('ok'); 
@@ -335,17 +301,6 @@ var sketch = Sketch.create({
 function onSettingsChanged() {
   modified = true;
 }
-
-/*function onThemeChanged( dark ) {
-  
-  settings.colour.h = 220;
-  settings.colour.s = 1;
-  settings.colour.v = dark ? 0.5 : 0.1;
-
-  document.body.className = dark ? 'dark' : '';
-
-  colourGUI.updateDisplay();
-}*/
 
 var gui = new dat.GUI();
 gui.add( settings, 'tentacles' ).min( 1 ).max( 100.0 ).onChange( onSettingsChanged );

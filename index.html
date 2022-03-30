@@ -7,7 +7,11 @@
     <meta charset="UTF-8">
     <!-- <link rel="icon" type="image/png" href="./dist/img/ico.png" /> -->
     <link rel="stylesheet" href="css/style.css">
+
     <script src="https://kit.fontawesome.com/9273e00d47.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/0.10.0/lodash.min.js"></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
     <title>Portfolio Evan Massonnet</title>
 </head>
@@ -15,8 +19,8 @@
 <body class="dark">
 
     <div class="icon_bar">
-        <a class="linkedin" href="www.linkedin.com/in/evan-massonnet-24809721a"><i class="fab fa-linkedin-in fa-2x icon_link"></i></a>
-        <a class="github" href="https://github.com/Th3Wrench"><i class="fab fa-github fa-2x icon_link"></i></a>
+        <a class="linkedin" href="www.linkedin.com/in/evan-massonnet"><i class="fab fa-linkedin-in fa-2x icon_link"></i></a>
+        <a class="github" href="https://github.com/EvanMassonnet"><i class="fab fa-github fa-2x icon_link"></i></a>
         <a class="mail" href="mailto:evanmassonnet@gmail.com"><i class="fas fa-envelope fa-2x icon_link"></i></a>
     </div>
 
@@ -35,45 +39,51 @@
                 <li><a href="#PersonnalProject"><i class="fas fa-pen"></i>Personal Projects</a></li>
             </ul>
         </nav>
+        
+    </div>
+
+
+    
+
+
+
+    <section class="background">
+        <div id="container" style="position:absolute"></div>
         <div class="banner_content">
             <h1 id="title" style="font-size:300%; opacity: 0; padding: 10%;">Evan MASSONNET</h1>
             <p id="subtitle" style="font-size:150%; opacity: 0;">Computer science and mathematics student in Swiss</p>
             <a href="" class="btn btn_cta">En savoir plus</a>
         </div>
-        
-    </div>
+      </section>
 
-    <div id="container" style="position:absolute"></div>
+      <section class="background">
+        <div class="content-wrapper">
+          <p class="content-title">Cras lacinia non eros nec semper.</p>
+          <p class="content-subtitle">Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ut massa mattis nibh semper pretium.</p>
+        </div>
+      </section>
+
+      
+
+<!-- 
+    <footer class="main_footer ptb_3" id="Footer">
+        <div class="footer_content text_center">
+            <p>Copyright &copy; 2022 MASSONNET Evan. Tous droits réservés.</p>
+            
+        </div>
+
+    </footer> -->
+
+    <script src="js/paralax.js"></script>
+
     <script src="lib/sketch.min.js"></script>
     <script src="lib/dat.gui.min.js"></script>
-    <script src="js/base.js"></script>
+    <script src="js/base.js"></script> -->
     <!-- <script src="js/cellular_automaton.js"></script> -->
     <!-- <script src="js/wave.js"></script> -->
-
-    <section>
-        
-    </section>
+    <!-- <script src="js/water_drop.js"></script>
 
 
-
-    <!-- <section class="section_projects text_center radiant" id="SchoolProjects">
-        <div id="modal0" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Aperçu</h4>
-                    </div>
-                    <div class="modal-body">
-                        <img src="img/Reinhardt.JPG" alt="Projet Fallout">
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn_project_section" type="button" data-dismiss="modal">Fermer</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 </body>
 
 </html>
