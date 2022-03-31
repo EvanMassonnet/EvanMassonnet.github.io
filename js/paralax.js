@@ -5,7 +5,7 @@ var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(nav
 var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
 var slideDurationSetting = 600; //Amount of time for which slide is "locked"
 var currentSlideNumber = 0;
-//var totalSlideNumber = $(".background").length;
+
 
 var pageList = [
     document.getElementById( 'page_1' ),
@@ -47,6 +47,7 @@ function parallaxScroll(evt) {
       slideDurationTimeout(slideDurationSetting);
     }
   }
+  console.log(currentSlideNumber);
 }
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
