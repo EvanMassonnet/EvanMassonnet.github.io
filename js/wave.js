@@ -5,7 +5,7 @@ const colorList = [{h:286,s:1.0,v:0.667}];
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-var settings = {
+let settings = {
   quantity : 30,
   width : 10,
   speed : 10,

@@ -1,15 +1,11 @@
-//const colorList = [{h:286,s:1.0,v:0.667}, {h:0,s:1.0,v:0.5}, {h:50,s:1.0,v:0.5}];
-const colorList = [{h:286,s:1.0,v:0.667}];
-
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-
-var settings = {
+let settings_3 = {
   quantity : 30,
   lifeTime : 100,
   speed : 1,
   radius : 100
 };
+
+var canvas_3 = document.getElementById( 'container_3' );
 
 
 var Drop = function( options ) {
@@ -44,22 +40,22 @@ Drop.prototype = {
 
 var drops = [];
 
-var sketch = Sketch.create({
+var sketch_3 = Sketch.create({
 
   retina: 'auto',
-  container: document.getElementById( 'container' ),
+  container: canvas_3,
 
   setup: function() {
     
     var drop;
 
-    for(var i = 0; i < settings.quantity; ++i){
+    for(var i = 0; i < settings_3.quantity; ++i){
       drop = new Drop({
         position : {x : Math.random() * vw, y : Math.random() * vh},
-        lifeTime : settings.lifeTime * random( 0.9, 1.1 ),
-        speed : settings.speed * random( 0.9, 1.1 ),
-        radius : settings.radius * random( 0.9, 1.1 ),
-        currentRadius : random(0, settings.radius * 0.9)
+        lifeTime : settings_3.lifeTime * random( 0.9, 1.1 ),
+        speed : settings_3.speed * random( 0.9, 1.1 ),
+        radius : settings_3.radius * random( 0.9, 1.1 ),
+        currentRadius : random(0, settings_3.radius * 0.9)
       });
 
       drops.push(drop);
@@ -72,9 +68,9 @@ var sketch = Sketch.create({
         if(drops[i].isFinish()){
             drops[i] = new Drop({
                 position : {x : Math.random() * vw, y : Math.random() * vh},
-                lifeTime : settings.lifeTime * random( 0.9, 1.1 ),
-                speed : settings.speed * random( 0.9, 1.1 ),
-                radius : settings.radius * random( 0.9, 1.1 ),
+                lifeTime : settings_3.lifeTime * random( 0.9, 1.1 ),
+                speed : settings_3.speed * random( 0.9, 1.1 ),
+                radius : settings_3.radius * random( 0.9, 1.1 ),
                 currentRadius : 0
               });;
         }else{

@@ -140,28 +140,12 @@ html.dark, body.dark {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283442', endColorstr='#000d19', GradientType=1);
 }
 
-.LinkButtonMainBackGround {
-    height: 100%;
-    width: 100px;
-    background: rgb(36, 36, 36);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-
-}
-
 .icon_link {
     background: linear-gradient(131deg, rgba(130, 0, 170, 1) 0%, rgba(255, 0, 0, 1) 48%, rgba(255, 211, 0, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.LinkButtonBackGround {
-    height: 50px;
-    height: 50px;
-
-}
 
 a {
     text-decoration: none;
@@ -221,6 +205,8 @@ ul {
 .banner_content {
     color: white;
     padding: 10%;
+    position: absolute;
+    top: 31%;
 }
 
 
@@ -276,7 +262,7 @@ ul {
     bottom: 0;
   }
 
-  .background:first-child {
+  /* .background:first-child {
     background-image: url(https://i.postimg.cc/kXq9Qmnj/bgd1.jpg);
     transform: translateY(-15vh);
   }
@@ -303,6 +289,26 @@ ul {
   
   .background:nth-child(3) {
     z-index: 1;
+  } */
+
+  .content-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-flow: column nowrap;
+    color: #fff;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    transform: translateY(40vh);
+    will-change: transform;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
+  }
+  .content-title {
+    font-size: 12vh;
+    line-height: 1.4;
   }
 
   .background.up-scroll {

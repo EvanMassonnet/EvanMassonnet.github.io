@@ -1,10 +1,4 @@
-
-//const colorList = [{h:286,s:1.0,v:0.667}, {h:0,s:1.0,v:0.5}, {h:50,s:1.0,v:0.5}];
-const colorList = [{h:286,s:1.0,v:0.667}];
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-
-var settings = {
+let settings_2 = {
   quantity : 100,
   size : Math.round(vh / 100),
   law : Math.floor(Math.random() * 256),
@@ -12,6 +6,7 @@ var settings = {
   autoReset : false,
 };
 
+var canvas_2 = document.getElementById( 'container_2' );
 
 var Automaton = function( options ) {
 
@@ -109,18 +104,17 @@ Automaton.prototype = {
 var automa;
 var compte = 0;
 
-var sketch = Sketch.create({
+var sketch_2 = Sketch.create({
 
   retina: 'auto',
   interval: 1,
-  type : 'canvas',
-  container: document.getElementById( 'container' ),
+  container: canvas_2,
 
   setup: function() {
     automa = new Automaton({
-      size : settings.size,
-      law : settings.law,
-      quantity : settings.quantity,
+      size : settings_2.size,
+      law : settings_2.law,
+      quantity : settings_2.quantity,
     });
   },
 
@@ -129,7 +123,7 @@ var sketch = Sketch.create({
       automa.update();
       ++compte;
     }else{
-      sketch.toggle();
+      sketch_2.toggle();
     }
     
   },
@@ -138,8 +132,6 @@ var sketch = Sketch.create({
     const start = Date.now();
 
     automa.draw(this);
-
-    console.log(Date.now() - start);
   },
 });
 

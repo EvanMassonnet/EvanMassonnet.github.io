@@ -1,8 +1,7 @@
 
-//const colorList = [{h:286,s:1.0,v:0.667}, {h:0,s:1.0,v:0.5}, {h:50,s:1.0,v:0.5}];
 const colorList = [{h:286,s:1.0,v:0.667}];
 
-var settings = {
+let settings = {
   interactive: false,
   darkTheme: true,
   headRadius: 60,
@@ -22,6 +21,8 @@ var settings = {
 
 var a = document.getElementById( 'subtitle' )
 var b = document.getElementById( 'title' )
+
+var canvas_1 = document.getElementById( 'container_1' );
 
 const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
 const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
@@ -192,11 +193,11 @@ var modified = false;
 var tentacles = [];
 var center = { x:0, y:0 };
 var scale = window.devicePixelRatio || 1;
-var sketch = Sketch.create({
+var sketch_1 = Sketch.create({
 
   retina: 'auto',
 
-  container: document.getElementById( 'container' ),
+  container: canvas_1,
 
   setup: function() {
 
@@ -302,23 +303,23 @@ function onSettingsChanged() {
   modified = true;
 }
 
-var gui = new dat.GUI();
-gui.add( settings, 'tentacles' ).min( 1 ).max( 100.0 ).onChange( onSettingsChanged );
-gui.add( settings, 'thickness' ).min( 1.0 ).max( 200.0 ).onChange( onSettingsChanged );
-gui.add( settings, 'length' ).min( 10.0 ).max( 500.0 ).onChange( onSettingsChanged );
-gui.add( settings, 'wind' ).min( -3.0 ).max( 3.0 ).onChange( onSettingsChanged );
-gui.add( settings, 'friction' ).min( -1.0 ).max( 1.0 ).onChange( onSettingsChanged );
+// var gui = new dat.GUI();
+// gui.add( settings, 'tentacles' ).min( 1 ).max( 100.0 ).onChange( onSettingsChanged );
+// gui.add( settings, 'thickness' ).min( 1.0 ).max( 200.0 ).onChange( onSettingsChanged );
+// gui.add( settings, 'length' ).min( 10.0 ).max( 500.0 ).onChange( onSettingsChanged );
+// gui.add( settings, 'wind' ).min( -3.0 ).max( 3.0 ).onChange( onSettingsChanged );
+// gui.add( settings, 'friction' ).min( -1.0 ).max( 1.0 ).onChange( onSettingsChanged );
 
-gui.add( settings, 'speed' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-gui.add( settings, 'irregularSpeed' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-gui.add( settings, 'amplitude' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-gui.add( settings, 'irregularAmplitude' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-gui.add( settings, 'force' ).min( -1.0 ).max( 1.0 ).onChange( onSettingsChanged );
+// gui.add( settings, 'speed' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
+// gui.add( settings, 'irregularSpeed' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
+// gui.add( settings, 'amplitude' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
+// gui.add( settings, 'irregularAmplitude' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
+// gui.add( settings, 'force' ).min( -1.0 ).max( 1.0 ).onChange( onSettingsChanged );
 
-var colourGUI = gui.addColor( settings, 'colour' );
-gui.add( settings, 'pulse' );
+// var colourGUI = gui.addColor( settings, 'colour' );
+// gui.add( settings, 'pulse' );
 
-var interactiveGUI = gui.add( settings, 'interactive' );
-gui.add( sketch, 'autoclear' );
-gui.add( sketch, 'export' );
-gui.close();
+// var interactiveGUI = gui.add( settings, 'interactive' );
+// gui.add( sketch, 'autoclear' );
+// gui.add( sketch, 'export' );
+// gui.close();

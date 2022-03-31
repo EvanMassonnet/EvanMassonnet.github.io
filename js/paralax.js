@@ -10,6 +10,7 @@ var currentSlideNumber = 0;
 var pageList = [
     document.getElementById( 'page_1' ),
     document.getElementById( 'page_2' ),
+    document.getElementById( 'page_3' ),
 ]
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
