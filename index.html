@@ -16,7 +16,7 @@
 
 <body class="dark">
 
-    <div class="icon_bar">
+    <div class="icon_bar" style="z-index: 100;"">
         <a class="linkedin" href="www.linkedin.com/in/evan-massonnet"><i class="fab fa-linkedin-in fa-2x icon_link"></i></a>
         <a class="github" href="https://github.com/EvanMassonnet"><i class="fab fa-github fa-2x icon_link"></i></a>
         <a class="mail" href="mailto:evanmassonnet@gmail.com"><i class="fas fa-envelope fa-2x icon_link"></i></a>
@@ -25,7 +25,7 @@
     
 
 
-    <div  style=" position:absolute; z-index: 5; background-color: transparent; width: 100%;">
+    <div  style=" position:absolute; z-index: 100; background-color: transparent; width: 100%;">
         <nav class="main_nav">
             <a class="current_page" href="index.html">
                 <h1 class="logo_title">PORTFOLIO</h1>
@@ -51,9 +51,14 @@
             <div id="container_1"></div>
         </div>
         <div class="banner_content">
-            <h1 id="title" style="font-size:300%; opacity: 0; padding: 10%;">Evan MASSONNET</h1>
-            <p id="subtitle" style="font-size:150%; opacity: 0;">Computer science and mathematics student in Swiss</p>
-            <a href="" class="btn btn_cta">En savoir plus</a>
+            <div class="banner_text">
+                <h1 id="title" class="titleSection">Evan MASSONNET</h1>
+                <p id="subtitle">Computer science and mathematics student in Swiss</p>
+            </div>
+            <div class="banner_pic">
+                <img class="picture" src="img/EvanMassonnet.png" alt="Bebou">
+            </div>
+            
         </div>
         
     </section>
@@ -64,37 +69,50 @@
             <div id="container_2"></div>
         </div>
         <div class="banner_content">
-            <h1 id="title" style="font-size:300%; opacity: 1; padding: 10%;">Evan MASSONNET</h1>
-            <p id="subtitle" style="font-size:150%; opacity: 1;">Computer science and mathematics student in Swiss</p>
-            <a href="" class="btn btn_cta">En savoir plus</a>
+            <div class="banner_text">
+                <h1 id="title" class="titleSection">JaVelo : Route planner for cycling in switzerland</h1>
+                <p id="subtitle">Second semester project, the goal was to create a cycle route planner on Swiss territory.
+                    The route had to consider the cycle paths and the unevenness of the terrain to find the best path.
+                    The source code is not available because the project has not yet been rated.</p>
+            </div>
+            <div class="banner_pic">
+                <img class="project_picture" src="img/javelo.png" alt="Bebou">
+            </div>
         </div>
-        
     </section>
 
-    <section id="page_3" class="background ">
-        
+    
+
+    <section id="page_3" class="background">
         <div class="content-wrapper">
             <div id="container_3"></div>
         </div>
         <div class="banner_content">
-            <h1 id="title" style="font-size:300%; opacity: 1; padding: 10%;">Evan MASSONNET</h1>
-            <p id="subtitle" style="font-size:150%; opacity: 1;">Computer science and mathematics student in Swiss</p>
-            <a href="" class="btn btn_cta">En savoir plus</a>
+            <div class="banner_text">
+                <h1 id="title" class="titleSection">ICWars : Top view 2D game </h1>
+                <p id="subtitle">"Advance wars" style game made in java. There are different types of units, music, and animations.  The maps have their own effects that will have to be used to pass the levels. The style of the game is inspired by Despot Game.</p>
+            </div>
+            <div class="banner_pic">
+                <img class="project_picture" src="img/lavaLevel.png" alt="Bebou">
+                <img class="project_picture" src="img/snowLevel.png" alt="Bebou">
+            </div>
         </div>
-        
-    </section >
+    </section>
 
     <section id="page_4" class="background">
-        
         <div class="content-wrapper">
             <div id="container_4"></div>
         </div>
         <div class="banner_content">
-            <h1 id="title" style="font-size:300%; opacity: 1; padding: 10%;">Evan MASSONNET</h1>
-            <p id="subtitle" style="font-size:150%; opacity: 1;">Computer science and mathematics student in Swiss</p>
-            <a href="" class="btn btn_cta">En savoir plus</a>
+            <div class="banner_text">
+                <h1 id="title" class="titleSection">Fingerprint recognition</h1>
+                <p id="subtitle">"Implementation of fingerprint recognition in Java based on the calculation of minutiae and their orientation</p>
+            </div>
+            <div class="banner_pic">
+                <img class="project_picture" src="img/Fingerprint.png" alt="Bebou">
+                <img class="project_picture" src="img/FingerprintWithMinutiae.png" alt="Bebou">
+            </div>
         </div>
-        
     </section>
 
       

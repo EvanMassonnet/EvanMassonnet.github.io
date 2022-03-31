@@ -7,7 +7,7 @@
 html, body {
     background-color: #222;
     min-height:1200px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 
@@ -112,7 +112,6 @@ html, body {
     background: -o-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 26%, #f5f5f5 59%, #f5f5f5 77%, #cecece 100%);
     background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%, #ffffff 26%, #f5f5f5 59%, #f5f5f5 77%, #cecece 100%);
     background: radial-gradient(ellipse at center, #ffffff 0%, #ffffff 26%, #f5f5f5 59%, #f5f5f5 77%, #cecece 100%);
-    overflow: hidden;
     padding: 0;
     margin: 0;
     height: 100%;
@@ -204,13 +203,42 @@ ul {
 
 
 .banner_content {
-    color: white;
-    padding: 10%;
-    position: absolute;
-    top: 31%;
+  display: flex;
+  align-items: center;
+  color: white;
+  padding: 10%;
+  position: absolute;
+  top: 20%;
 }
 
+.banner_text{
+  font-size: 2rem;
+  font-weight: bold;
+  padding-right: 100px;
+}
+.banner_text h1 {
+  font-size:150%; 
+}
 
+.banner_text p {
+  font-size:100%; 
+}
+
+.picture {
+  border-radius: 50%;
+  height: 300px;
+}
+
+.project_picture {
+  border-radius: 5%;
+  height: 400px;
+}
+
+.banner_pic {
+  height: 100%;
+  width: 70%;
+
+}
 
 
 
@@ -238,117 +266,7 @@ ul {
 }
 
 
-/*.background {
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    overflow: hidden;
-    will-change: transform;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    height: 130vh;
-    position: fixed;
-    width: 100%;
-    transition: all 1.2s cubic-bezier(0.22, 0.44, 0, 1);
-  }
 
-  .background:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-
-  /* .background:first-child {
-    background-image: url(https://i.postimg.cc/kXq9Qmnj/bgd1.jpg);
-    transform: translateY(-15vh);
-  }
-  .background:first-child .content-wrapper {
-    transform: translateY(15vh);
-  }
-  .background:nth-child(2) {
-    background-color: #c40f0f;
-  }
-  .background:nth-child(3) {
-    background-color: green;
-  }
-  .background:nth-child(4) {
-    background-color: blue;
-  }
-
-  .background:nth-child(1) {
-    z-index: 3;
-  }
-  
-  .background:nth-child(2) {
-    z-index: 2;
-  }
-  
-  .background:nth-child(3) {
-    z-index: 1;
-  } */
-
-  /*.content-wrapper {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    flex-flow: column nowrap;
-    color: #fff;
-    font-family: Montserrat;
-    text-transform: uppercase;
-    transform: translateY(40vh);
-    will-change: transform;
-    -webkit-backface-visibility: hidden;
-            backface-visibility: hidden;
-    transition: all 1.7s cubic-bezier(0.22, 0.44, 0, 1);
-  }
-  .content-title {
-    font-size: 12vh;
-    line-height: 1.4;
-  }
-
-  .background.up-scroll {
-    transform: translate3d(0, -15vh, 0);
-  }
-  .background.up-scroll .content-wrapper {
-    transform: translateY(15vh);
-  }
-  .background.up-scroll + .background {
-    transform: translate3d(0, 30vh, 0);
-  }
-  .background.up-scroll + .background .content-wrapper {
-    transform: translateY(30vh);
-  }
-  
-  .background.down-scroll {
-    transform: translate3d(0, -130vh, 0);
-  } 
-  .background.down-scroll .content-wrapper {
-    transform: translateY(40vh);
-  }
-  .background.down-scroll + .background:not(.down-scroll) {
-    transform: translate3d(0, -15vh, 0);
-  }
-  .background.down-scroll + .background:not(.down-scroll) .content-wrapper {
-    transform: translateY(15vh);
-  }*/
-
-
-
-
-
-
-
-
-  @import url(https://fonts.googleapis.com/css?family=Montserrat);
-html, body {
-  overflow: scroll;
-}
 
 .background {
   background-size: cover;
@@ -383,44 +301,16 @@ html, body {
   transform: translateY(15vh);
 }
 .background:nth-child(2) {
-  background: #283442;
-    background: -moz-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #283442), color-stop(40%, #122335), color-stop(100%, #000d19));
-    background: -webkit-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -o-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283442', endColorstr='#000d19', GradientType=1);
+  background-color: #122335;
 }
 .background:nth-child(3) {
-  background: #283442;
-    background: -moz-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #283442), color-stop(40%, #122335), color-stop(100%, #000d19));
-    background: -webkit-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -o-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283442', endColorstr='#000d19', GradientType=1);
+  background-color: #122335;
 }
 .background:nth-child(4) {
-  background: #283442;
-    background: -moz-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #283442), color-stop(40%, #122335), color-stop(100%, #000d19));
-    background: -webkit-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -o-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283442', endColorstr='#000d19', GradientType=1);
+  background-color: rgba(0, 0, 0, 1);
 }
 .background:nth-child(5) {
-  background: #283442;
-    background: -moz-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #283442), color-stop(40%, #122335), color-stop(100%, #000d19));
-    background: -webkit-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -o-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: -ms-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
-    background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283442', endColorstr='#000d19', GradientType=1);
+  background-color: #122335;
 }
 
 /* Set stacking context of slides */

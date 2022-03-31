@@ -47,7 +47,6 @@ function parallaxScroll(evt) {
       slideDurationTimeout(slideDurationSetting);
     }
   }
-  console.log(currentSlideNumber);
 }
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //

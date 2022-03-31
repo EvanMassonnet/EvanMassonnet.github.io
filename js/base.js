@@ -1,5 +1,5 @@
 
-const colorList = [{h:286,s:1.0,v:0.667}];
+const colorList = [{h:20,s:1.0,v:0.667}];
 
 let settings = {
   interactive: false,
@@ -19,8 +19,8 @@ let settings = {
   force: 0.0,
 };
 
-var a = document.getElementById( 'subtitle' )
-var b = document.getElementById( 'title' )
+var a = document.getElementById( 'title' )
+var b = document.getElementById( 'subtitle' )
 
 var canvas_1 = document.getElementById( 'container_1' );
 
@@ -248,11 +248,11 @@ var sketch_1 = Sketch.create({
 
     //text
     if(parseFloat(a.style.opacity) < 1) {
-      let num = parseFloat(a.style.opacity) + 0.003
+      let num = parseFloat(a.style.opacity) + 0.008
       a.style.opacity = num.toString()
     }else{
       if(parseFloat(b.style.opacity) < 1) {
-        let num = parseFloat(b.style.opacity) + 0.002
+        let num = parseFloat(b.style.opacity) + 0.005
         b.style.opacity = num.toString()
       }
     }

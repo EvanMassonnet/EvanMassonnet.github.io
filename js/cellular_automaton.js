@@ -1,7 +1,10 @@
+let availableLaw = [9, 11, 13, 18, 22, 26, 28, 30, 39, 45, 57, 58, 60, 73, 75, 86, 89, 90, 101, 102, 105, 110, 118, 124, 135, 137, 149, 150, 182, 193, 225];
+//let availableLaw = [118];
+
 let settings_2 = {
-  quantity : 100,
-  size : Math.round(vh / 100),
-  law : Math.floor(Math.random() * 256),
+  quantity : 10,
+  size : 10,
+  law : availableLaw[Math.floor(Math.random() * availableLaw.length)],
   speed : 10,
   autoReset : false,
 };
@@ -29,7 +32,7 @@ var Automaton = function( options ) {
   this.cells = [];
   var firstCell = []
 
-  for(var i = 0; i < this.quantity; ++i){
+  for(var i = 0; i < vh / this.size; ++i){
     firstCell.push(Math.round(Math.random()));
   }
   this.cells.push(firstCell);
@@ -88,10 +91,14 @@ Automaton.prototype = {
 
   draw: function( ctx ) {
 
-    for(var j = 0; j < this.quantity; ++j){
+    for(var j = 0; j < vh / this.size; ++j){
 
       if(this.cells[0][j] == 1){
-        //ctx.fillStyle = 'hsl(' + h + ',' + s + '%,' + v + '%)';
+        var gradient = ctx.createLinearGradient(0, 0, vw, 0);
+        gradient.addColorStop(0, 'black');
+        gradient.addColorStop(0.5, "#371a8c");
+        gradient.addColorStop(1, 'black');
+        ctx.fillStyle = gradient;
         ctx.rect(this.step * this.size, j * this.size, this.size ,this.size);
         
       }
@@ -119,7 +126,7 @@ var sketch_2 = Sketch.create({
   },
 
   update: function() {
-    if(compte < 100){
+    if(compte < vw / settings_2.size){
       automa.update();
       ++compte;
     }else{
@@ -129,8 +136,6 @@ var sketch_2 = Sketch.create({
   },
 
   draw: function() {
-    const start = Date.now();
-
     automa.draw(this);
   },
 });

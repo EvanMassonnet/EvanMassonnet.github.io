@@ -38,7 +38,8 @@ Stick.prototype = {
   }
 };
 
-var sticks = [];
+var sticks_left = [];
+var sticks_right = [];
 
 var sketch = Sketch.create({
 
@@ -55,12 +56,24 @@ var sketch = Sketch.create({
     for(var i = 0; i < settings_4.quantity; ++i){
       stick = new Stick({
         width : settings_4.width,
+        stickLength : -settings_4.stickLength,
+        position : {x : vw, y:i * vh / settings_4.quantity },
+        amplitude : settings_4.amplitude,
+      });
+
+      sticks_left.push(stick);
+    }
+
+
+    for(var i = 0; i < settings_4.quantity; ++i){
+      stick = new Stick({
+        width : settings_4.width,
         stickLength : settings_4.stickLength,
         position : {x : 0, y:i * vh / settings_4.quantity },
         amplitude : settings_4.amplitude,
       });
 
-      sticks.push(stick);
+      sticks_right.push(stick);
     }
   },
 
@@ -68,15 +81,17 @@ var sketch = Sketch.create({
     var t;
     t = this.millis * 0.001;
 
-    for(var i = 0; i < sticks.length; ++i){
-      sticks[i].update(t);
+    for(var i = 0; i < sticks_left.length; ++i){
+      sticks_left[i].update(t);
+      sticks_right[i].update(t);
     }
   },
 
   draw: function() {
 
-    for ( var i = 0, n = sticks.length; i < n; i++ ) {
-      sticks[i].draw( this );
+    for ( var i = 0, n = sticks_left.length; i < n; i++ ) {
+      sticks_left[i].draw( this );
+      sticks_right[i].draw( this );
     }
 
   },
