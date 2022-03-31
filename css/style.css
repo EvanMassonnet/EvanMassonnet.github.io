@@ -7,7 +7,7 @@
 html, body {
     background-color: #222;
     min-height:1200px;
-    overflow: hidden;
+    
 }
 
 
@@ -16,6 +16,11 @@ html, body, canvas {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+html {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 
@@ -301,10 +306,26 @@ ul {
   transform: translateY(15vh);
 }
 .background:nth-child(2) {
-  background-color: #122335;
+  background: #283442;
+    background: -moz-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #283442), color-stop(40%, #122335), color-stop(100%, #000d19));
+    background: -webkit-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: -o-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283442', endColorstr='#000d19', GradientType=1);
+
 }
 .background:nth-child(3) {
-  background-color: #122335;
+  background: #283442;
+    background: -moz-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #283442), color-stop(40%, #122335), color-stop(100%, #000d19));
+    background: -webkit-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: -o-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: -ms-radial-gradient(center, ellipse cover, #283442 0%, #122335 40%, #000d19 100%);
+    background: radial-gradient(ellipse at center, #283442 0%, #122335 40%, #000d19 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#283442', endColorstr='#000d19', GradientType=1);
+
 }
 .background:nth-child(4) {
   background-color: rgba(0, 0, 0, 1);
