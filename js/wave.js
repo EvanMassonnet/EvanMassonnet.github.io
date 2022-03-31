@@ -1,11 +1,9 @@
 
-//const colorList = [{h:286,s:1.0,v:0.667}, {h:0,s:1.0,v:0.5}, {h:50,s:1.0,v:0.5}];
-const colorList = [{h:286,s:1.0,v:0.667}];
 
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-let settings = {
+var canvas_4 = document.getElementById( 'container_4' );
+
+let settings_4 = {
   quantity : 30,
   width : 10,
   speed : 10,
@@ -48,18 +46,18 @@ var sketch = Sketch.create({
   autoclear : true,
   //interval: 1,
   //type : 'canvas',
-  container: document.getElementById( 'container' ),
+  container: canvas_4,
 
   setup: function() {
     
     var stick;
 
-    for(var i = 0; i < settings.quantity; ++i){
+    for(var i = 0; i < settings_4.quantity; ++i){
       stick = new Stick({
-        width : settings.width,
-        stickLength : settings.stickLength,
-        position : {x : 0, y:i * vh / settings.quantity },
-        amplitude : settings.amplitude,
+        width : settings_4.width,
+        stickLength : settings_4.stickLength,
+        position : {x : 0, y:i * vh / settings_4.quantity },
+        amplitude : settings_4.amplitude,
       });
 
       sticks.push(stick);

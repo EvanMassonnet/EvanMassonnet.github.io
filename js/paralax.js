@@ -11,6 +11,7 @@ var pageList = [
     document.getElementById( 'page_1' ),
     document.getElementById( 'page_2' ),
     document.getElementById( 'page_3' ),
+    document.getElementById( 'page_4' ),
 ]
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
