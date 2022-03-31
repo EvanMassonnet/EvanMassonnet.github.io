@@ -14,6 +14,22 @@ var pageList = [
     document.getElementById( 'page_4' ),
 ]
 
+var sketchs = [
+  sketch_1,
+  sketch_2,
+  sketch_3,
+  sketch_4,
+]
+
+for(var i = 0; i < pageList.length; ++i){
+  if(currentSlideNumber == i ){
+    sketchs[i].start(); 
+  }else{
+    sketchs[i].stop();
+
+  }
+}
+
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function parallaxScroll(evt) {
   if (isFirefox) {
@@ -45,6 +61,14 @@ function parallaxScroll(evt) {
       }
       previousItem();
       slideDurationTimeout(slideDurationSetting);
+    }
+  }
+  for(var i = 0; i < pageList.length; ++i){
+    if(currentSlideNumber == i ){
+      sketchs[i].start(); 
+    }else{
+      sketchs[i].stop();
+  
     }
   }
 }

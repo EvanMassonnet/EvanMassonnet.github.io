@@ -90,10 +90,11 @@ Automaton.prototype = {
   },
 
   draw: function( ctx ) {
-
+    ctx.beginPath();
     for(var j = 0; j < vh / this.size; ++j){
 
       if(this.cells[0][j] == 1){
+        
         var gradient = ctx.createLinearGradient(0, 0, vw, 0);
         gradient.addColorStop(0, 'black');
         gradient.addColorStop(0.5, "#371a8c");
@@ -101,8 +102,10 @@ Automaton.prototype = {
         ctx.fillStyle = gradient;
         ctx.rect(this.step * this.size, j * this.size, this.size ,this.size);
         
+        
       }
     }
+    ctx.closePath();
     ctx.fill();
     ++this.step;
   }
@@ -116,6 +119,7 @@ var sketch_2 = Sketch.create({
   retina: 'auto',
   interval: 1,
   container: canvas_2,
+  autoclear : false,
 
   setup: function() {
     automa = new Automaton({

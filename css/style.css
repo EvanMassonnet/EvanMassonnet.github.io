@@ -7,7 +7,7 @@
 html, body {
     background-color: #222;
     min-height:1200px;
-    
+    overflow: hidden;
 }
 
 
@@ -16,11 +16,6 @@ html, body, canvas {
     height: 100%;
     margin: 0;
     padding: 0;
-}
-
-html {
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
 }
 
 

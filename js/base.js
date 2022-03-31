@@ -1,31 +1,22 @@
 
-const colorList = [{h:20,s:1.0,v:0.667}];
+const colorList = [{h:200,s:1.0,v:0.667}];
+
+const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
+const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
 let settings = {
-  interactive: false,
-  darkTheme: true,
-  headRadius: 60,
   thickness: 18,  //random
   tentacles: 40,
-  friction: 0.02,
+  friction: 0.01,
   colour: {h:220,s:1.0,v:0.667},
-  length: 70,
-  pulse: true,
+  length: vw * 3 / 90,
   wind: -0.5,
   amplitude: 10,
-  irregularAmplitude: 0,
-  irregularSpeed: 0,
   speed: 17,
   force: 0.0,
 };
 
-var a = document.getElementById( 'title' )
-var b = document.getElementById( 'subtitle' )
-
 var canvas_1 = document.getElementById( 'container_1' );
-
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
 var utils = {
 
@@ -179,7 +170,7 @@ Tentacle.prototype = {
 
     if ( settings.thickness > 2 ) {
 
-      v += settings.darkTheme ? -10 : 10;
+      v += -10;
 
       ctx.strokeStyle = 'hsl(' + h + ',' + s + '%,' + v + '%)';
       ctx.lineWidth = 1;
@@ -209,7 +200,7 @@ var sketch_1 = Sketch.create({
     for ( var i = 0; i < 100; i++ ) {
 
       tentacle = new Tentacle({
-        length: random( 10, 20 ),
+        length: (i/5) * (i/10) + random( 10, 20 ),
         radius: random( 0.05, 1.0 ),
         spacing: random( 0.2, 1.0 ),
         friction: random( 0.7, 0.88 )
@@ -226,40 +217,15 @@ var sketch_1 = Sketch.create({
 
     t = this.millis * 0.001;
 
-    if ( settings.interactive ) {
-
-      ease += ( 0.7 - ease ) * 0.05;
-
-      center.x += ( this.mouse.x / scale - center.x ) * ease;
-      center.y += ( this.mouse.y / scale - center.y ) * ease;
-
-    } else {
-
       t = this.millis;
       cx = this.width * 0.5;
       cy = this.height * 0.5;
 
       center.x = cx + sin( t * 0.002 ) * cos( t * 0.00005 ) * cx * 0.5;
       center.y = cy + sin( t * 0.003 ) * tan( sin( t * 0.0003 ) * 1.15 ) * cy * 0.4;
-    }
 
     //Gravity change :
-    settings.gravity =  settings.amplitude / 100 * cos(t * settings.irregularAmplitude/10000) * sin( cos(t * settings.irregularSpeed/10000) * t * settings.speed/10000)
-
-    //text
-    if(parseFloat(a.style.opacity) < 1) {
-      let num = parseFloat(a.style.opacity) + 0.008
-      a.style.opacity = num.toString()
-    }else{
-      if(parseFloat(b.style.opacity) < 1) {
-        let num = parseFloat(b.style.opacity) + 0.005
-        b.style.opacity = num.toString()
-      }
-    }
-
-
-  
-    
+    settings.gravity =  settings.amplitude / 100 * sin( t * settings.speed/10000)
 
     var px, py, theta, tentacle;
     var step = TWO_PI / settings.tentacles;
@@ -271,8 +237,8 @@ var sketch_1 = Sketch.create({
       theta = i * step;
       
       //Tentacles screen position
-      px =  Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-      py = i * Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0) / settings.tentacles;
+      px =  vw + 30;
+      py = i * vh / settings.tentacles;
       tentacle.move( px, py );
       tentacle.update();
     }
@@ -286,40 +252,4 @@ var sketch_1 = Sketch.create({
       tentacles[i].draw( this );
     }
   },
-  
-  test: function(){
-	  console.log('ok'); 
-  },
-  
-  
-  
-
-  export: function() {
-    window.open( this.canvas.toDataURL(), 'tentacles', "top=20,left=20,width=" + this.width + ",height=" + this.height );
-  }
 });
-
-function onSettingsChanged() {
-  modified = true;
-}
-
-// var gui = new dat.GUI();
-// gui.add( settings, 'tentacles' ).min( 1 ).max( 100.0 ).onChange( onSettingsChanged );
-// gui.add( settings, 'thickness' ).min( 1.0 ).max( 200.0 ).onChange( onSettingsChanged );
-// gui.add( settings, 'length' ).min( 10.0 ).max( 500.0 ).onChange( onSettingsChanged );
-// gui.add( settings, 'wind' ).min( -3.0 ).max( 3.0 ).onChange( onSettingsChanged );
-// gui.add( settings, 'friction' ).min( -1.0 ).max( 1.0 ).onChange( onSettingsChanged );
-
-// gui.add( settings, 'speed' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-// gui.add( settings, 'irregularSpeed' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-// gui.add( settings, 'amplitude' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-// gui.add( settings, 'irregularAmplitude' ).min( 0.0 ).max( 100 ).onChange( onSettingsChanged );
-// gui.add( settings, 'force' ).min( -1.0 ).max( 1.0 ).onChange( onSettingsChanged );
-
-// var colourGUI = gui.addColor( settings, 'colour' );
-// gui.add( settings, 'pulse' );
-
-// var interactiveGUI = gui.add( settings, 'interactive' );
-// gui.add( sketch, 'autoclear' );
-// gui.add( sketch, 'export' );
-// gui.close();

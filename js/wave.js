@@ -41,7 +41,7 @@ Stick.prototype = {
 var sticks_left = [];
 var sticks_right = [];
 
-var sketch = Sketch.create({
+var sketch_4 = Sketch.create({
 
   retina: 'auto',
   autoclear : true,
