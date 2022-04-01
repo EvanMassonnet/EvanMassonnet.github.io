@@ -7,7 +7,7 @@
 html, body {
     background-color: #222;
     min-height:1200px;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 
@@ -144,8 +144,8 @@ ul {
   
   top: 50%;
   height: 30%;
-  background: linear-gradient(to left, rgba(255, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%),
-  linear-gradient(to top, rgba(0,0,0,0) 25%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 75%);
+  /*background: linear-gradient(to left, rgba(255, 0, 0, 0) 70%, rgba(0, 0, 0, 1) 100%),
+  linear-gradient(to top, rgba(0,0,0,0) 25%, rgba(0,0,0,1) 35%, rgba(0,0,0,1) 65%, rgba(0,0,0,0) 75%);*/
 }
 
 .icon_bar nav {
