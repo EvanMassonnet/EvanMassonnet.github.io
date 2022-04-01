@@ -14,6 +14,8 @@ var pageList = [
     document.getElementById( 'page_4' ),
 ];
 
+window.addEventListener('resize', resizeAnimations);
+
 var sketchs = [
   sketch_1,
   sketch_2,
@@ -110,6 +112,8 @@ function slideDurationTimeout(slideDuration) {
 // ------------- ADD EVENT LISTENER ------------- //
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, parallaxScroll);
+//on phone
+window.addEventListener("scroll", parallaxScroll);
 
 // ------------- SLIDE MOTION ------------- //
 function nextItem() {
@@ -134,6 +138,14 @@ function updateAnimations(){
       sketchs[i].stop();
   
     }
+  }
+}
+
+function resizeAnimations(){
+  vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+  for(var i = 0; i < pageList.length; ++i){
+    sketchs[i].clear();
   }
 }
 

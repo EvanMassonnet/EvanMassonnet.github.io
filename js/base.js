@@ -1,9 +1,9 @@
 
 const colorList = [{h:200,s:1.0,v:0.667}];
 
-const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
-const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
-
+var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+ 
 let settings = {
   thickness: 18,  //random
   tentacles: 40,
@@ -187,6 +187,7 @@ var scale = window.devicePixelRatio || 1;
 var sketch_1 = Sketch.create({
 
   retina: 'auto',
+  resize: 'true',
 
   container: canvas_1,
 
@@ -258,4 +259,5 @@ var sketch_1 = Sketch.create({
       tentacles[i].draw( this );
     }
   },
+
 });

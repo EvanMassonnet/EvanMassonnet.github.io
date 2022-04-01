@@ -9,32 +9,31 @@ let settings_4 = {
   speed : 10,
   stickLength : 100,
   amplitude : 100,
+  positionY : vh / 30, 
 };
 
 
 var Stick = function( options ) {
-
-  this.width = options.width;
   this.position = options.position;
-  this.stickLength = options.stickLength;
-  this.currentLength = options.stickLength;
-  this.amplitude = options.amplitude;
+  this.currentLength = settings_4.stickLength;
+  this.direction = options.direction;
+  this.positionX = options.positionX;
+  this.Id = options.Id;
 };
 
 Stick.prototype = {
 
   update: function(t) {
-    this.currentLength = this.stickLength + this.amplitude * sin(t + this.position.y/100);
+    this.currentLength = this.direction * settings_4.stickLength + settings_4.amplitude * sin(t + this.Id * (vh / 30)/100);
   },
 
   draw: function( ctx ) {
     ctx.beginPath();
-    ctx.rect(this.position.x, this.position.y, this.currentLength, this.width);
+    ctx.rect(vw * this.positionX / 100, this.Id * (vh / 30), this.currentLength, settings_4.width);
     var color = this.currentLength/2 + 150;
     ctx.fillStyle = 'hsl(' + color + ',' + 100 + '%,' + 50 + '%)';
     ctx.closePath();
     ctx.fill();
-
   }
 };
 
@@ -45,8 +44,6 @@ var sketch_4 = Sketch.create({
 
   retina: 'auto',
   autoclear : true,
-  //interval: 1,
-  //type : 'canvas',
   container: canvas_4,
 
   setup: function() {
@@ -55,22 +52,21 @@ var sketch_4 = Sketch.create({
 
     for(var i = 0; i < settings_4.quantity; ++i){
       stick = new Stick({
-        width : settings_4.width,
-        stickLength : -settings_4.stickLength,
-        position : {x : vw, y:i * vh / settings_4.quantity },
-        amplitude : settings_4.amplitude,
+        positionX : 100,   //in % : size of the screen
+        //position : {x : vw, y:i * vh / settings_4.quantity },
+        direction : -1,   
+        Id : i, 
       });
 
       sticks_left.push(stick);
     }
 
-
     for(var i = 0; i < settings_4.quantity; ++i){
       stick = new Stick({
-        width : settings_4.width,
-        stickLength : settings_4.stickLength,
-        position : {x : 0, y:i * vh / settings_4.quantity },
-        amplitude : settings_4.amplitude,
+        positionX : 0,
+        //position : {x : 0, y:i * vh / settings_4.quantity },
+        direction : 1,
+        Id : i,
       });
 
       sticks_right.push(stick);

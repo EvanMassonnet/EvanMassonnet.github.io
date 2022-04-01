@@ -1,5 +1,4 @@
 let availableLaw = [9, 11, 13, 18, 22, 26, 28, 30, 39, 45, 57, 58, 60, 73, 75, 86, 89, 90, 101, 102, 105, 110, 118, 124, 135, 137, 149, 150, 182, 193, 225];
-//let availableLaw = [118];
 
 let settings_2 = {
   quantity : 10,
@@ -108,11 +107,18 @@ Automaton.prototype = {
     ctx.closePath();
     ctx.fill();
     ++this.step;
+  },
+
+  restart: function(){
+    this.step = 0;
   }
 };
 
 var automa;
 var compte = 0;
+
+let oldWidth = vw;
+let oldHeight = vh;
 
 var sketch_2 = Sketch.create({
 
@@ -122,6 +128,7 @@ var sketch_2 = Sketch.create({
   autoclear : false,
 
   setup: function() {
+    console.log(settings_2.law);
     automa = new Automaton({
       size : settings_2.size,
       law : settings_2.law,
@@ -130,13 +137,19 @@ var sketch_2 = Sketch.create({
   },
 
   update: function() {
+    
+    if(oldWidth != vw || oldHeight != vh){
+      console.log("old : " + oldWidth + " new : " + vw + "  old : " + oldHeight + " new : " + vh);
+      oldWidth = vw;
+      oldHeight = vh;
+      compte = 0;
+      automa.restart();
+    }
 
     
     if(compte < vw / settings_2.size){
       automa.update();
       ++compte;
-    }else{
-      sketch_2.toggle();
     }
     
   },
