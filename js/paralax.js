@@ -12,14 +12,47 @@ var pageList = [
     document.getElementById( 'page_2' ),
     document.getElementById( 'page_3' ),
     document.getElementById( 'page_4' ),
-]
+];
 
 var sketchs = [
   sketch_1,
   sketch_2,
   sketch_3,
   sketch_4,
-]
+];
+
+let aboutPageId = 0;
+let schoolProjectsPageId = 1;
+let personalProjectsPageId = 3;
+
+let aboutClick = document.getElementById("about");
+let schoolProjectsClick = document.getElementById("school_projects");
+let personalProjectsClick = document.getElementById("personal_projects");
+
+aboutClick.addEventListener("click", function(){changePage(aboutPageId);}, false);
+schoolProjectsClick.addEventListener("click", function(){changePage(schoolProjectsPageId);}, false);
+personalProjectsClick.addEventListener("click", function(){changePage(personalProjectsPageId);}, false);
+
+
+function changePage(pageId){
+  if(currentSlideNumber != pageId){
+    if(currentSlideNumber > pageId){
+      while(currentSlideNumber != pageId){
+        currentSlideNumber--;
+        previousItem();
+        slideDurationTimeout(slideDurationSetting);
+      }
+    }else{
+      while(currentSlideNumber != pageId){
+        currentSlideNumber++;
+        nextItem();
+        slideDurationTimeout(slideDurationSetting);
+      }
+    }
+    updateAnimations();
+  }
+}
+
 
 for(var i = 0; i < pageList.length; ++i){
   if(currentSlideNumber == i ){
@@ -63,14 +96,8 @@ function parallaxScroll(evt) {
       slideDurationTimeout(slideDurationSetting);
     }
   }
-  for(var i = 0; i < pageList.length; ++i){
-    if(currentSlideNumber == i ){
-      sketchs[i].start(); 
-    }else{
-      sketchs[i].stop();
   
-    }
-  }
+  updateAnimations();
 }
 
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
@@ -98,3 +125,15 @@ function previousItem() {
   currentSlide.classList.remove("down-scroll");
   currentSlide.classList.add("up-scroll");
 }
+
+function updateAnimations(){
+  for(var i = 0; i < pageList.length; ++i){
+    if(currentSlideNumber == i ){
+      sketchs[i].start(); 
+    }else{
+      sketchs[i].stop();
+  
+    }
+  }
+}
+

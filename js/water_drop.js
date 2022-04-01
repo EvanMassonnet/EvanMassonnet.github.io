@@ -63,6 +63,7 @@ var sketch_3 = Sketch.create({
   },
 
   update: function() {
+    
       
     for(var i = 0; i < drops.length; ++i){
         if(drops[i].isFinish()){

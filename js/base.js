@@ -212,7 +212,13 @@ var sketch_1 = Sketch.create({
   },
 
   update: function() {
-
+/*
+    //stop the animation if the current page is not this one 
+    //avoid animation restart if you leave and come back to the page
+    if(currentSlideNumber != 0){      
+      sketch_1.stop();
+    }
+*/
     var t, cx, cy, pulse;
 
     t = this.millis * 0.001;

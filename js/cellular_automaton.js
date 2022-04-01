@@ -130,6 +130,8 @@ var sketch_2 = Sketch.create({
   },
 
   update: function() {
+
+    
     if(compte < vw / settings_2.size){
       automa.update();
       ++compte;

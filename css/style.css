@@ -18,91 +18,7 @@ html, body, canvas {
     padding: 0;
 }
 
-
-
-
-#StartMenu {
-    position: relative;
-    margin: auto;
-    margin-top: 100px;
-    width: 350px;
-    padding: 20px;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    background-color: white;
-    box-sizing: border-box;
-}
-
-#StartMenu p {
-    /* title */
-    padding: 0;
-    text-align: center;
-    font-size: x-large;
-    font-weight: bold;
-}
-
-#PlayButton, #ChapterButton, #SettingsButton {
-    position: relative;
-    margin: auto;
-    margin-top: 10px;
-    width: 100%;
-    height: 40px;
-    box-sizing: border-box;
-    font-size: large;
-    color: white;
-    text-align: center;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
-    background: #2ecc71;
-    border: 0;
-    border-bottom: 2px solid #28be68;
-    cursor: pointer;
-    -webkit-box-shadow: inset 0 -2px #28be68;
-    box-shadow: inset 0 -2px #28be68;
-    border-radius: 5px;
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-#PlayButton:active, #PlayButton:hover,
-#ChapterButton:active, #ChapterButton:hover,
-#SettingsButton:active, #SettingsButton:hover {
-    top: 1px;
-    background: #55D88B;
-    outline: none;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-}
-
-
-#Settings, #startMenuWrapper {
-    -webkit-transition: max-height 1s;
-    -moz-transition: max-height 1s;
-    -ms-transition: max-height 1s;
-    -o-transition: max-height 1s;
-    transition: max-height 1s;
-    overflow: hidden;
-}
-
-#settings {
-    max-height: 0;
-}
-
-
-#StartMenuWrapper {
-    z-index: 2;
-}
-
-#GameAreaWrapper {
-    position: absolute !important;
-    top: 0;
-    left: 0;
-    opacity: 0;
-}
-
-
-
+/* 
 html, body {
 
     background: #f2f2f2;
@@ -115,7 +31,7 @@ html, body {
     padding: 0;
     margin: 0;
     height: 100%;
-}
+} */
 
 body:before {
 
@@ -171,13 +87,19 @@ ul {
 }
 
 .main_nav li {
-    padding: 0.5rem 0.7rem;
-    flex: 0 1 50%;
+    padding: 1rem 5rem;
+    text-transform: uppercase;
 }
 
 .main_nav li .fas {
     color: #c2ad7e;
     padding: 0.7rem 0.3rem;
+}
+
+.main_nav h1 {
+  text-decoration: none;
+  padding: 1rem 5rem;
+  text-transform: uppercase;
 }
 
 .main_nav a {
