@@ -120,12 +120,12 @@ document.addEventListener(mousewheelEvent, parallaxScroll)
 //on phone
 /*document.addEventListener("touchmove", parallaxScroll, false);
 document.addEventListener("scroll", parallaxScroll, false);
-window.addEventListener("touchmove", parallaxScroll, false);*/
-/*window.addEventListener("scroll", parallaxScroll, false);
+window.addEventListener("touchmove", parallaxScroll, false);
+window.addEventListener("scroll", parallaxScroll, false);*/
 
 document.addEventListener("touchmove", parallaxScroll);
 document.addEventListener("scroll", parallaxScroll);
-window.addEventListener("touchmove", parallaxScroll);*/
+window.addEventListener("touchmove", parallaxScroll);
 window.addEventListener("scroll", parallaxScroll);
 
 
