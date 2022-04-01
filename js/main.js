@@ -113,7 +113,9 @@ function slideDurationTimeout(slideDuration) {
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, parallaxScroll);
 //on phone
-window.addEventListener("scroll", parallaxScroll);
+document.addEventListener("touchmove", parallaxScroll, false);
+document.addEventListener("scroll", parallaxScroll, false);
+
 
 // ------------- SLIDE MOTION ------------- //
 function nextItem() {
