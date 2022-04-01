@@ -67,6 +67,10 @@ for(var i = 0; i < pageList.length; ++i){
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
 function parallaxScroll(evt) {
+  console.log("scroll");
+
+  changePage(3);
+
   if (isFirefox) {
     //Set delta for Firefox
     delta = evt.detail * (-120);
@@ -112,9 +116,17 @@ function slideDurationTimeout(slideDuration) {
 // ------------- ADD EVENT LISTENER ------------- //
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
 window.addEventListener(mousewheelEvent, parallaxScroll);
+document.addEventListener(mousewheelEvent, parallaxScroll)
 //on phone
 document.addEventListener("touchmove", parallaxScroll, false);
 document.addEventListener("scroll", parallaxScroll, false);
+window.addEventListener("touchmove", parallaxScroll, false);
+window.addEventListener("scroll", parallaxScroll, false);
+
+document.addEventListener("touchmove", parallaxScroll);
+document.addEventListener("scroll", parallaxScroll);
+window.addEventListener("touchmove", parallaxScroll);
+window.addEventListener("scroll", parallaxScroll);
 
 
 // ------------- SLIDE MOTION ------------- //
