@@ -19,6 +19,7 @@ var pageList = [
     document.getElementById( 'page_7' ),
     document.getElementById( 'page_8' ),
     document.getElementById( 'page_9' ),
+    document.getElementById( 'page_10' ),
 ];
 
 window.addEventListener('resize', resizeAnimations);
@@ -185,7 +186,7 @@ function updateAnimations(){
 function resizeAnimations(){
   vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
   vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-  for(var i = 0; i < pageList.length; ++i){
+  for(var i = 0; i < sketchs.length; ++i){
     sketchs[i].clear();
   }
 }
