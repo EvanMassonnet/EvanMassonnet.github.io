@@ -7,7 +7,7 @@ var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight
 let settings = {
   thickness: 18,  //random
   tentacles: 40,
-  friction: 0.01,
+  friction: 0.02,
   colour: {h:220,s:1.0,v:0.667},
   length: vw * 3 / 90,
   wind: -0.5,

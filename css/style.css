@@ -1,6 +1,6 @@
 * {
     font-family: sans-serif;
-    font-size: 14px;
+    font-size: 1rem;
 }
 
 
@@ -49,18 +49,20 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(to top, rgba(255, 166, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    padding: 0.5rem 1rem;
+    background: linear-gradient(to top, rgba(255, 166, 0, 0) 0%, rgb(0, 0, 0) 50%);
+    /*padding: 0.5rem 1rem;*/
 }
 
 .main_nav ul {
     display: flex;
+    margin: 0;
+    padding: 0;
     /* justify-content: center; */
 
 }
 
 .main_nav li {
-    padding: 1rem 5rem;
+    padding: 1rem 1rem;
     text-transform: uppercase;
 }
 
@@ -80,20 +82,23 @@ ul {
     padding-bottom: 0.3rem;
     border-bottom: 2px transparent solid;
     transition: border-color 1s;
+    font-size: 17px;
 
 }
 
 .logo_title {
     color: #fff;
     text-transform: none;
+    font-size: 20px;
+
 }
 
 .main_nav a:hover {
-    border-color: #c2ad7e;
+    border-color: white;
 }
 
 .main_nav a.current_page {
-    border-color: #c40f0f;
+    text-decoration: none;
 }
 
 
@@ -131,8 +136,8 @@ ul {
 }
 
 .banner_pic {
-  height: 100%;
-  width: 70%;
+  height: 1rem;
+  width: 0.5rem;
 
 }
 
@@ -299,3 +304,60 @@ ul {
 .background.down-scroll + .background:not(.down-scroll) .content-wrapper {
   transform: translateY(15vh);
 }
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 950px) {
+  .main_nav {
+    position: relative;
+    width: auto;
+    padding: 1.5rem 2rem;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to top, rgba(255, 166, 0, 0) 0%, rgb(0, 0, 0) 30%); }
+    .main_nav ul{
+      text-align: center;
+      align-items: center;
+    }
+    
+    .main_nav li {
+      width: 33%;
+      margin-top: 0rem;
+      font-size: 0.9rem;
+      padding: 1rem; }
+    .main_nav h1 {
+      margin: 0rem;
+      padding: 0rem;
+      font-size: 2rem;
+    }
+  .section_projects .project {
+    margin: 0.2rem; }
+    .section_projects .project img {
+      max-width: 600px;
+      min-width: 240px;
+      max-height: none;
+      min-height: 90px; }
+    .section_projects .project .project_galery {
+      margin-bottom: 2rem; } }
+
+@media (max-width: 650px) {
+  .main_nav li {
+    padding: 0.5rem;
+    font-size: 0.8rem; 
+    text-align: center;}
+  .header {
+    height: 100%; }
+    .header .header_content {
+      padding: 4.4rem; }
+      .header .header_content .cta_title {
+        font-size: 2.5rem; }
+      .header .header_content .cta_catch {
+        font-size: 1rem; } }

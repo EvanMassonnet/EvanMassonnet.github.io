@@ -2,10 +2,12 @@
 var ticking = false;
 var isFirefox = (/Firefox/i.test(navigator.userAgent));
 var isIe = (/MSIE/i.test(navigator.userAgent)) || (/Trident.*rv\:11\./i.test(navigator.userAgent));
+
 var scrollSensitivitySetting = 30; //Increase/decrease this number to change sensitivity to trackpad gestures (up = less sensitive; down = more sensitive) 
+var touchScreenSensitivitySetting = 30;
 var slideDurationSetting = 600; //Amount of time for which slide is "locked"
 var currentSlideNumber = 0;
-
+var firstTouchPosition = -1;
 
 var pageList = [
     document.getElementById( 'page_1' ),
@@ -66,11 +68,7 @@ for(var i = 0; i < pageList.length; ++i){
 }
 
 // ------------- DETERMINE DELTA/SCROLL DIRECTION ------------- //
-function parallaxScroll(evt) {
-  console.log("scroll");
-
-  changePage(3);
-
+function parallaxScrollMouse(evt){
   if (isFirefox) {
     //Set delta for Firefox
     delta = evt.detail * (-120);
@@ -82,7 +80,7 @@ function parallaxScroll(evt) {
     delta = evt.wheelDelta;
   }
 
-  if (ticking != true) {
+  if (!ticking) {
     if (delta <= -scrollSensitivitySetting) {
       //Down scroll
       ticking = true;
@@ -106,27 +104,49 @@ function parallaxScroll(evt) {
   updateAnimations();
 }
 
+function parallaxScrollTouchScreen(evt){
+
+  if (!ticking) {
+    if(firstTouchPosition != -1){
+      let delta = evt.changedTouches[0].pageY - firstTouchPosition;
+      console.log(delta);
+      if (delta <= -touchScreenSensitivitySetting) {
+        if (currentSlideNumber !== pageList.length - 1) {
+          currentSlideNumber++;
+          nextItem();
+        }
+        slideDurationTimeout(slideDurationSetting);
+      }
+      if (delta >= touchScreenSensitivitySetting) {
+        if (currentSlideNumber !== 0) {
+          currentSlideNumber--;
+        }
+        previousItem();
+        slideDurationTimeout(slideDurationSetting);
+      }
+    }else{
+      firstTouchPosition = evt.targetTouches[0].pageY
+    }
+  }
+}
+
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
   setTimeout(function() {
     ticking = false;
+    firstTouchPosition = -1;
   }, slideDuration);
 }
 
 // ------------- ADD EVENT LISTENER ------------- //
 var mousewheelEvent = isFirefox ? "DOMMouseScroll" : "wheel";
-window.addEventListener(mousewheelEvent, parallaxScroll);
-document.addEventListener(mousewheelEvent, parallaxScroll)
-//on phone
-/*document.addEventListener("touchmove", parallaxScroll, false);
-document.addEventListener("scroll", parallaxScroll, false);
-window.addEventListener("touchmove", parallaxScroll, false);
-window.addEventListener("scroll", parallaxScroll, false);*/
+document.addEventListener(mousewheelEvent, parallaxScrollMouse);
+document.addEventListener("touchstart", parallaxScrollTouchScreen);
+document.addEventListener("touchend", parallaxScrollTouchScreen);
 
-//document.addEventListener("touchmove", parallaxScroll);
-document.addEventListener("scroll", parallaxScroll);
-//window.addEventListener("touchmove", parallaxScroll);
-//window.addEventListener("scroll", parallaxScroll);
+
+
+
 
 
 // ------------- SLIDE MOTION ------------- //
