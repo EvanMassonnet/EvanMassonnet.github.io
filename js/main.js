@@ -172,7 +172,7 @@ function previousItem() {
 }
 
 function updateAnimations(){
-  for(var i = 0; i < pageList.length; ++i){
+  for(var i = 0; i < sketchs.length; ++i){
     if(currentSlideNumber == i ){
       sketchs[i].start(); 
     }else{
