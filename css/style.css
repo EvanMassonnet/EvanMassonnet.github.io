@@ -394,11 +394,30 @@ ul {
       top: 40vh
     }
 
+    .banner_content h1{
+      font-size: 1.5rem;
+    }
+
+    .banner_content p{
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    .project_content h1{
+      font-size: 1.5rem;
+    }
+
+    .project_content p{
+      font-size: 1rem;
+    }
+
     .project_pic img{
-      height: 15rem;
+      height: 8rem;
     }
 
     .project_content {
+      padding: 15%;
       top: 30vh;
     }
     }
