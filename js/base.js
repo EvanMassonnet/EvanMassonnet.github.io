@@ -3,10 +3,10 @@ const colorList = [{h:200,s:1.0,v:0.667}];
 
 var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
- 
+console.log(Math.floor(vh / 30 + Math.random() * 10));
 let settings = {
-  thickness: 18,  //random
-  tentacles: 40,
+  thickness: 10 + Math.floor(Math.random() * 25),
+  tentacles: Math.floor(vh / 40 + Math.random() * 10),
   friction: 0.02,
   colour: {h:220,s:1.0,v:0.667},
   length: vw * 3 / 90,

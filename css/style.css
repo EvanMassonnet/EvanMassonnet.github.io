@@ -103,18 +103,18 @@ ul {
 
 
 .banner_content {
+  flex-direction: column-reverse;
   display: flex;
   align-items: center;
   color: white;
   padding: 10%;
   position: absolute;
-  top: 20%;
+  top: 20vh;
 }
 
 .banner_text{
   font-size: 2rem;
   font-weight: bold;
-  padding-right: 100px;
   text-align: center;
 }
 .banner_text h1 {
@@ -130,15 +130,9 @@ ul {
   height: 300px;
 }
 
-.project_picture {
-  border-radius: 5%;
-  height: 400px;
-}
-
-.banner_pic {
-  height: 1rem;
-  width: 0.5rem;
-
+.banner_pic img{
+  border-radius: 50%;
+  height: 20rem;
 }
 
 
@@ -346,7 +340,20 @@ ul {
       max-height: none;
       min-height: 90px; }
     .section_projects .project .project_galery {
-      margin-bottom: 2rem; } }
+      margin-bottom: 2rem; } 
+    
+    .banner_content{
+      padding: 0;
+      width: 100vw;
+      top: 40vh
+    }
+    }
+
+@media (max-width: 500px) {
+  .banner_pic img{
+    height: 15rem;
+  }
+}
 
 @media (max-width: 650px) {
   .main_nav li {
