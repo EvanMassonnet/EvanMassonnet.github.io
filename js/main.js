@@ -130,6 +130,8 @@ function parallaxScrollTouchScreen(evt){
   }
 }
 
+
+
 // ------------- SET TIMEOUT TO TEMPORARILY "LOCK" SLIDES ------------- //
 function slideDurationTimeout(slideDuration) {
   setTimeout(function() {
