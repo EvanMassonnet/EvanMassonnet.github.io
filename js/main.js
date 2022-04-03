@@ -14,6 +14,11 @@ var pageList = [
     document.getElementById( 'page_2' ),
     document.getElementById( 'page_3' ),
     document.getElementById( 'page_4' ),
+    document.getElementById( 'page_5' ),
+    document.getElementById( 'page_6' ),
+    document.getElementById( 'page_7' ),
+    document.getElementById( 'page_8' ),
+    document.getElementById( 'page_9' ),
 ];
 
 window.addEventListener('resize', resizeAnimations);
@@ -27,7 +32,7 @@ var sketchs = [
 
 let aboutPageId = 0;
 let schoolProjectsPageId = 1;
-let personalProjectsPageId = 3;
+let personalProjectsPageId = 5;
 
 let aboutClick = document.getElementById("about");
 let schoolProjectsClick = document.getElementById("school_projects");
@@ -58,7 +63,7 @@ function changePage(pageId){
 }
 
 
-for(var i = 0; i < pageList.length; ++i){
+for(var i = 0; i < sketchs.length; ++i){
   if(currentSlideNumber == i ){
     sketchs[i].start(); 
   }else{
