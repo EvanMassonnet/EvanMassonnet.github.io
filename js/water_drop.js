@@ -1,11 +1,11 @@
-let settings_3 = {
+let settings_5 = {
   quantity : 30,
   lifeTime : 100,
   speed : 1,
   radius : 100
 };
 
-var canvas_3 = document.getElementById( 'container_3' );
+var canvas_5 = document.getElementById( 'container_5' );
 
 
 var Drop = function( options ) {
@@ -40,22 +40,22 @@ Drop.prototype = {
 
 var drops = [];
 
-var sketch_3 = Sketch.create({
+var sketch_5 = Sketch.create({
 
   retina: 'auto',
-  container: canvas_3,
+  container: canvas_5,
 
   setup: function() {
     
     var drop;
 
-    for(var i = 0; i < settings_3.quantity; ++i){
+    for(var i = 0; i < settings_5.quantity; ++i){
       drop = new Drop({
         position : {x : Math.random() * vw, y : Math.random() * vh},
-        lifeTime : settings_3.lifeTime * random( 0.9, 1.1 ),
-        speed : settings_3.speed * random( 0.9, 1.1 ),
-        radius : settings_3.radius * random( 0.9, 1.1 ),
-        currentRadius : random(0, settings_3.radius * 0.9)
+        lifeTime : settings_5.lifeTime * random( 0.9, 1.1 ),
+        speed : settings_5.speed * random( 0.9, 1.1 ),
+        radius : settings_5.radius * random( 0.9, 1.1 ),
+        currentRadius : random(0, settings_5.radius * 0.9)
       });
 
       drops.push(drop);
@@ -69,9 +69,9 @@ var sketch_3 = Sketch.create({
         if(drops[i].isFinish()){
             drops[i] = new Drop({
                 position : {x : Math.random() * vw, y : Math.random() * vh},
-                lifeTime : settings_3.lifeTime * random( 0.9, 1.1 ),
-                speed : settings_3.speed * random( 0.9, 1.1 ),
-                radius : settings_3.radius * random( 0.9, 1.1 ),
+                lifeTime : settings_5.lifeTime * random( 0.9, 1.1 ),
+                speed : settings_5.speed * random( 0.9, 1.1 ),
+                radius : settings_5.radius * random( 0.9, 1.1 ),
                 currentRadius : 0
               });;
         }else{
@@ -82,6 +82,7 @@ var sketch_3 = Sketch.create({
   },
 
   draw: function() {
+
 
     for ( var i = 0, n = drops.length; i < n; i++ ) {
       drops[i].draw( this );

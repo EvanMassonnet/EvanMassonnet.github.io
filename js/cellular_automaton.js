@@ -1,6 +1,6 @@
 let availableLaw = [9, 11, 13, 18, 22, 26, 28, 30, 39, 45, 57, 58, 60, 73, 75, 86, 89, 90, 101, 102, 105, 110, 118, 124, 135, 137, 149, 150, 182, 193, 225];
 
-let settings_2 = {
+let settings_4 = {
   quantity : 10,
   size : 10,
   law : availableLaw[Math.floor(Math.random() * availableLaw.length)],
@@ -8,7 +8,7 @@ let settings_2 = {
   autoReset : false,
 };
 
-var canvas_2 = document.getElementById( 'container_2' );
+var canvas_4 = document.getElementById( 'container_4' );
 
 var Automaton = function( options ) {
 
@@ -119,19 +119,19 @@ var compte = 0;
 let oldWidth = vw;
 let oldHeight = vh;
 
-var sketch_2 = Sketch.create({
+var sketch_4 = Sketch.create({
 
   retina: 'auto',
   interval: 1,
-  container: canvas_2,
+  container: canvas_4,
   autoclear : false,
 
   setup: function() {
-    console.log(settings_2.law);
+    console.log(settings_4.law);
     automa = new Automaton({
-      size : settings_2.size,
-      law : settings_2.law,
-      quantity : settings_2.quantity,
+      size : settings_4.size,
+      law : settings_4.law,
+      quantity : settings_4.quantity,
     });
   },
 
@@ -145,7 +145,7 @@ var sketch_2 = Sketch.create({
     }
 
     
-    if(compte < vw / settings_2.size){
+    if(compte < vw / settings_4.size){
       automa.update();
       ++compte;
     }

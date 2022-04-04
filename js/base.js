@@ -3,6 +3,7 @@ const colorPalette = ["ee9b00","ca6702","bb3e03","ae2012","9b2226","ee9b00","ca6
 
 var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+
 let settings = {
   thickness: 10 + Math.floor(Math.random() * 25),
   tentacles: Math.floor(vh / 40 + Math.random() * 10),
@@ -184,6 +185,7 @@ var modified = false;
 var tentacles = [];
 var center = { x:0, y:0 };
 var scale = window.devicePixelRatio || 1;
+
 var sketch_1 = Sketch.create({
 
   retina: 'auto',

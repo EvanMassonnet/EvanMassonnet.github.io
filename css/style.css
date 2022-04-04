@@ -228,7 +228,7 @@ ul {
   background: radial-gradient(ellipse at center, #94d2bd 0%, #0a9396 40%, #005f73 100%);
 }
 .background:nth-child(4) {
-  background: #001219;
+  background: radial-gradient(ellipse at center, #005f73 0%, #0a9396 40%, #94d2bd 100%);
 }
 .background:nth-child(5) {
   background: radial-gradient(ellipse at center, #94d2bd 0%, #0a9396 40%, #005f73 100%);

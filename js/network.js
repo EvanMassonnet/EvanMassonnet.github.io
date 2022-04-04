@@ -1,7 +1,7 @@
-var canvas_5 = document.getElementById( 'container_5' );
+var canvas_6 = document.getElementById( 'container_6' );
 
-let settings_5 = {
-  quantity : 30,
+let settings_6 = {
+  quantity : Math.max(10, Math.floor(vh * vw / 100000)),
   radius : 7,
   speed : 0.2,
 };
@@ -34,7 +34,7 @@ NetworkCell.prototype = {
 
   draw: function( ctx ) {
     ctx.beginPath();
-    ctx.arc(this.position.x,this.position.y, settings_5.radius, 0, 2 * Math.PI);
+    ctx.arc(this.position.x,this.position.y, settings_6.radius, 0, 2 * Math.PI);
     ctx.fillStyle = "#9b2226";
     ctx.closePath();
     ctx.fill();
@@ -43,20 +43,20 @@ NetworkCell.prototype = {
 
 var networkCells = [];
 
-var sketch_5 = Sketch.create({
+var sketch_6 = Sketch.create({
 
   retina: 'auto',
   autoclear : true,
-  container: canvas_5,
+  container: canvas_6,
 
   setup: function() {
     
     var networkCell;
 
-    for(var i = 0; i < settings_4.quantity; ++i){
+    for(var i = 0; i < settings_6.quantity; ++i){
         networkCell = new NetworkCell({
         position : {x : Math.random() * vw, y : Math.random() * vh},
-        speed : {dx : -settings_5.speed + 2 * Math.random() * settings_5.speed, dy : -settings_5.speed + 2 * Math.random() * settings_5.speed},
+        speed : {dx : -settings_6.speed + 2 * Math.random() * settings_6.speed, dy : -settings_6.speed + 2 * Math.random() * settings_6.speed},
       });
 
       networkCells.push(networkCell);
@@ -70,7 +70,7 @@ var sketch_5 = Sketch.create({
   },
 
   draw: function() {
-      console.log("draw");
+
     for ( var i = 0, n = networkCells.length; i < n; i++ ) {
         networkCells[i].draw( this );
     }

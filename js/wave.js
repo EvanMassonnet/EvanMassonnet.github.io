@@ -1,9 +1,9 @@
 
 
 
-var canvas_4 = document.getElementById( 'container_4' );
+var canvas_2 = document.getElementById( 'container_2' );
 
-let settings_4 = {
+let settings_2 = {
   quantity : 30,
   width : 10,
   speed : 10,
@@ -16,7 +16,7 @@ let settings_4 = {
 
 var Stick = function( options ) {
   this.position = options.position;
-  this.currentLength = settings_4.stickLength;
+  this.currentLength = settings_2.stickLength;
   this.direction = options.direction;
   this.positionX = options.positionX;
   this.Id = options.Id;
@@ -28,14 +28,14 @@ var Stick = function( options ) {
 Stick.prototype = {
 
   update: function(t) {
-    this.currentLength = this.direction * (settings_4.stickLength+15) + settings_4.amplitude * sin( this.frequency * (t + this.Id * (vh / 30)/100) + this.phase) * this.amplitude;
+    this.currentLength = this.direction * (settings_2.stickLength+15) + settings_2.amplitude * sin( this.frequency * (t + this.Id * (vh / 30)/100) + this.phase) * this.amplitude;
   },
 
   draw: function( ctx ) {
     ctx.beginPath();
-    ctx.rect(vw * this.positionX / 100, this.Id * (vh / 30), this.currentLength, settings_4.width);
-    var color = this.currentLength/20 + 45;
-    ctx.fillStyle = 'hsl(' + color + ',' + 91.4 + '%,' + 28.8 + '%)';
+    ctx.rect(vw * this.positionX / 100, this.Id * (vh / 30), this.currentLength, settings_2.width);
+    var color = this.currentLength/10 + 45;
+    ctx.fillStyle = 'hsl(' + color + ',' + 100 + '%,' + 50 + '%)';
     ctx.closePath();
     ctx.fill();
   }
@@ -44,17 +44,17 @@ Stick.prototype = {
 var sticks_left = [];
 var sticks_right = [];
 
-var sketch_4 = Sketch.create({
+var sketch_2 = Sketch.create({
 
   retina: 'auto',
   autoclear : true,
-  container: canvas_4,
+  container: canvas_2,
 
   setup: function() {
     
     var stick;
 
-    for(var i = 0; i < settings_4.quantity; ++i){
+    for(var i = 0; i < settings_2.quantity; ++i){
       stick = new Stick({
         positionX : 100,   //in % : size of the screen
         phase : 0,
@@ -67,7 +67,7 @@ var sketch_4 = Sketch.create({
       sticks_left.push(stick);
     }
 
-    /*for(var i = 0; i < settings_4.quantity; ++i){
+    /*for(var i = 0; i < settings_2.quantity; ++i){
       stick = new Stick({
         positionX : 0,
         phase : 1,
