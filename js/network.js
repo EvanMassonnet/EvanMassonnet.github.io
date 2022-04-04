@@ -1,7 +1,7 @@
 var canvas_6 = document.getElementById( 'container_6' );
 
 let settings_6 = {
-  quantity : Math.max(10, Math.floor(vh * vw / 100000)),
+  quantity : Math.max(20, Math.floor(vh * vw / 100000)),
   radius : 7,
   speed : 0.2,
 };

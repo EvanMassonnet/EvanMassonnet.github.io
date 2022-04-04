@@ -89,7 +89,7 @@ Automaton.prototype = {
 
   draw: function( ctx ) {
     ctx.beginPath();
-    for(var j = 0; j < vh / this.size; ++j){
+    for(var j = 0; j < vh / this.size + 10; ++j){
 
       if(this.cells[0][j] == 1){
         
@@ -98,7 +98,7 @@ Automaton.prototype = {
         gradient.addColorStop(0.5, "#005f73");
         gradient.addColorStop(1, '#001219');
         ctx.fillStyle = gradient;
-        ctx.rect(this.step * this.size, j * this.size, this.size ,this.size);
+        ctx.rect(this.step * this.size, (j+5) * this.size, this.size ,this.size);
         
         
       }

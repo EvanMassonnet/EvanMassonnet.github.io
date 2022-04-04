@@ -130,6 +130,7 @@ ul {
 .project_pic img{
   border-radius: 5%;
   height: 20rem;
+  
 }
 
 .project_content {
@@ -137,14 +138,16 @@ ul {
   display: flex;
   align-items: center;
   color: white;
-  padding: 10%;
+  padding: 10vw;
+  width: 80vw;
   position: absolute;
   top: 20vh;
+  text-align: center;
 }
 
 .project_text{
   font-weight: bold;
-  text-align: center;
+  width: 100%;
 }
 
 .project_text h1 {
@@ -153,6 +156,12 @@ ul {
 
 .project_text p {
   font-size: 1.5rem; 
+}
+
+.project_text p a{
+  text-decoration: underline;
+  font-size: 1.5rem;
+  color: white;
 }
 
 
