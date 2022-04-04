@@ -29,6 +29,7 @@ var sketchs = [
   sketch_2,
   sketch_3,
   sketch_4,
+  sketch_5,
 ];
 
 let aboutPageId = 0;
@@ -101,8 +102,9 @@ function parallaxScrollMouse(evt){
       ticking = true;
       if (currentSlideNumber !== 0) {
         currentSlideNumber--;
+        previousItem();
       }
-      previousItem();
+     
       slideDurationTimeout(slideDurationSetting);
     }
   }
@@ -134,6 +136,8 @@ function parallaxScrollTouchScreen(evt){
       }
     }
   }
+
+  updateAnimations();
 }
 
 
