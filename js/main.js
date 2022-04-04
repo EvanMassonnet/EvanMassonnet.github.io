@@ -33,7 +33,7 @@ var sketchs = [
 
 let aboutPageId = 0;
 let schoolProjectsPageId = 1;
-let personalProjectsPageId = 5;
+let personalProjectsPageId = 6;
 
 let aboutClick = document.getElementById("about");
 let schoolProjectsClick = document.getElementById("school_projects");

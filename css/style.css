@@ -82,7 +82,7 @@ ul {
     padding-bottom: 0.3rem;
     border-bottom: 2px transparent solid;
     transition: border-color 1s;
-    font-size: 17px;
+    font-size: 1.3rem;
 
 }
 
@@ -176,7 +176,6 @@ ul {
 
 .icon_bar nav {
   z-index: 100;
-  
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -371,12 +370,15 @@ ul {
     .main_nav li {
       width: 33%;
       margin-top: 0rem;
-      font-size: 0.9rem;
-      padding: 1rem; }
+      font-size: 0.8rem;
+      padding: 1rem;
+      
+     }
+
     .main_nav h1 {
       margin: 0rem;
       padding: 0rem;
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   .section_projects .project {
     margin: 0.2rem; }
@@ -431,13 +433,22 @@ ul {
 @media (max-width: 650px) {
   .main_nav li {
     padding: 0.5rem;
-    font-size: 0.8rem; 
+    font-size: 0.4rem; 
     text-align: center;}
-  .header {
-    height: 100%; }
+  .main_nav a {
+    font-size: 0.6rem;
+  }
+  .main_nav h1{
+    font-size: 1.2rem; 
+  }
+  .icon_bar a {
+    font-size: 1rem;
+  }
+  }
+  /*
     .header .header_content {
       padding: 4.4rem; }
       .header .header_content .cta_title {
         font-size: 2.5rem; }
       .header .header_content .cta_catch {
-        font-size: 1rem; } }
+        font-size: 1rem; } }*/
