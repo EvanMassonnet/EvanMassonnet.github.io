@@ -111,11 +111,13 @@ function parallaxScrollMouse(evt){
 }
 
 function parallaxScrollTouchScreen(evt){
+  if(evt.type == "touchstart"){
+    firstTouchPosition = evt.targetTouches[0].pageY
+  }
 
   if (!ticking) {
-    if(firstTouchPosition != -1){
+    if(firstTouchPosition != -1 && evt.type == "touchend"){
       let delta = evt.changedTouches[0].pageY - firstTouchPosition;
-      console.log(delta);
       if (delta <= -touchScreenSensitivitySetting) {
         if (currentSlideNumber !== pageList.length - 1) {
           currentSlideNumber++;
@@ -130,8 +132,6 @@ function parallaxScrollTouchScreen(evt){
         previousItem();
         slideDurationTimeout(slideDurationSetting);
       }
-    }else{
-      firstTouchPosition = evt.targetTouches[0].pageY
     }
   }
 }

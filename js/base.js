@@ -1,9 +1,8 @@
 
-const colorList = [{h:200,s:1.0,v:0.667}];
+const colorPalette = ["ee9b00","ca6702","bb3e03","ae2012","9b2226","ee9b00","ca6702","bb3e03"];
 
 var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
-console.log(Math.floor(vh / 30 + Math.random() * 10));
 let settings = {
   thickness: 10 + Math.floor(Math.random() * 25),
   tentacles: Math.floor(vh / 40 + Math.random() * 10),
@@ -58,7 +57,7 @@ var Tentacle = function( options ) {
   this.spacing = options.spacing || 20;
   this.friction = options.friction || 0.8;
   this.shade = random( 0.80, 1.15 );
-  this.color = colorList[Math.floor(Math.random() * colorList.length)];
+  this.color = "#" + colorPalette[Math.floor(Math.random() * colorPalette.length)];
 
   this.nodes = [];
   this.outer = [];
@@ -161,18 +160,19 @@ Tentacle.prototype = {
     ctx.lineTo( e.x, e.y );
     ctx.closePath();
 
-    h = this.color.h * this.shade;
+    /*h = this.color.h * 1.1 * this.shade;
     s = this.color.s * 100 * this.shade;
-    v = this.color.v * 100 * this.shade;
+    v = this.color.v * 100 * this.shade;*/
+    
 
-    ctx.fillStyle = 'hsl(' + h + ',' + s + '%,' + v + '%)';
+    ctx.fillStyle = this.color//'hsl(' + h + ',' + s + '%,' + v + '%)';
     ctx.fill();
 
     if ( settings.thickness > 2 ) {
 
       v += -10;
 
-      ctx.strokeStyle = 'hsl(' + h + ',' + s + '%,' + v + '%)';
+      ctx.strokeStyle = this.color;//'hsl(' + h + ',' + s + '%,' + v + '%)';
       ctx.lineWidth = 1;
       ctx.stroke();
     }
@@ -201,7 +201,7 @@ var sketch_1 = Sketch.create({
     for ( var i = 0; i < 100; i++ ) {
 
       tentacle = new Tentacle({
-        length: (i/5) * (i/10) + random( 10, 20 ),
+        length: (i/5) * (i/10) + random( 5, 11 ),
         radius: random( 0.05, 1.0 ),
         spacing: random( 0.2, 1.0 ),
         friction: random( 0.7, 0.88 )

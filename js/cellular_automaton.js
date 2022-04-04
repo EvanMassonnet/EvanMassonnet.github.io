@@ -14,7 +14,6 @@ var Automaton = function( options ) {
 
   this.size = options.size;
   this.quantity = options.quantity;
-  this.color = colorList[0];
   this.law = [];
   this.step = 0;
 
@@ -95,9 +94,9 @@ Automaton.prototype = {
       if(this.cells[0][j] == 1){
         
         var gradient = ctx.createLinearGradient(0, 0, vw, 0);
-        gradient.addColorStop(0, 'black');
-        gradient.addColorStop(0.5, "#371a8c");
-        gradient.addColorStop(1, 'black');
+        gradient.addColorStop(0, '#001219');
+        gradient.addColorStop(0.5, "#005f73");
+        gradient.addColorStop(1, '#001219');
         ctx.fillStyle = gradient;
         ctx.rect(this.step * this.size, j * this.size, this.size ,this.size);
         
@@ -139,7 +138,6 @@ var sketch_2 = Sketch.create({
   update: function() {
     
     if(oldWidth != vw || oldHeight != vh){
-      console.log("old : " + oldWidth + " new : " + vw + "  old : " + oldHeight + " new : " + vh);
       oldWidth = vw;
       oldHeight = vh;
       compte = 0;

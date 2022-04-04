@@ -3,8 +3,6 @@
 
 var canvas_4 = document.getElementById( 'container_4' );
 
-console.log(vw);
-
 let settings_4 = {
   quantity : 30,
   width : 10,
@@ -36,8 +34,8 @@ Stick.prototype = {
   draw: function( ctx ) {
     ctx.beginPath();
     ctx.rect(vw * this.positionX / 100, this.Id * (vh / 30), this.currentLength, settings_4.width);
-    var color = this.currentLength * settings_4.colorRange/2 + 150;
-    ctx.fillStyle = 'hsl(' + color + ',' + 100 + '%,' + 50 + '%)';
+    var color = this.currentLength/20 + 45;
+    ctx.fillStyle = 'hsl(' + color + ',' + 91.4 + '%,' + 28.8 + '%)';
     ctx.closePath();
     ctx.fill();
   }
