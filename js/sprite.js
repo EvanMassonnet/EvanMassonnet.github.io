@@ -55,12 +55,12 @@ let frameSpeed = 0.1;
   
     setup: function() {
       
-      sprites.push(new Sprite('img/GreenRobotIdle.png', 4, 1, {x: vw/2-20, y:vh/2}, 1));
-      sprites.push(new Sprite('img/MainIdle.png', 4, 1, {x: vw/2+80, y:vh/2-100}, 0.6));
-      sprites.push(new Sprite('img/RedRobotIdle.png', 4, 1, {x: vw/2 +80, y:vh/2}, 1));
-      sprites.push(new Sprite('img/GunEnemyIdle.png', 4, 1, {x: vw/2 -20, y:vh/2-100}, 1.2));
-      sprites.push(new Sprite('img/GunIdle.png', 4, 1, {x: vw/2-120, y:vh/2-100}, 1.2));
-      sprites.push(new Sprite('img/OctoIdle.png', 11, 1, {x: vw/2-170, y:vh/2}, 0.3));
+      sprites.push(new Sprite('img/GreenRobotIdle.png', 4, 1, {x: vw/2-20, y:vh/2+100}, 1));
+      sprites.push(new Sprite('img/MainIdle.png', 4, 1, {x: vw/2+80, y:vh/2}, 0.6));
+      sprites.push(new Sprite('img/RedRobotIdle.png', 4, 1, {x: vw/2 +80, y:vh/2+100}, 1));
+      sprites.push(new Sprite('img/GunEnemyIdle.png', 4, 1, {x: vw/2 -20, y:vh/2}, 1.2));
+      sprites.push(new Sprite('img/GunIdle.png', 4, 1, {x: vw/2-120, y:vh/2}, 1.2));
+      sprites.push(new Sprite('img/OctoIdle.png', 11, 1, {x: vw/2-170, y:vh/2+100}, 0.3));
     },
   
     update: function() {
