@@ -133,6 +133,10 @@ ul {
   
 }
 
+#image_page_9 img{
+  height: 12rem;
+}
+
 .project_content {
   flex-direction: column;
   display: flex;
@@ -434,10 +438,21 @@ ul {
   }
 
   }
-  /*
-    .header .header_content {
-      padding: 4.4rem; }
-      .header .header_content .cta_title {
-        font-size: 2.5rem; }
-      .header .header_content .cta_catch {
-        font-size: 1rem; } }*/
+
+  @media (max-width: 1200px) {
+  
+  #image_page_5 img{
+    height: 15rem;
+  }
+
+  #image_page_6 img{
+    height: 15rem;
+  }
+
+  #image_page_7 img{
+    height: 15rem;
+  }
+  #image_page_9 img{
+    height: 8rem;
+  }
+  }
