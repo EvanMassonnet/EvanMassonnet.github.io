@@ -99,7 +99,7 @@ ul {
   display: flex;
   align-items: center;
   color: white;
-  padding: 10%;
+  padding: 5%;
   position: absolute;
   top: 20vh;
 }
@@ -133,8 +133,16 @@ ul {
   
 }
 
+#image_page_5 img{
+  height: 15rem;
+}
+
 #image_page_9 img{
   height: 12rem;
+}
+
+#image_page_7 img{
+  height: 15rem;
 }
 
 .project_content {
