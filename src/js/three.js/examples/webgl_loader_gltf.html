@@ -7,12 +7,9 @@
 		<link type="text/css" rel="stylesheet" href="main.css">
 	</head>
 
-	<body>
-		<div id="info">
-			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> - GLTFLoader<br />
-			Battle Damaged Sci-fi Helmet by
-			<a href="https://sketchfab.com/theblueturtle_" target="_blank" rel="noopener">theblueturtle_</a><br />
-			<a href="https://hdrihaven.com/hdri/?h=royal_esplanade" target="_blank" rel="noopener">Royal Esplanade</a> by <a href="https://hdrihaven.com/" target="_blank" rel="noopener">HDRI Haven</a>
+	<body class="background">
+		<div class="background">
+			
 		</div>
 
 		<!-- Import maps polyfill -->
@@ -32,11 +29,17 @@
 
 			import * as THREE from 'three';
 
-			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+			import Stats from 'three/addons/libs/stats.module.js';
+
+			//import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 			import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-			import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+			//import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+			import { Lensflare, LensflareElement } from 'three/addons/objects/Lensflare.js';
 
 			let camera, scene, renderer;
+			let stats;
+
+			var model, model2;
 
 			init();
 			render();
@@ -47,50 +50,110 @@
 				document.body.appendChild( container );
 
 				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.25, 20 );
-				camera.position.set( - 1.8, 0.6, 2.7 );
+				camera.position.set(0, 0, 5 );
 
 				scene = new THREE.Scene();
 
-				new RGBELoader()
-					.setPath( 'textures/equirectangular/' )
-					.load( 'royal_esplanade_1k.hdr', function ( texture ) {
+				/**const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+				const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
+				const cube = new THREE.Mesh( geometry, material );
+				cube.name = 'bocube';
+				cube.position.set(0,0,0);
+				scene.add( cube );**/
 
-						texture.mapping = THREE.EquirectangularReflectionMapping;
 
-						scene.background = texture;
-						scene.environment = texture;
+				// lights
 
+				const dirLight = new THREE.DirectionalLight( 0xffffff, 0.05 );
+				dirLight.position.set( 0, - 1, 0 ).normalize();
+				dirLight.color.setHSL( 0.1, 0.7, 0.5 );
+				scene.add( dirLight );
+
+				// lensflares
+				const textureLoader = new THREE.TextureLoader();
+
+				const textureFlare0 = textureLoader.load( 'textures/lensflare/lensflare0.png' );
+				const textureFlare3 = textureLoader.load( 'textures/lensflare/lensflare3.png' );
+
+				//addLight( 0.55, 0.9, 0.5, 5, 0, - 1 );
+				//addLight( 0.08, 0.8, 0.5, 0, 0, - 1 );
+				addLight(0.06, 1.0, 0.5, -2, 2, 1 );
+
+				function addLight( h, s, l, x, y, z ) {
+
+					const light = new THREE.PointLight( 0xffffff, 1.5, 2000 );
+					light.color.setHSL( h, s, l );
+					light.position.set( x, y, z );
+					scene.add( light );
+
+					const lensflare = new Lensflare();
+					lensflare.addElement( new LensflareElement( textureFlare0, 700, 0, light.color ) );
+					lensflare.addElement( new LensflareElement( textureFlare3, 60, 0.6 ) );
+					lensflare.addElement( new LensflareElement( textureFlare3, 70, 0.7 ) );
+					lensflare.addElement( new LensflareElement( textureFlare3, 120, 0.9 ) );
+					lensflare.addElement( new LensflareElement( textureFlare3, 70, 1 ) );
+					light.add( lensflare );
+
+				}
+
+				
+
+				// new RGBELoader()
+				// 	.setPath( 'textures/equirectangular/' )
+				// 	.load( 'royal_esplanade_1k.hdr', function ( texture ) {
+
+				// 		texture.mapping = THREE.EquirectangularReflectionMapping;
+
+				// 		scene.background = texture;
+				// 		scene.environment = texture;
+
+				// 		render();
+
+				// 	} );
+
+				const loader = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
+					//loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
+					loader.load( 'ISS.gltf', function ( gltf ) {
+						model = gltf.scene;
+						model.scale.set(0.05,0.05,0.05);
+						model.name = 'ISS';
+						scene.add( model );
 						render();
-
-						// model
-
-						const loader = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
-						loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
-
-							scene.add( gltf.scene );
-
-							render();
-
-						} );
 
 					} );
 
-				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				const loader2 = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
+					//loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
+					loader.load( 'rock.gltf', function ( gltf ) {
+						model2 = gltf.scene;
+						model2.scale.set(0.3,0.3,0.3);
+						model2.name = 'rock';
+						scene.add( model2 );
+						render();
+
+					} );
+
+				renderer = new THREE.WebGLRenderer( { antialias: true }, {alpha: true} );
+				renderer.setClearColor( 0x000000, 0 );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
 				renderer.toneMapping = THREE.ACESFilmicToneMapping;
 				renderer.toneMappingExposure = 1;
+				renderer.setAnimationLoop( animation );
 				renderer.outputEncoding = THREE.sRGBEncoding;
 				container.appendChild( renderer.domElement );
 
-				const controls = new OrbitControls( camera, renderer.domElement );
+				/*const controls = new OrbitControls( camera, renderer.domElement );
 				controls.addEventListener( 'change', render ); // use if there is no animation loop
 				controls.minDistance = 2;
 				controls.maxDistance = 10;
 				controls.target.set( 0, 0, - 0.2 );
-				controls.update();
+				controls.update();*/
 
 				window.addEventListener( 'resize', onWindowResize );
+
+				stats = new Stats();
+				document.body.appendChild( stats.dom );
 
 			}
 
@@ -105,12 +168,37 @@
 
 			}
 
-			//
-
 			function render() {
 
 				renderer.render( scene, camera );
 
+			}
+
+			function animation( time ) {
+				const mesh = scene.getObjectByName('ISS');
+				const mesh2 = scene.getObjectByName('rock');
+				if(mesh == undefined || mesh2 == undefined){
+					return;
+				}
+		
+				mesh.rotation.y += 0.001;
+				mesh.rotation.x += 0.003;
+
+				mesh2.rotation.y += 0.001;
+				mesh2.rotation.x += 0.003;
+
+				mesh.position.x = Math.sin(time / 100000);
+				mesh.position.y = Math.cos(time / 200000);
+
+				if(mesh2.position.x > 3){
+					mesh2.position.x = -3;
+				}
+
+				mesh2.position.x += 0.01;
+
+				renderer.render(scene, camera );
+
+				stats.update();
 			}
 
 		</script>

@@ -37,6 +37,10 @@ button {
 	z-index: 1; /* TODO Solve this in HTML */
 }
 
+.background {
+	background-image: url(../examples/textures/Stars.jpg);
+}
+
 a, button, input, select {
 	pointer-events: auto;
 }
