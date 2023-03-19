@@ -4,8 +4,8 @@ $lightColor : #f4f4f4;
 $darkColor : #01050a;
 $sectionBg :#f2f2f2;
 
-$mainBg: url('../dist/img/Benford.JPG');
-$secondBg: url('../img/Benford.JPG.jpg');
+$mainBg: url('../img/Benford.JPG');
+$secondBg: url('../img/Benford.JPG');
 
 
 *{
@@ -65,7 +65,7 @@ h1, h2, h3, h4 { font-weight: 500; text-transform: uppercase;font-family: 'Robot
     height: 93.4vh;
     color: #fff;
     .header_content{
-        background: rgba(0, 0, 0, 0.5);
+        background: $mainBg;
         color: #f1f1f1;
         width: 100%;
         height:100%;
