@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<html>
 
 <head>
     <meta charset="UTF-8">
     <!-- <link rel="icon" type="image/png" href="./dist/img/ico.png" /> -->
-    <link rel="stylesheet" href="css/style.css">
-    <meta
+    <link rel="stylesheet" href="/dist/css/main.css">
+    <meta 
     name="description"
     content="Computer science and mathematics student in Switzerland. 
     I am looking for a first professional experience."
@@ -19,257 +18,25 @@
     <title>Portfolio Evan Massonnet</title>
 </head>
 
-<body class="dark">
+<body>
+    <nav class="main_nav">
+        <a class="current_page" href="index.html">
+            <h1 class="logo_title">PORTFOLIO</h1>
+        </a>
 
-    <div class="icon_bar">
-        <nav class="icon_bar">
-            <a target="_blank" class="linkedin" href="https://www.linkedin.com/in/evan-massonnet/"><i class="fab fa-linkedin-in fa-2x icon_link"></i></a>
-            <a target="_blank" class="github" href="https://github.com/EvanMassonnet"><i class="fab fa-github fa-2x icon_link"></i></a>
-            <a class="mail" href="mailto:evanmassonnet@gmail.com"><i class="fas fa-envelope fa-2x icon_link"></i></a>
-        </nav>
-    </div>
-
-    
-
-
-    <div  style=" position:absolute; z-index: 100; background-color: transparent; width: 100%;">
-        <nav class="main_nav">
-            <a class="current_page" href="index.html">
-                <h1 class="logo_title">Portfolio</h1>
-            </a>
-    
-            <ul>
-                <li><a id="about" href="#About"><i class="fas fa-user fa"></i>About</a></li>
-                <li><a id="school_projects" href="#SchoolProjects"><i class="fas fa-code fa"></i>School Projects</a></li>
-                <li><a id="personal_projects" href="#PersonnalProject"><i class="fas fa-gamepad"></i>Personal Projects</a></li>
-            </ul>
-        </nav>
-    </div>
-
-
-    
-
-
-
-    <section id="page_1" class="background up-scroll">
-        <div class="content-wrapper">
-            <div style="min-width: 100vw; min-height: 100vh;" id="container_1"></div>
+        <ul>
+            <li><a href="#"><i class="fas fa-code fa"></i>A</a></li>
+            <li><a href="#"><i class="fas fa-lightbulb fa"></i>B</a></li>
+            <li><a href="#"><i class="fas fa-pen"></i>C</a></li>
+        </ul>
+    </nav>
+    <header class="header">
+        <div class="header_content">
+            <h1 class="cta_title">Evan Massonnet</h1>
+            <p class="cta_catch"></p>
+            <a href="#" class="btn btn_cta">En savoir plus</a>
         </div>
-        <div class="banner_content">
-            <div class="banner_text">
-                <h1>Evan MASSONNET</h1>
-                <p>Computer science and mathematics student in Switzerland. 
-                    I am looking for a first professional experience. 
-                    On this website, you will find different projects that I realized.
-                    If you have any questions, feel free to contact me !</p>
-            </div>
-            <div id="image_page_1" class="banner_pic">
-                <img src="img/EvanMassonnet.png" alt="Myself">
-            </div>
-        </div>
-    </section>
-
-    <section id="page_2" class="background">
-        <div class="content-wrapper">
-            <div id="container_2"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-bicycle fa-1x"></i> JaVelo : Route planner for cycling in switzerland</h1>
-                <p>Second semester project, the goal was to create a cycle route planner on Swiss territory.
-                    The route had to consider the cycle paths and the unevenness of the terrain to find the best path.
-                    The source code is not available because the project has not yet been rated.</p>
-            </div>
-            <div id="image_page_2" class="project_pic">
-                <img src="img/javelo.png" alt="Javelo interface">
-            </div>
-        </div>
-    </section>
-
-    
-
-    <section id="page_3" class="background">
-        <div class="content-wrapper">
-            <div id="container_3"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-gamepad fa-1x"></i> ICWars : Top view 2D game </h1>
-                <p>"Advance wars" style game made in java. There are different types of units, music, and animations.  The maps have their own effects that will have to be used to pass the levels. The style of the game is inspired by Despot's Game.</p>
-            </div>
-            <div id="image_page_3" class="project_pic">
-                <!-- <img class="project_picture" src="img/lavaLevel.png" alt="Lava level">
-                <img class="project_picture" src="img/snowLevel.png" alt="Snow level"> -->
-            </div>
-        </div>
-    </section>
-
-    <section id="page_4" class="background">
-        <div class="content-wrapper">
-            <div id="container_4"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-fingerprint fa-1x"></i> Fingerprint recognition</h1>
-                <p>First semester project, I implemented a fingerprint recognition algorithm in Java based on the calculation of minutiae and their orientation</p>
-            </div>
-            <div id="image_page_4" class="project_pic">
-                <img class="project_picture" src="img/Fingerprint.png" alt="Fingerprint">
-                <img class="project_picture" src="img/FingerprintWithMinutiae.png" alt="Fingerprint with minutiae">
-            </div>
-        </div>
-    </section>
-
-
-    <section id="page_5" class="background">
-        <div class="content-wrapper">
-            <div id="container_5"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-calculator fa-1x"></i> Benford’s Law</h1>
-                <p>Academic article on Benford's law and its application in the detection of falsified data.
-                    This law is an observation that in many real-life sets of numerical data, the leading digit is likely to be small.
-                    It can be observed in many data such as elections, account statements or in scientific measures.
-                    However, by applying only this law, it is difficult to determine whether the data has been tampered with or not.
-                    You can read the article <a target="_blank" href="https://drive.google.com/file/d/1VAYdhLUy3tp7M89xabpwhDqIUz7YqiYs/view?usp=sharing">here</a> (in French).</p>
-            </div>
-            <div id="image_page_5" class="project_pic">
-                <img class="project_picture" src="img/Benford.JPG" alt="Benford's law on election data">
-                <img class="project_picture" src="img/BenfordError.JPG" alt="Error evolution on falsify data">
-            </div>
-        </div>
-    </section>
-
-
-    <section id="page_6" class="background">
-        <div class="content-wrapper">
-            <div id="container_6"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-robot fa-1x"></i> SAM : Autonomous transport robot </h1>
-                <p>SAM ( Medical Assistance System ) is a school project of which the objective was to transport medical equipment through hospitals.
-                    It use overboard motor and batteries, Xbox Kinect for vision and Nvidia Jetson TX1 as motherboard. 
-                    We were finalist of the Metz Engineering Science Olympiad.
-                    After that, the robot lost its primary function ...</p>
-            </div>
-            <div id="image_page_6" class="project_pic">
-                <img class="project_picture" src="img/SAM.JPG" alt="SAM">
-                <img class="project_picture" src="img/SAMBeer.JPG" alt="SAM with an important payload">
-                <img class="project_picture" src="img/SAMElectronic.JPG" alt="Electroinc part">
-            </div>
-        </div>
-    </section>
-
-
-    <section id="page_7" class="background">
-        <div class="content-wrapper">
-            <div id="container_7"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fa fa-tree-city fa-1x"></i> Procedural building generation in Unity</h1>
-                <p>The goal of this project is to use free basic assets to procedurally generate city buildings.
-                    For this, we proceed as follows:
-                    We use Pearlin noise from unity with a threshord to create the shape of the foundation.
-                    We apply a recursive filter on the shape to remove holes and irregular shapes.
-                    We build the walls and windows up to the desired height
-                    We build the roof recursively starting from the outside, if a geometry is irregular (i.e. if no pieces can complete it) we add walls and the roof is built on the next level.
-                    And finally, we add decorations such as fireplaces and balconies.</p>
-            </div>
-            <div id="image_page_7" class="project_pic">
-                <img class="project_picture" src="img/Building1.JPG" alt="Example of builded structur">
-                <img class="project_picture" src="img/Building2.JPG" alt="Example of builded structur">
-            </div>
-        </div>
-    </section>
-
-    <section id="page_8" class="background">
-        <div class="content-wrapper">
-            <div id="container_8"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-puzzle-piece fa-1x"></i> 3D printed video game character puzzle</h1>
-                <p>Printable 3d puzzle of overwatch game character Reinhardt. 
-                    This model is based on the Reinhardt figurine from Incredibuilds. 
-                    I recreated it because it is not sold in my country.
-                    I also did the BioShock Big Daddy model but never posted it.</p>
-            </div>
-            <div id="image_page_8" class="project_pic">
-                <img src="img/Reinhardt3D.PNG" alt="Reinhardt 3D model">
-                <img src="img/Reinhardt.JPG" alt="Reinhardt 3D printed">
-                <img src="img/BigDaddyFront.jpg" alt="Big Daddy printed">
-                <img src="img/BigDaddySide.jpg" alt="Big Daddy 3D printed">
-            </div>
-        </div>
-    </section>
-
-    <section id="page_9" class="background">
-        <div class="content-wrapper">
-            <div id="container_9"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-dog fa-1x"></i> Quadruped robot</h1>
-                <p>I wanted to create a quadruped robot, at first using basic components like servo motors.
-                    However, these components do not allow good control and effects such as elasticity, force control or damping.
-                    I was inspired by MIT and I created several 3D models, the first version had big problems but allowed me to do physical simulation.
-                    The second version is smaller and used commercially available components but lacked power.
-                    The 3rd version required custom components and machined parts. I rebuilt the MIT robot's motor controller and test it.
-                    Currently, I have not yet managed to have the machined parts so the project is on hold.</p>
-            </div>
-            <div id="image_page_9" class="project_pic">
-                <img src="img/PCB.JPG" alt="PCB">
-                <img src="img/QuadrupedV1.JPG" alt="Quadruped v1">
-                <img src="img/QuadrupedV2.PNG" alt="Quadruped v2">
-                <img src="img/QuadrupedV3.JPG" alt="Quadruped v3">
-            </div>
-        </div>
-    </section>
-
-    <section id="page_10" class="background">
-        <div class="content-wrapper">
-            <div id="container_10"></div>
-        </div>
-        <div class="project_content">
-            <div class="project_text">
-                <h1><i class="fas fa-solid fa-robot fa-1x"></i> Scorpion robot</h1>
-                <p>Scorpion robot controllable through a phone application. It uses an arduino card, Bluetooth,  20 servomotors.
-                    The tail could be moved.</p>
-            </div>
-            <div id="image_page_10" class="project_pic">
-                <img src="img/ScorpioFront.JPG" alt="Scorpion robot front">
-                <img src="img/ScorpioSide.JPG" alt="Scorpion robot side">
-            </div>
-        </div>
-    </section>
-
-      
-
-<!-- 
-    <footer class="main_footer ptb_3" id="Footer">
-        <div class="footer_content text_center">
-            <p>Copyright &copy; 2022 MASSONNET Evan. Tous droits réservés.</p>
-            
-        </div>
-
-    </footer> -->
-
-    <script src="lib/sketch.min.js"></script>
-    <script src="lib/dat.gui.min.js"></script>
-
-    
-    <script src="js/base.js"></script>
-    <script src="js/wave.js"></script>
-    <script src="js/sprite.js"></script>
-    <script src="js/cellular_automaton.js"></script>
-    <script src="js/water_drop.js"></script>
-    <script src="js/network.js"></script>
-    
-
-    <script src="js/main.js"></script>
+    </header>
 
 </body>
 

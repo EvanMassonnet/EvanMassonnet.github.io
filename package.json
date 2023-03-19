@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "node-sass": "^8.0.0",
+    "three": "^0.150.1"
+  }
+}
