@@ -38,7 +38,8 @@ button {
 }
 
 .background {
-	background-image: url(../examples/textures/Stars.jpg);
+	/* background-image: url(../examples/textures/Stars.jpg); */
+	background-image: url(../examples/textures/hero-bg.png);
 }
 
 a, button, input, select {
