@@ -36,13 +36,80 @@
 			//import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
 			import { Lensflare, LensflareElement } from 'three/addons/objects/Lensflare.js';
 
+			import { RectAreaLightUniformsLib } from 'three/addons/lights/RectAreaLightUniformsLib.js';
+
 			let camera, scene, renderer;
 			let stats;
 
-			var model, model2;
+			var iss;
+			var default_rock;
+			var rocks = [];
+			var rocks_x = [];
+			var rocks_y = [];
+			var rocks_speed = [];
+
+			const rock_count = 50;
 
 			init();
 			render();
+
+			const createLights = () => {
+					// A hemisphere light is a gradient colored light;
+					// the first parameter is the sky color, the second parameter is the ground color,
+					// the third parameter is the intensity of the light
+					const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0.9);
+
+					// an ambient light modifies the global color of a scene and makes the shadows softer
+					const ambientLight = new THREE.AmbientLight(0xccb8b4, 0.3);
+					scene.add(ambientLight);
+
+					// A directional light shines from a specific direction.
+					// It acts like the sun, that means that all the rays produced are parallel.
+					const shadowLight = new THREE.DirectionalLight(0xffffff, 0.5);
+
+					// Set the direction of the light
+					shadowLight.position.set(150, 150, 0);
+					//shadowLight.castShadow = true;
+
+					// define the visible area of the projected shadow
+					// shadowLight.shadow.camera.left = -800;
+					// shadowLight.shadow.camera.right = 800;
+					// shadowLight.shadow.camera.top = 800;
+					// shadowLight.shadow.camera.bottom = -800;
+					// shadowLight.shadow.camera.near = 1;
+					// shadowLight.shadow.camera.far = 1200;
+
+					// res of shadow
+					//shadowLight.shadow.mapSize.width = 2048;
+					//shadowLight.shadow.mapSize.height = 2048;
+
+					const  burnerLightDown = new THREE.DirectionalLight(0xDE00FF, 0.2);
+					burnerLightDown.position.set(0, -5, 0);
+					//burnerLightDown.castShadow = true;
+
+					const  burnerLightTop = new THREE.DirectionalLight(0x2f63c8, 1.0);
+					burnerLightTop.position.set(0, 5, 0);
+					//burnerLightTop.castShadow = true;
+
+					// burnerLight.shadow.camera.left = -100;
+					// burnerLight.shadow.camera.right = 100;
+					// shadowLight.shadow.camera.top = 100;
+					// burnerLight.shadow.camera.bottom = -100;
+					// burnerLight.shadow.camera.near = 1;
+					// burnerLight.shadow.camera.far = 1000;
+
+					// burnerLight.shadow.mapSize.width = 2048;
+					// burnerLight.shadow.mapSize.height = 2048;
+
+					//scene.add(hemisphereLight);
+					scene.add(shadowLight);
+					scene.add(burnerLightDown);
+					scene.add(burnerLightTop);
+					scene.add(ambientLight);
+			};
+
+			createLights();
+
 
 			function init() {
 
@@ -63,21 +130,59 @@
 
 
 				// lights
+				
+				
 
-				const dirLight = new THREE.DirectionalLight( 0xffffff, 0.05 );
-				dirLight.position.set( 0, - 1, 0 ).normalize();
-				dirLight.color.setHSL( 0.1, 0.7, 0.5 );
-				scene.add( dirLight );
+				
+
+				// const dirLight = new THREE.PointLight( 0xffffff, 0.5 );
+				// dirLight.position.set( 1, 0, 0 ).normalize();
+				// dirLight.color.setHSL( 0.1, 0.7, 0.5 );
+				// scene.add( dirLight );
+
+				// const dirLight2 = new THREE.PointLight( 0xffffff, 0.5 );
+				// dirLight2.position.set( -1, 0, 0 ).normalize();
+				// dirLight2.color.setHSL( 0.6, 0.6, 0.5 );
+				// scene.add( dirLight2 );
+
+				// const dirLight = new THREE.HemisphereLight(0x0091FE, 0xFED480,  1.0);
+				// dirLight.position.set( 0, 10, 0 );
+				// //dirLight2.color.setHSL( 0.6, 0.6, 0.5 );
+				// scene.add( dirLight );
+
+				// RectAreaLightUniformsLib.init();
+
+				// const rectLight1 = new THREE.RectAreaLight( 0xff0000, 5, 5, 100 );
+				// rectLight1.position.set( - 5, 5, -1 );
+				// scene.add( rectLight1 );
+
+				// const rectLight2 = new THREE.RectAreaLight( 0x00ff00, 5, 5, 100 );
+				// rectLight2.position.set( 0, 5, -1 );
+				// scene.add( rectLight2 );
+
+				// const rectLight3 = new THREE.RectAreaLight( 0x0000ff, 5, 5, 100 );
+				// rectLight3.position.set( 5, 5, -1 );
+				// scene.add( rectLight3 );
+
+				// const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0.9);
+				// scene.add( hemisphereLight );
+
+				// const ambientLight = new THREE.AmbientLight(0xccb8b4, 0.6);
+  				// scene.add(ambientLight);
+
+				//const ambientLight = new THREE.AmbientLight( 0xffffff, 0.09 );
+				//scene.add( ambientLight );
 
 				// lensflares
-				const textureLoader = new THREE.TextureLoader();
+				// const textureLoader = new THREE.TextureLoader();
 
-				const textureFlare0 = textureLoader.load( 'textures/lensflare/lensflare0.png' );
-				const textureFlare3 = textureLoader.load( 'textures/lensflare/lensflare3.png' );
+				// const textureFlare0 = textureLoader.load( 'textures/lensflare/lensflare0.png' );
+				// const textureFlare3 = textureLoader.load( 'textures/lensflare/lensflare3.png' );
 
 				//addLight( 0.55, 0.9, 0.5, 5, 0, - 1 );
 				//addLight( 0.08, 0.8, 0.5, 0, 0, - 1 );
-				addLight(0.06, 1.0, 0.5, -2, 2, 1 );
+				//addLight(0.6, 1.0, 0.5, -2, 2, 1 );
+				//addLight(0.2, 0.3, 0.5, 2, 2, 1 );
 
 				function addLight( h, s, l, x, y, z ) {
 
@@ -113,11 +218,14 @@
 
 				const loader = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
 					//loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
-					loader.load( 'ISS.gltf', function ( gltf ) {
-						model = gltf.scene;
-						model.scale.set(0.05,0.05,0.05);
-						model.name = 'ISS';
-						scene.add( model );
+					//loader.load( 'Astra.gltf', function ( gltf ) {
+					loader.load( 'Astronaute.gltf', function ( gltf ) {
+						iss = gltf.scene;
+						iss.scale.set(0.05,0.05,0.05);
+						iss.rotation.set(0,-90,0);						//iss.scale.set(0.5,0.5,0.5);
+						//iss.scale.set(0.01,0.01,0.01);
+						iss.name = 'ISS';
+						scene.add( iss );
 						render();
 
 					} );
@@ -125,10 +233,22 @@
 				const loader2 = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
 					//loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
 					loader.load( 'rock.gltf', function ( gltf ) {
-						model2 = gltf.scene;
-						model2.scale.set(0.3,0.3,0.3);
-						model2.name = 'rock';
-						scene.add( model2 );
+						default_rock = gltf.scene;
+						default_rock.scale.set(0.3,0.3,0.3);
+						default_rock.name = 'rock';
+						rocks.push(default_rock);
+						scene.add( default_rock );
+						for (var i = 0; i < rock_count; i++) {
+							var rock = default_rock.clone();
+							//default_rock.scale.set(0.05 + Math.random() * 0.05 ,0.05 + Math.random() *0.05, 0.05 + Math.random() *0.05);
+							default_rock.scale.set(0.1 + Math.random() * 0.05 ,0.1 + Math.random() *0.05, 0.1 + Math.random() *0.05);
+							rock.position.set((2*Math.random()-1)*5, -1+(2*Math.random()-1)*0.5, (2*Math.random()-1)*2);
+							rocks.push(rock);
+							rocks_x.push(Math.random()*0.01);
+							rocks_y.push(Math.random()*0.01);
+							rocks_speed.push(0.001 + Math.random()*0.0012);
+							scene.add( rock );
+						}
 						render();
 
 					} );
@@ -175,26 +295,29 @@
 			}
 
 			function animation( time ) {
-				const mesh = scene.getObjectByName('ISS');
-				const mesh2 = scene.getObjectByName('rock');
-				if(mesh == undefined || mesh2 == undefined){
+				
+				if(iss == undefined){
 					return;
 				}
-		
-				mesh.rotation.y += 0.001;
-				mesh.rotation.x += 0.003;
 
-				mesh2.rotation.y += 0.001;
-				mesh2.rotation.x += 0.003;
+				iss.rotation.y += 0.001;
+				iss.rotation.x += 0.003;
 
-				mesh.position.x = Math.sin(time / 100000);
-				mesh.position.y = Math.cos(time / 200000);
+				iss.position.x = Math.sin(time / 100000);
+				iss.position.y = Math.cos(time / 200000);
 
-				if(mesh2.position.x > 3){
-					mesh2.position.x = -3;
+				for (var i = 0; i < rocks.length; i++) {
+					rocks[i].rotation.x += rocks_x[i];
+					rocks[i].rotation.y += rocks_y[i];
+
+					rocks[i].position.x += rocks_speed[i];
+
+					if(rocks[i].position.x > window.innerWidth / 400){
+						rocks[i].position.x = -window.innerWidth / 400;
+					}
 				}
+		
 
-				mesh2.position.x += 0.01;
 
 				renderer.render(scene, camera );
 
