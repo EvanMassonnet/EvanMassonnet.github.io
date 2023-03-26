@@ -95,8 +95,11 @@ h1, h2, h3, h4 {
 
 .header {
   height: 93.4vh;
-  background: url("../img/Stars.jpg"), no-repeat;
+  background: url("../img/Stars.jpg"), #0f131f;
   background-size: cover;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .header .header_container {
   display: flex;
