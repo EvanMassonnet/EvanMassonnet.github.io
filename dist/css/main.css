@@ -107,9 +107,7 @@ h1, h2, h3, h4 {
 }
 .header .header_container .header_content {
   color: #f4f4f4;
-  width: 100%;
-  height: 100%;
-  padding: 5.4rem 0;
+  padding: 5.4rem 8rem 5.4rem 0;
 }
 .header .header_container .header_content .cta_title {
   font-size: 64px;

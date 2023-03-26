@@ -51,7 +51,7 @@ function init() {
     const loader_iss = new GLTFLoader().setPath('../dist/models/');
     loader_iss.load('ISS.gltf', function (gltf) {
         iss = gltf.scene;
-        iss.scale.set(0.05, 0.05, 0.05);
+        iss.scale.set(0.08, 0.08, 0.08);
         iss.rotation.set(0, -90, 0);
         iss.position.set(0, 0, 0);
         iss.name = 'ISS';
@@ -63,7 +63,7 @@ function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true }, { alpha: true });
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(400, 400);
+    renderer.setSize(550, 550);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
     renderer.setAnimationLoop(animation);
@@ -78,7 +78,7 @@ function onWindowResize() {
 
     camera.aspect = 1
     camera.updateProjectionMatrix();
-    renderer.setSize(400, 400);
+    renderer.setSize(550, 550);
 
     render();
 
