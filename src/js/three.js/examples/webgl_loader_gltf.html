@@ -41,7 +41,7 @@
 			let camera, scene, renderer;
 			let stats;
 
-			var iss;
+			var iss, astronaute_head, astronaute_arm;
 			var default_rock;
 			var rocks = [];
 			var rocks_x = [];
@@ -57,50 +57,27 @@
 					// A hemisphere light is a gradient colored light;
 					// the first parameter is the sky color, the second parameter is the ground color,
 					// the third parameter is the intensity of the light
-					const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0.9);
+					//const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0);
 
 					// an ambient light modifies the global color of a scene and makes the shadows softer
-					const ambientLight = new THREE.AmbientLight(0xccb8b4, 0.3);
+					const ambientLight = new THREE.AmbientLight(0xccb8b4, 0);
 					scene.add(ambientLight);
 
 					// A directional light shines from a specific direction.
 					// It acts like the sun, that means that all the rays produced are parallel.
-					const shadowLight = new THREE.DirectionalLight(0xffffff, 0.5);
+					const shadowLight = new THREE.DirectionalLight(0xffffff, 0);
 
 					// Set the direction of the light
 					shadowLight.position.set(150, 150, 0);
 					//shadowLight.castShadow = true;
 
-					// define the visible area of the projected shadow
-					// shadowLight.shadow.camera.left = -800;
-					// shadowLight.shadow.camera.right = 800;
-					// shadowLight.shadow.camera.top = 800;
-					// shadowLight.shadow.camera.bottom = -800;
-					// shadowLight.shadow.camera.near = 1;
-					// shadowLight.shadow.camera.far = 1200;
-
-					// res of shadow
-					//shadowLight.shadow.mapSize.width = 2048;
-					//shadowLight.shadow.mapSize.height = 2048;
-
-					const  burnerLightDown = new THREE.DirectionalLight(0xDE00FF, 0.2);
+					const  burnerLightDown = new THREE.DirectionalLight(0xDE00FF, 2.0);
 					burnerLightDown.position.set(0, -5, 0);
 					//burnerLightDown.castShadow = true;
 
-					const  burnerLightTop = new THREE.DirectionalLight(0x2f63c8, 1.0);
+					const  burnerLightTop = new THREE.DirectionalLight(0x2f63c8, 5.0);
 					burnerLightTop.position.set(0, 5, 0);
 					//burnerLightTop.castShadow = true;
-
-					// burnerLight.shadow.camera.left = -100;
-					// burnerLight.shadow.camera.right = 100;
-					// shadowLight.shadow.camera.top = 100;
-					// burnerLight.shadow.camera.bottom = -100;
-					// burnerLight.shadow.camera.near = 1;
-					// burnerLight.shadow.camera.far = 1000;
-
-					// burnerLight.shadow.mapSize.width = 2048;
-					// burnerLight.shadow.mapSize.height = 2048;
-
 					//scene.add(hemisphereLight);
 					scene.add(shadowLight);
 					scene.add(burnerLightDown);
@@ -109,7 +86,6 @@
 			};
 
 			createLights();
-
 
 			function init() {
 
@@ -121,118 +97,47 @@
 
 				scene = new THREE.Scene();
 
-				/**const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-				const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-				const cube = new THREE.Mesh( geometry, material );
-				cube.name = 'bocube';
-				cube.position.set(0,0,0);
-				scene.add( cube );**/
-
-
-				// lights
-				
-				
-
-				
-
-				// const dirLight = new THREE.PointLight( 0xffffff, 0.5 );
-				// dirLight.position.set( 1, 0, 0 ).normalize();
-				// dirLight.color.setHSL( 0.1, 0.7, 0.5 );
-				// scene.add( dirLight );
-
-				// const dirLight2 = new THREE.PointLight( 0xffffff, 0.5 );
-				// dirLight2.position.set( -1, 0, 0 ).normalize();
-				// dirLight2.color.setHSL( 0.6, 0.6, 0.5 );
-				// scene.add( dirLight2 );
-
-				// const dirLight = new THREE.HemisphereLight(0x0091FE, 0xFED480,  1.0);
-				// dirLight.position.set( 0, 10, 0 );
-				// //dirLight2.color.setHSL( 0.6, 0.6, 0.5 );
-				// scene.add( dirLight );
-
-				// RectAreaLightUniformsLib.init();
-
-				// const rectLight1 = new THREE.RectAreaLight( 0xff0000, 5, 5, 100 );
-				// rectLight1.position.set( - 5, 5, -1 );
-				// scene.add( rectLight1 );
-
-				// const rectLight2 = new THREE.RectAreaLight( 0x00ff00, 5, 5, 100 );
-				// rectLight2.position.set( 0, 5, -1 );
-				// scene.add( rectLight2 );
-
-				// const rectLight3 = new THREE.RectAreaLight( 0x0000ff, 5, 5, 100 );
-				// rectLight3.position.set( 5, 5, -1 );
-				// scene.add( rectLight3 );
-
-				// const hemisphereLight = new THREE.HemisphereLight(0xaaaaaa, 0x000000, 0.9);
-				// scene.add( hemisphereLight );
-
-				// const ambientLight = new THREE.AmbientLight(0xccb8b4, 0.6);
-  				// scene.add(ambientLight);
-
-				//const ambientLight = new THREE.AmbientLight( 0xffffff, 0.09 );
-				//scene.add( ambientLight );
-
-				// lensflares
-				// const textureLoader = new THREE.TextureLoader();
-
-				// const textureFlare0 = textureLoader.load( 'textures/lensflare/lensflare0.png' );
-				// const textureFlare3 = textureLoader.load( 'textures/lensflare/lensflare3.png' );
-
-				//addLight( 0.55, 0.9, 0.5, 5, 0, - 1 );
-				//addLight( 0.08, 0.8, 0.5, 0, 0, - 1 );
-				//addLight(0.6, 1.0, 0.5, -2, 2, 1 );
-				//addLight(0.2, 0.3, 0.5, 2, 2, 1 );
-
-				function addLight( h, s, l, x, y, z ) {
-
-					const light = new THREE.PointLight( 0xffffff, 1.5, 2000 );
-					light.color.setHSL( h, s, l );
-					light.position.set( x, y, z );
-					scene.add( light );
-
-					const lensflare = new Lensflare();
-					lensflare.addElement( new LensflareElement( textureFlare0, 700, 0, light.color ) );
-					lensflare.addElement( new LensflareElement( textureFlare3, 60, 0.6 ) );
-					lensflare.addElement( new LensflareElement( textureFlare3, 70, 0.7 ) );
-					lensflare.addElement( new LensflareElement( textureFlare3, 120, 0.9 ) );
-					lensflare.addElement( new LensflareElement( textureFlare3, 70, 1 ) );
-					light.add( lensflare );
-
-				}
-
-				
-
-				// new RGBELoader()
-				// 	.setPath( 'textures/equirectangular/' )
-				// 	.load( 'royal_esplanade_1k.hdr', function ( texture ) {
-
-				// 		texture.mapping = THREE.EquirectangularReflectionMapping;
-
-				// 		scene.background = texture;
-				// 		scene.environment = texture;
-
-				// 		render();
-
-				// 	} );
-
-				const loader = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
-					//loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
-					//loader.load( 'Astra.gltf', function ( gltf ) {
-					loader.load( 'Astronaute.gltf', function ( gltf ) {
+				const loader_iss = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
+				loader_iss.load( 'ISS.gltf', function ( gltf ) {
 						iss = gltf.scene;
 						iss.scale.set(0.05,0.05,0.05);
-						iss.rotation.set(0,-90,0);						//iss.scale.set(0.5,0.5,0.5);
-						//iss.scale.set(0.01,0.01,0.01);
+						iss.rotation.set(0,-90,0);						
+						iss.position.set(0,0,0);
 						iss.name = 'ISS';
 						scene.add( iss );
 						render();
 
 					} );
 
+
+
+				const loader_astronaute_head = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
+					loader_astronaute_head.load( 'Astronaute.gltf', function ( gltf ) {
+						astronaute_head = gltf.scene;
+						astronaute_head.scale.set(0.02,0.02,0.02);
+						astronaute_head.rotation.set(0,-90,0);		
+						astronaute_head.position.set(-1.5,1,0);
+						astronaute_head.name = 'astronaute_head';
+						scene.add( astronaute_head );
+						render();
+
+					} );
+
+				const loader_astronaute_arm = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
+				loader_astronaute_arm.load( 'Astronaute_Arm.gltf', function ( gltf ) {
+						astronaute_arm = gltf.scene;
+						astronaute_arm.scale.set(0.02,0.02,0.02);
+						astronaute_arm.rotation.set(0,-90,0);
+						astronaute_arm.position.set(1.5,1,0);
+						astronaute_arm.name = 'astronaute_arm';
+						scene.add( astronaute_arm );
+						render();
+
+					} );
+
 				const loader2 = new GLTFLoader().setPath( 'models/gltf/DamagedHelmet/glTF/' );
 					//loader.load( 'DamagedHelmet.gltf', function ( gltf ) {
-					loader.load( 'rock.gltf', function ( gltf ) {
+					loader2.load( 'rock.gltf', function ( gltf ) {
 						default_rock = gltf.scene;
 						default_rock.scale.set(0.3,0.3,0.3);
 						default_rock.name = 'rock';
@@ -243,6 +148,7 @@
 							//default_rock.scale.set(0.05 + Math.random() * 0.05 ,0.05 + Math.random() *0.05, 0.05 + Math.random() *0.05);
 							default_rock.scale.set(0.1 + Math.random() * 0.05 ,0.1 + Math.random() *0.05, 0.1 + Math.random() *0.05);
 							rock.position.set((2*Math.random()-1)*5, -1+(2*Math.random()-1)*0.5, (2*Math.random()-1)*2);
+							rock.rotation.set(Math.random()*360,Math.random()*360,Math.random()*360);
 							rocks.push(rock);
 							rocks_x.push(Math.random()*0.01);
 							rocks_y.push(Math.random()*0.01);
@@ -296,15 +202,21 @@
 
 			function animation( time ) {
 				
-				if(iss == undefined){
+				if(iss == undefined || astronaute_arm == undefined || astronaute_head == undefined){
 					return;
 				}
 
 				iss.rotation.y += 0.001;
 				iss.rotation.x += 0.003;
 
-				iss.position.x = Math.sin(time / 100000);
-				iss.position.y = Math.cos(time / 200000);
+				astronaute_arm.rotation.y -= 0.001;
+				//astronaute_arm.rotation.x += 0.003;
+
+				astronaute_head.rotation.y -= 0.003;
+				//astronaute_head.rotation.x += 0.003;
+
+				//iss.position.x = Math.sin(time / 100000);
+				//iss.position.y = Math.cos(time / 200000);
 
 				for (var i = 0; i < rocks.length; i++) {
 					rocks[i].rotation.x += rocks_x[i];
