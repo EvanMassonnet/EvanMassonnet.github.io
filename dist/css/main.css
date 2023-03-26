@@ -1,5 +1,6 @@
 :root {
   color-scheme: dark;
+  --curve: 10px;
 }
 
 * {
@@ -27,6 +28,17 @@ ul {
 
 h1, h2, h3, h4 {
   letter-spacing: 2pt;
+}
+
+.btn {
+  background: #6366f1;
+  padding: 12px 28px;
+  color: #f4f4f4;
+  border-radius: var(--curve);
+  margin-right: 16px;
+  margin-right: 16px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .ptb_1 {
@@ -65,14 +77,13 @@ h1, h2, h3, h4 {
   padding: 0.7rem 0.3rem;
 }
 .main_nav a {
-  color: #fff;
+  color: #f4f4f4;
   padding-bottom: 0.3rem;
   border-bottom: 2px transparent solid;
   transition: border-color 1s;
 }
 .main_nav a .logo_title {
   padding: 5px 0 0 0;
-  color: #fff;
   text-transform: none;
 }
 .main_nav a:hover {
@@ -84,28 +95,29 @@ h1, h2, h3, h4 {
 
 .header {
   height: 93.4vh;
-  color: #fff;
   background: url("../img/Stars.jpg"), no-repeat;
   background-size: cover;
 }
 .header .header_container {
-  padding: 11.4rem 1rem;
+  display: flex;
+  align-items: center;
+  padding: 11.4rem 3rem;
   max-width: 1380px;
   margin: auto;
 }
-.header .header_content {
-  color: #f1f1f1;
+.header .header_container .header_content {
+  color: #f4f4f4;
   width: 100%;
   height: 100%;
   padding: 5.4rem 0;
 }
-.header .header_content .cta_title {
+.header .header_container .header_content .cta_title {
   font-size: 64px;
 }
-.header .header_content .cta_catch {
-  color: #6E7684;
+.header .header_container .header_content .cta_catch {
+  color: #828B99;
   font-size: 20px;
-  padding: 0.6rem 0 2.2rem 0;
+  padding: 0.6rem 0 3.2rem 0;
   max-width: 600px;
 }
 

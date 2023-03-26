@@ -1,14 +1,17 @@
 $webWidth : 1280px;
 $primaryColor : #6366f1;
+$paraColor : #828B99;
 $lightColor : #f4f4f4;
 $darkColor : #01050a;
 $sectionBg :#f2f2f2;
+
 
 $mainBg: url('../img/Stars.jpg');
 $secondBg: url('../img/Benford.JPG');
 
 :root {
     color-scheme: dark;
+    --curve: 10px;
 }
 
 *{
@@ -24,6 +27,17 @@ a { text-decoration: none; color: $primaryColor;}
 ul {list-style-type: none;}
 h1, h2, h3, h4 {letter-spacing: 2pt;}
 
+.btn {
+    background: $primaryColor;
+    padding: 12px 28px;    
+    color: $lightColor;
+    border-radius: var(--curve);
+    margin-right: 16px;
+    margin-right: 16px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
 .ptb {
     &_1{padding: 1rem;}
     &_2{padding: 2rem;}
@@ -33,6 +47,7 @@ h1, h2, h3, h4 {letter-spacing: 2pt;}
 }
 
 .main_nav{
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -50,14 +65,13 @@ h1, h2, h3, h4 {letter-spacing: 2pt;}
         }
     }
 
-    a{
-        color:  #fff;
+    a {
+        color: $lightColor;
         padding-bottom: 0.3rem;
         border-bottom: 2px transparent solid;
         transition: border-color 1s;
         .logo_title {
             padding :5px 0 0 0;
-            color: #fff;
             text-transform: none;
         }
         &:hover { border-color: $primaryColor;}
@@ -70,33 +84,36 @@ h1, h2, h3, h4 {letter-spacing: 2pt;}
 
 .header{
     height: 93.4vh;
-    color: #fff;
     background: $mainBg, no-repeat;
     background-size: cover;
     .header_container {
         // width: 100%;
         // height:100%;
-        padding: 11.4rem 1rem;
+        display: flex;
+        align-items:center;
+        padding: 11.4rem 3rem;
         max-width: 1380px;
         margin: auto;
+        .header_content {
+            color: $lightColor;
+            width: 100%;
+            height:100%;
+            padding: 5.4rem 0;
+    
+            .cta_title {
+                // font-size: 4.5rem;
+                font-size: 64px;
+            }
+            .cta_catch {
+                // font-size: 1.2rem;
+                color: $paraColor;
+                font-size: 20px;
+                padding: 0.6rem 0 3.2rem 0;
+                
+                max-width: 600px;
+                //text-shadow: 2px 2px 4px #000000;
+            }
+        }
     }
-    .header_content{
-        color: #f1f1f1;
-        width: 100%;
-        height:100%;
-        padding: 5.4rem 0;
 
-        .cta_title{
-            // font-size: 4.5rem;
-            font-size: 64px;
-        }
-        .cta_catch{
-            // font-size: 1.2rem;
-            color: #6E7684;
-            font-size: 20px;
-            padding: 0.6rem 0 2.2rem 0;
-            max-width: 600px;
-            //text-shadow: 2px 2px 4px #000000;
-        }
-    }
 }
