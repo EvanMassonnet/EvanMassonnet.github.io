@@ -1,12 +1,15 @@
 $webWidth : 1280px;
-$primaryColor : #ffae00;
+$primaryColor : #6366f1;
 $lightColor : #f4f4f4;
 $darkColor : #01050a;
 $sectionBg :#f2f2f2;
 
-$mainBg: url('../img/Benford.JPG');
+$mainBg: url('../img/Stars.jpg');
 $secondBg: url('../img/Benford.JPG');
 
+:root {
+    color-scheme: dark;
+}
 
 *{
     margin : 0;
@@ -14,10 +17,12 @@ $secondBg: url('../img/Benford.JPG');
     box-sizing: border-box;
 }
 
-body {font-family: 'Roboto', sans-serif;}
+html {font-size: 100%;}
+
+body {font-family: 'Inter', sans-serif;}
 a { text-decoration: none; color: $primaryColor;}
 ul {list-style-type: none;}
-h1, h2, h3, h4 { font-weight: 500; text-transform: uppercase;font-family: 'Roboto'; letter-spacing: 5pt;}
+h1, h2, h3, h4 {letter-spacing: 2pt;}
 
 .ptb {
     &_1{padding: 1rem;}
@@ -31,8 +36,10 @@ h1, h2, h3, h4 { font-weight: 500; text-transform: uppercase;font-family: 'Robot
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $darkColor;
-    padding: 0.5rem 1rem;
+    backdrop-filter: blur(20px);
+    position: fixed;
+    width: 100%;
+    padding: 0 16px;
     ul{display: flex;}
     li{
         padding: 0.5rem 0.7rem;
@@ -64,23 +71,32 @@ h1, h2, h3, h4 { font-weight: 500; text-transform: uppercase;font-family: 'Robot
 .header{
     height: 93.4vh;
     color: #fff;
+    background: $mainBg, no-repeat;
+    background-size: cover;
+    .header_container {
+        // width: 100%;
+        // height:100%;
+        padding: 11.4rem 1rem;
+        max-width: 1380px;
+        margin: auto;
+    }
     .header_content{
-        background: $mainBg;
         color: #f1f1f1;
         width: 100%;
         height:100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 5.4rem;
+        padding: 5.4rem 0;
 
-        .cta_title{font-size: 4.5rem;
-            text-shadow: 0px 0px 3px #000;
-            text-align: center;
+        .cta_title{
+            // font-size: 4.5rem;
+            font-size: 64px;
         }
-        .cta_catch{font-size: 1.2rem;padding: 0.6rem 0 2.2rem 0;
-            text-align: center;//text-shadow: 2px 2px 4px #000000;
+        .cta_catch{
+            // font-size: 1.2rem;
+            color: #6E7684;
+            font-size: 20px;
+            padding: 0.6rem 0 2.2rem 0;
+            max-width: 600px;
+            //text-shadow: 2px 2px 4px #000000;
         }
     }
 }
