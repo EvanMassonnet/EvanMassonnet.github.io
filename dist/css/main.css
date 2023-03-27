@@ -98,17 +98,15 @@ h1, h2, h3, h4 {
 }
 
 .header {
-  height: 93.4vh;
   background: url("../img/Stars.jpg"), #0f131f;
-  background-size: cover;
   background-size: contain;
-  background-position: center;
+  background-position: center top;
   background-repeat: no-repeat;
 }
 .header .header_container {
   display: flex;
   align-items: center;
-  padding: 11.4rem 3rem;
+  padding: 11.4rem 3rem 0 3rem;
   max-width: 1380px;
   margin: auto;
 }
@@ -129,20 +127,22 @@ h1, h2, h3, h4 {
   max-width: 600px;
 }
 
+.transition {
+  overflow: hidden;
+}
+
+.placeholder {
+  height: 2000px;
+}
+
 @media screen and (max-width: 1260px) {
-  .header {
-    background-size: cover;
-  }
   .header .header_container {
     flex-direction: column;
   }
 }
 @media screen and (max-width: 867px) {
-  .header {
-    background-size: cover;
-  }
   .header .header .header_container {
-    padding: 11.4rem 2rem;
+    padding: 11.4rem 2rem 0rem 2rem;
   }
   .header .header .header_container .header_content {
     padding: 0;
