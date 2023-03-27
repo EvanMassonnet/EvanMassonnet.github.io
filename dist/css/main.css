@@ -1,6 +1,7 @@
 :root {
   color-scheme: dark;
   --curve: 10px;
+  --scale: calc(100vw / 1920);
 }
 
 * {
@@ -19,7 +20,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #6366f1;
+  color: #5254ca;
 }
 
 ul {
@@ -31,14 +32,17 @@ h1, h2, h3, h4 {
 }
 
 .btn {
-  background: #6366f1;
+  background: #5254ca;
   padding: 12px 28px;
   color: #f4f4f4;
   border-radius: var(--curve);
   margin-right: 16px;
-  margin-right: 16px;
   font-size: 16px;
   font-weight: bold;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+.btn:hover {
+  background: #3c3d97;
 }
 
 .ptb_1 {
@@ -73,7 +77,7 @@ h1, h2, h3, h4 {
   padding: 0.5rem 0.7rem;
 }
 .main_nav li .fas {
-  color: #6366f1;
+  color: #5254ca;
   padding: 0.7rem 0.3rem;
 }
 .main_nav a {
@@ -87,10 +91,10 @@ h1, h2, h3, h4 {
   text-transform: none;
 }
 .main_nav a:hover {
-  border-color: #6366f1;
+  border-color: #5254ca;
 }
 .main_nav a.current_page {
-  border-color: #6366f1;
+  border-color: #5254ca;
 }
 
 .header {
@@ -110,16 +114,57 @@ h1, h2, h3, h4 {
 }
 .header .header_container .header_content {
   color: #f4f4f4;
-  padding: 5.4rem 8rem 5.4rem 0;
+  padding: 5.4rem 3rem 5.4rem 6rem;
+}
+.header .header_container .header_content .cta_group {
+  display: flex;
 }
 .header .header_container .header_content .cta_title {
-  font-size: 64px;
+  font-size: 3.8rem;
 }
 .header .header_container .header_content .cta_catch {
+  font-size: 1.2rem;
   color: #828B99;
-  font-size: 20px;
   padding: 0.6rem 0 3.2rem 0;
   max-width: 600px;
+}
+
+@media screen and (max-width: 1260px) {
+  .header {
+    background-size: cover;
+  }
+  .header .header_container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 867px) {
+  .header {
+    background-size: cover;
+  }
+  .header .header .header_container {
+    padding: 11.4rem 2rem;
+  }
+  .header .header .header_container .header_content {
+    padding: 0;
+  }
+  .header .header .header_container .header_content .cta_title {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .header_content .cta_group {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .header_content .cta_group .btn {
+    margin: 0;
+  }
+  .header_content .cta_group .btn.btn_cta, .header_content .cta_group .btn_cta_outline {
+    text-align: center;
+  }
+  .header_canvas {
+    transform: scale(0.7);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
