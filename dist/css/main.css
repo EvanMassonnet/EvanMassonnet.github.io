@@ -27,8 +27,15 @@ ul {
   list-style-type: none;
 }
 
-h1, h2, h3, h4 {
-  letter-spacing: 2pt;
+h2,
+h3,
+h4 {
+  text-align: center;
+  font-weight: 600;
+}
+
+p {
+  color: #828b99;
 }
 
 .btn {
@@ -104,6 +111,7 @@ h1, h2, h3, h4 {
   background-repeat: no-repeat;
 }
 .header .header_container {
+  max-width: 1280px;
   display: flex;
   align-items: center;
   padding: 11.4rem 3rem 0 3rem;
@@ -122,9 +130,68 @@ h1, h2, h3, h4 {
 }
 .header .header_container .header_content .cta_catch {
   font-size: 1.2rem;
-  color: #828B99;
+  color: #828b99;
   padding: 0.6rem 0 3.2rem 0;
   max-width: 600px;
+}
+
+section {
+  padding: 6rem;
+  max-width: 1280px;
+  margin: auto;
+}
+section h2 {
+  padding: 0 0 4rem 0;
+  font-weight: 300;
+}
+section .cards_skill {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+section .cards_skill .card_skill_item {
+  padding: 1rem;
+  width: 33.3%;
+}
+section .cards_skill .card_skill_item .card_skill {
+  background: #161b22;
+  border: 1px solid #2c3239;
+  border-radius: var(--curve);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+section .cards_skill .card_skill_item .card_skill .card_img {
+  padding: 2rem 1rem 0 0;
+}
+section .cards_skill .card_skill_item .card_skill:hover i {
+  animation: 1s ease-in infinite bounce;
+}
+section .cards_skill .card_skill_item .card_skill h3 {
+  text-align: left;
+  padding: 0 0 1rem 0;
+}
+section .cards_skill .card_skill_item .card_skill > i {
+  position: absolute;
+  top: 35px;
+  right: 33px;
+  border-radius: 50%;
+}
+section .cards_skill .card_skill_item .card_skill .fa-code {
+  background: rgba(89, 48, 165, 0.67);
+  box-shadow: 0px 0px 20px 10px rgba(126, 59, 255, 0.64);
+}
+section .cards_skill .card_skill_item .card_skill .fa-display {
+  background: rgba(48, 118, 165, 0.67);
+  box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
+}
+section .cards_skill .card_skill_item .card_skill .fa-toolbox {
+  background: rgba(62, 165, 48, 0.67);
+  box-shadow: 0px 0px 20px 10px rgba(59, 255, 229, 0.64);
 }
 
 .transition {
@@ -135,20 +202,32 @@ h1, h2, h3, h4 {
   height: 2000px;
 }
 
-@media screen and (max-width: 1260px) {
+@media screen and (max-width: 1268px) {
   .header .header_container {
     flex-direction: column;
   }
+  section .cards_skill .card_skill_item {
+    width: 50%;
+  }
+  section .cards_skill .card_skill_item:last-child {
+    margin: auto;
+  }
 }
 @media screen and (max-width: 867px) {
-  .header .header .header_container {
-    padding: 11.4rem 2rem 0rem 2rem;
+  .header .header_container {
+    padding: 5.4rem 0rem 3.4rem 0rem;
   }
-  .header .header .header_container .header_content {
-    padding: 0;
+  .header .header_container .header_content {
+    padding: 2.4rem 1rem 4.4rem 1rem;
   }
-  .header .header .header_container .header_content .cta_title {
-    font-size: 2rem;
+  .header .header_container .header_content .cta_title {
+    font-size: 3rem;
+  }
+  section {
+    padding: 6rem 1rem;
+  }
+  section .cards_skill .card_skill_item {
+    width: 100%;
   }
 }
 @media screen and (max-width: 500px) {
@@ -159,11 +238,42 @@ h1, h2, h3, h4 {
   .header_content .cta_group .btn {
     margin: 0;
   }
-  .header_content .cta_group .btn.btn_cta, .header_content .cta_group .btn_cta_outline {
+  .header_content .cta_group .btn.btn_cta,
+  .header_content .cta_group .btn_cta_outline {
     text-align: center;
   }
   .header_canvas {
     transform: scale(0.7);
+  }
+}
+@keyframes bounce {
+  from {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+  }
+  10% {
+    -webkit-transform: scale(1.1, 0.9) translateY(0);
+    transform: scale(1.1, 0.9) translateY(0);
+  }
+  30% {
+    -webkit-transform: scale(0.9, 1.1) translateY(0.5em);
+    transform: scale(0.9, 1.1) translateY(-0.5em);
+  }
+  50% {
+    -webkit-transform: scale(1.05, 0.95) translateY(0);
+    transform: scale(1.05, 0.95) translateY(0);
+  }
+  57% {
+    -webkit-transform: scale(1) translateY(-0.125em);
+    transform: scale(1) translateY(-0.125em);
+  }
+  64% {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
+  }
+  to {
+    -webkit-transform: scale(1) translateY(0);
+    transform: scale(1) translateY(0);
   }
 }
 
