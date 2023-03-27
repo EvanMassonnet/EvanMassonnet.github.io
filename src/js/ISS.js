@@ -13,7 +13,7 @@ const createLights = () => {
 
 
     // an ambient light modifies the global color of a scene and makes the shadows softer
-    const ambientLight = new THREE.AmbientLight(0xccb8b4, 0);
+    const ambientLight = new THREE.AmbientLight(0xccb8b4, 1);
     scene.add(ambientLight);
 
     // A directional light shines from a specific direction.
@@ -24,11 +24,11 @@ const createLights = () => {
     shadowLight.position.set(150, 150, 0);
     //shadowLight.castShadow = true;
 
-    const burnerLightDown = new THREE.DirectionalLight(0xDE00FF, 2.0);
+    const burnerLightDown = new THREE.DirectionalLight(0xDE00FF, 0.2);
     burnerLightDown.position.set(0, -5, 0);
     //burnerLightDown.castShadow = true;
 
-    const burnerLightTop = new THREE.DirectionalLight(0x2f63c8, 5.0);
+    const burnerLightTop = new THREE.DirectionalLight(0x2f63c8, 0.2);
     burnerLightTop.position.set(0, 5, 0);
 
     scene.add(shadowLight);
