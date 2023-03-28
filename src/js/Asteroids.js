@@ -51,7 +51,7 @@ const positionAsteroids = () => {
         }
 
         //rocks[i].scale.set(0.3 + Math.random() * 0.05, 0.3 + Math.random() * 0.05, 0.3 + Math.random() * 0.05);
-        rocks[i].scale.set(0.3 + Math.random() * 0.5, 0.2 + Math.random() * 0.5, 0.3 + Math.random() * 0.5);
+        //rocks[i].scale.set(0.3 + Math.random() * 0.5, 0.2 + Math.random() * 0.5, 0.3 + Math.random() * 0.5);
         //rocks[i].scale.set(0.3 +  0.5, 0.2 +  0.5, 0.3 + 0.5);
 
     }
@@ -67,7 +67,7 @@ function init() {
 
     camera = new THREE.PerspectiveCamera(45, window.innerWidth / 200, 0.25, 20);
     //camera = new THREE.OrthographicCamera( -window.innerWidth, window.innerWidth, -window.innerHeight, window.innerHeight, 0.01, 200 );
-    camera.position.set(0, 0, 8);
+    camera.position.set(0, 0, 10);
 
     scene = new THREE.Scene();
 

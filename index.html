@@ -1,123 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <!-- <link rel="icon" type="image/png" href="./dist/img/ico.png" /> -->
-    <link rel="stylesheet" href="/dist/css/main.css">
-    <meta 
-    name="description"
-    content="Computer science and mathematics student in Switzerland. 
+    <link rel="stylesheet" href="/dist/css/main.css" />
+    <meta
+      name="description"
+      content="Computer science and mathematics student in Switzerland. 
     I am looking for a first professional experience."
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <script src="https://kit.fontawesome.com/6df08405e1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6df08405e1.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      async
+      src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"
+    ></script>
 
     <script type="importmap">
-        {
-            "imports": {
-                "three": "./src/js/three.js/build/three.module.js",
-                "three/addons/": "./src/js/three.js/examples/jsm/"
-            }
+      {
+        "imports": {
+          "three": "./src/js/three.js/build/three.module.js",
+          "three/addons/": "./src/js/three.js/examples/jsm/"
         }
+      }
     </script>
     <script type="module" src="src/js/ISS.js"></script>
     <script type="module" src="src/js/Asteroids.js"></script>
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"
+    />
     <title>Portfolio Evan Massonnet</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <nav class="main_nav">
-        <a class="current_page" href="index.html">
-            <h1 class="logo_title">PORTFOLIO</h1>
-        </a>
+      <a class="current_page" href="index.html">
+        <h1 class="logo_title">PORTFOLIO</h1>
+      </a>
 
-        <ul>
-            <li><a href="#"><i class="fas fa-code fa"></i>A</a></li>
-            <li><a href="#"><i class="fas fa-lightbulb fa"></i>B</a></li>
-            <li><a href="#"><i class="fas fa-pen"></i>C</a></li>
-        </ul>
+      <ul>
+        <li>
+          <a href="#"><i class="fas fa-code fa"></i>A</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-lightbulb fa"></i>B</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-pen"></i>C</a>
+        </li>
+      </ul>
     </nav>
     <header class="header">
-        <div class="header_container">
-            <div class="header_content">
-                <h1 class="cta_title">Evan Massonnet</h1>
-                <p class="cta_catch">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, quaerat. Facilis ipsum maxime modi excepturi illum deleniti, minus, sapiente quam quos reiciendis dolores impedit, ad magni qui consequatur dignissimos. Et.</p>
-                <div class="cta_group">
-                    <a href="#" class="btn btn_cta"> Show more </a>
-                    <a href="#" class="btn btn_cta_outline"> Contact Me</a>
-                </div>
-
-            </div>
-            <div class="header_canvas">
-
-            </div>
-
+      <div class="header_container">
+        <div class="header_content">
+          <h1 class="cta_title">Evan Massonnet</h1>
+          <p class="cta_catch">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut,
+            quaerat. Facilis ipsum maxime modi excepturi illum deleniti, minus,
+            sapiente quam quos reiciendis dolores impedit, ad magni qui
+            consequatur dignissimos. Et.
+          </p>
+          <div class="cta_group">
+            <a href="#" class="btn btn_cta"> Show more </a>
+            <a href="#" class="btn btn_cta_outline"> Contact Me</a>
+          </div>
         </div>
-        <div class="transition">
-        
-        </div>
+        <div class="header_canvas"></div>
+      </div>
+      <div class="transition"></div>
     </header>
     <main>
-        <section>
-            <h2>Skills and Softwares</h2>
-            <ul class="cards_skill"> 
-                <li class="card_skill_item">
-                    <div class="card_skill">
-                        <h3>Coding</h3>
-                        <i class="fa fa-code"></i>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore est eaque autem cumque asperiores iure, architecto accusantium pariatur voluptatem culpa at voluptas rem maiores quae doloribus beatae officia? Nesciunt, aperiam.</p>
-                            <div class="card_img">
-                                <i class="fa fa-html5 fa-2xl"></i>
-                                <i class="fa fa-css3 fa-2xl"></i>
-                                <i class="fab fa-js-square fa-2xl"></i>
-                                <i class="fa-brands fa-python fa-2xl"></i>
-                            </div>
-                    </div>
-                </li>
-                <li class="card_skill_item">
-                    <div class="card_skill">
-                        <i class="fa fa-display"></i>
-                        <h3>Softwares</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore est eaque autem cumque asperiores iure, architecto accusantium pariatur voluptatem culpa at voluptas rem maiores quae doloribus beatae officia? Nesciunt, aperiam.</p>
-                        <div class="card_img">
-                            <i class="fa fa-html5 fa-2xl"></i>
-                            <i class="fa fa-css3 fa-2xl"></i>
-                            <i class="fab fa-js-square fa-2xl"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="card_skill_item">
-                    <div class="card_skill">
-                        <i class="fa fa-toolbox"></i>
-                        <h3>Tools</h3>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore est eaque autem cumque asperiores iure, architecto accusantium pariatur voluptatem culpa at voluptas rem maiores quae doloribus beatae officia? Nesciunt, aperiam.</p>
-                        <div class="card_img">
-                            <i class="fa fa-html5 fa-2xl"></i>
-                            <i class="fa fa-css3 fa-2xl"></i>
-                            <i class="fa-brands fa-unity fa-2xl"></i>
-                        </div>
-                    </div>
-                </li>
-            </ul>            
-        </section>
-        <div class="night">
-            <div class="shooting_star">
+      <section>
+        <h2>Skills and Softwares</h2>
+        <ul class="cards_skill">
+          <li class="card_skill_item">
+            <div class="card_skill">
+              <h3>Coding</h3>
+              <i class="fa fa-code"></i>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                est eaque autem cumque asperiores iure, architecto accusantium
+                pariatur voluptatem culpa at voluptas rem maiores quae doloribus
+                beatae officia? Nesciunt, aperiam.
+              </p>
+              <div class="card_img">
+                <i class="fa fa-html5 fa-2xl"></i>
+                <i class="fa fa-css3 fa-2xl"></i>
+                <i class="fab fa-js-square fa-2xl"></i>
+                <i class="fa-brands fa-python fa-2xl"></i>
+              </div>
             </div>
-        </div>
+          </li>
+          <li class="card_skill_item">
+            <div class="card_skill">
+              <i class="fa fa-display"></i>
+              <h3>Softwares</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                est eaque autem cumque asperiores iure, architecto accusantium
+                pariatur voluptatem culpa at voluptas rem maiores quae doloribus
+                beatae officia? Nesciunt, aperiam.
+              </p>
+              <div class="card_img">
+                <i class="fa fa-html5 fa-2xl"></i>
+                <i class="fa fa-css3 fa-2xl"></i>
+                <i class="fab fa-js-square fa-2xl"></i>
+              </div>
+            </div>
+          </li>
+          <li class="card_skill_item">
+            <div class="card_skill">
+              <i class="fa fa-toolbox"></i>
+              <h3>Tools</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore
+                est eaque autem cumque asperiores iure, architecto accusantium
+                pariatur voluptatem culpa at voluptas rem maiores quae doloribus
+                beatae officia? Nesciunt, aperiam.
+              </p>
+              <div class="card_img">
+                <i class="fa fa-html5 fa-2xl"></i>
+                <i class="fa fa-css3 fa-2xl"></i>
+                <i class="fa-brands fa-unity fa-2xl"></i>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div class="night">
+        <div class="shooting_star"></div>
+      </div>
+
+      <section class="section_education">
+        <h2>Education</h2>
+            <div id="timeline">
+                <div class="timeline_item">
+                    <div class="timeline_icon">
+                    </div>
+                    <div class="timeline_content">
+                        <h3>LOREM IPSUM DOLOR</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline_item">
+                    <div class="timeline_icon">
+                    </div>
+                    <div class="timeline_content right">
+                        <h3>LOREM IPSUM DOLOR</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+                            Atque, facilis quo maiores magnam modi ab libero praesentium blanditiis.
+                        </p>
+                    </div>
+                </div>
+    
+                <div class="timeline_item">
+                    <div class="timeline_icon">
+                    </div>
+                    <div class="timeline_content">
+                        <h3>LOREM IPSUM DOLOR</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, facilis quo. Maiores magnam modi ab libero praesentium blanditiis consequatur aspernatur accusantium maxime molestiae sunt ipsa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+      </section>
+
+      
+
 
     </main>
-
-
-
-</body>
-
+  </body>
 </html>
