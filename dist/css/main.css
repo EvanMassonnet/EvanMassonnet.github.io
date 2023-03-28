@@ -165,8 +165,10 @@ section .cards_skill .card_skill_item .card_skill {
   overflow: hidden;
   position: relative;
 }
-section .cards_skill .card_skill_item .card_skill .card_img {
-  padding: 2rem 1rem 0 0;
+section .cards_skill .card_skill_item .card_skill .card_skill_row {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
 }
 section .cards_skill .card_skill_item .card_skill:hover i {
   animation: 1s ease-in infinite bounce;

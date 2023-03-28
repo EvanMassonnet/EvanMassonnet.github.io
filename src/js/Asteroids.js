@@ -84,10 +84,10 @@ function init() {
             
             rock.rotation.set(Math.random() * 360, Math.random() * 360, Math.random() * 360);
             rocks.push(rock);
-            rocks_x.push(Math.random() * 0.01);
-            rocks_y.push(Math.random() * 0.01);
+            rocks_x.push(Math.random() * 0.005);
+            rocks_y.push(Math.random() * 0.005);
             // rocks_speed.push(0.001 + Math.random() * 0.0012);
-            rocks_speed.push(0.005 + Math.random() * 0.0012);
+            rocks_speed.push(0.004 + Math.random() * 0.0012);
             scene.add(rock);
         }
 

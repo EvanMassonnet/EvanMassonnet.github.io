@@ -184,8 +184,13 @@ section {
       padding: 1rem;
       width: 33.3%;
       .card_skill {
+        .card_skill_row {
+          display: flex;
+          flex-direction: row;
+          padding: 1rem;
+        }
         .card_img {
-            padding: 2rem 1rem 0 0 ;
+            // padding: 2rem 1rem 0 0;
         }
         background: $cardBgColor;
         border: 1px solid $cardBorderColor;
