@@ -305,7 +305,9 @@ section {
     width: 100%;
     clear: both;
   }
-
+  h3 {
+    padding: 0 0 0.5rem 0;
+  }
   #timeline {
     width: 100%;
     margin: 30px auto;
@@ -348,9 +350,31 @@ section {
         border: 1px solid $cardBorderColor;
         padding: 20px;
         border-radius: var(--curve);
+        
       }
       .timeline_content.right {
         float: right;
+      }
+      .timeline_card_info {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 0rem 1rem 0;
+        >span {
+          color: $paraColor;
+        }
+      }
+      .timeline_card_tag {
+        display: flex;
+        gap: 0.3rem;
+        padding: 0px 0rem 1rem 0;
+        span {
+          padding: 0.2rem 0.5rem;
+          border: 1px solid $primaryColor;
+          background-color: $cardBorderColor;
+          border-radius: var(--curve);
+          font-size: 0.7rem;
+          font-weight: 300;
+        }
       }
     }
   }

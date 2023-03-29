@@ -251,6 +251,9 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   width: 100%;
   clear: both;
 }
+.section_education h3 {
+  padding: 0 0 0.5rem 0;
+}
 .section_education #timeline {
   width: 100%;
   margin: 30px auto;
@@ -298,6 +301,27 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 .section_education #timeline .timeline_item .timeline_content.right {
   float: right;
+}
+.section_education #timeline .timeline_item .timeline_card_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0rem 1rem 0;
+}
+.section_education #timeline .timeline_item .timeline_card_info > span {
+  color: #828b99;
+}
+.section_education #timeline .timeline_item .timeline_card_tag {
+  display: flex;
+  gap: 0.3rem;
+  padding: 0px 0rem 1rem 0;
+}
+.section_education #timeline .timeline_item .timeline_card_tag span {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #5254ca;
+  background-color: #2c3239;
+  border-radius: var(--curve);
+  font-size: 0.7rem;
+  font-weight: 300;
 }
 
 .placeholder {
