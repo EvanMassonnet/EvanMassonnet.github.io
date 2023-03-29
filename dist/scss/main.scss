@@ -6,6 +6,7 @@ $cardBorderColor: #2c3239;
 
 $paraColor: #828b99;
 $lightColor: #f4f4f4;
+$lightColorDarken: #e9e9e9;
 $darkColor: #01050a;
 $sectionBg: #f2f2f2;
 
@@ -83,6 +84,28 @@ p {
     padding: 5rem;
   }
 }
+
+.shadow_blue {
+  box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
+}
+
+.shadow_purple {
+  box-shadow: 0px 0px 20px 10px rgba(126, 59, 255, 0.64);
+}
+
+.shadow_green {
+  box-shadow: 0px 0px 20px 10px rgba(59, 255, 229, 0.64);
+}
+
+.border_blue {
+  border : 1px solid rgba(59, 160, 255, 1);  
+} 
+.border_purple {
+  border : 1px solid rgba(126, 59, 255, 1);
+} 
+.border_green {
+  border : 1px solid rgba(59, 255, 229, 0.64);
+} 
 
 .main_nav {
   display: flex;
@@ -222,15 +245,12 @@ section {
 
         .fa-code {
           background: rgba(89, 48, 165, 0.67);
-          box-shadow: 0px 0px 20px 10px rgba(126, 59, 255, 0.64);
         }
         .fa-display {
           background: rgba(48, 118, 165, 0.67);
-          box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
         }
         .fa-toolbox {
           background: rgba(62, 165, 48, 0.67);
-          box-shadow: 0px 0px 20px 10px rgba(59, 255, 229, 0.64);
         }
       }
     }
@@ -306,7 +326,7 @@ section {
     clear: both;
   }
   h3 {
-    padding: 0 0 0.5rem 0;
+    padding: 0 0 0.3rem 0;
   }
   #timeline {
     width: 100%;
@@ -319,19 +339,19 @@ section {
       content: "";
       width: 3px;
       height: 100%;
-      background: $cardBgColor;
+      background: $cardBorderColor;
       left: 50%;
       top: 0;
       position: absolute;
     }
-    &:after {
+    &:after:not(:last-child) {
       content: "";
       clear: both;
       display: table;
       width: 100%;
     }
     .timeline_item {
-      margin-bottom: 50px;
+      margin-bottom: 12rem;
       position: relative;
       .timeline_icon {
         background: $cardBgColor;
@@ -344,13 +364,22 @@ section {
         overflow: hidden;
         border-radius: 50%;
       }
+      .timeline_icon_last {
+        top: -43px;
+      }
+      .timeline_canvas {
+        position: absolute;
+        width: 45%;
+      }
       .timeline_content {
         width: 45%;
         background: $cardBgColor;
-        border: 1px solid $cardBorderColor;
         padding: 20px;
         border-radius: var(--curve);
-        
+      }
+      .timeline_last {
+        width: 60%;
+        margin: 12rem auto auto auto; 
       }
       .timeline_content.right {
         float: right;
@@ -362,13 +391,22 @@ section {
         >span {
           color: $paraColor;
         }
+        div {
+          display: flex;
+          align-items: center;
+          gap:0.5rem;
+          span {
+            color: $lightColorDarken;
+            font-size: 0.8rem;
+          }
+        } 
       }
       .timeline_card_tag {
         display: flex;
         gap: 0.3rem;
         padding: 0px 0rem 1rem 0;
         span {
-          padding: 0.2rem 0.5rem;
+          padding: 0.2rem 0.7rem;
           border: 1px solid $primaryColor;
           background-color: $cardBorderColor;
           border-radius: var(--curve);
@@ -427,17 +465,28 @@ section {
       margin: 30px;
       padding: 0px;
       width: 90%;
+      &::before {
+        left: 0;
+      }
+      .timeline_item {
+        margin-bottom: 3rem;
+        .timeline_content {
+          width: 90%;
+          float: right;
+        }
+        .timeline_icon {
+          left: -12px;
+        }
+        .timeline_icon_last {
+          top: inherit;
+        }
+        .timeline_last {
+          margin: 0;
+        }
+        
+      }
     }
-    #timeline:before {
-      left: 0;
-    }
-    #timeline .timeline_item .timeline_content {
-      width: 90%;
-      float: right;
-    }
-    #timeline .timeline_item .timeline_icon {
-      left: -12px;
-    }
+
   }
 }
 
