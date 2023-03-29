@@ -49,10 +49,15 @@ p {
   margin-right: 16px;
   font-size: 16px;
   font-weight: bold;
+  border: 3px solid #5254ca;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
 .btn:hover {
   background: #3c3d97;
+}
+
+.btn_cta_outline {
+  background: none;
 }
 
 .ptb_1 {
@@ -264,6 +269,47 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   animation: shining 3000ms ease-in-out infinite;
   transform: translateX(50%) rotateZ(-45deg);
 }
+.transition_star .night .shooting_star:nth-child(2) {
+  animation-delay: 2000ms;
+  left: 46%;
+  top: calc(45% - 40px);
+}
+.transition_star .night .shooting_star:nth-child(2)::before, .transition_star .night .shooting_star:nth-child(2)::after {
+  animation-delay: 2000ms;
+}
+.transition_star .night .shooting_star:nth-child(3) {
+  animation-delay: 1500ms;
+  left: 50%;
+  top: calc(50% + 40px);
+}
+.transition_star .night .shooting_star:nth-child(3)::before, .transition_star .night .shooting_star:nth-child(3)::after {
+  animation-delay: 1500ms;
+}
+.transition_star .night .shooting_star_purple {
+  background: linear-gradient(-45deg, #df5fff, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #df5fff);
+}
+.transition_star .night .shooting_star_purple::before {
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #df5fff, rgba(0, 0, 255, 0));
+}
+.transition_star .night .shooting_star_purple::after {
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #df5fff, rgba(0, 0, 255, 0));
+}
+.transition_star .night .shooting_star_green {
+  background: linear-gradient(-45deg, #3bffe5, rgba(0, 0, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #3bffe5);
+}
+.transition_star .night .shooting_star_green::before {
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #3bffe5, rgba(0, 0, 255, 0));
+}
+.transition_star .night .shooting_star_green::after {
+  background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #3bffe5, rgba(0, 0, 255, 0));
+}
+.transition_star .night.night_large {
+  transform: rotateZ(45deg);
+}
 
 .section_education #timeline .timeline_item:after,
 .section_education #timeline .timeline_item:before {
@@ -286,7 +332,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .section_education #timeline:before {
   content: "";
   width: 3px;
-  height: 100%;
+  height: 73%;
   background: #2c3239;
   left: 50%;
   top: 0;
@@ -299,7 +345,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   width: 100%;
 }
 .section_education #timeline .timeline_item {
-  margin-bottom: 12rem;
+  margin-bottom: 3rem;
   position: relative;
 }
 .section_education #timeline .timeline_item .timeline_icon {
@@ -316,9 +362,12 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .section_education #timeline .timeline_item .timeline_icon_last {
   top: -43px;
 }
-.section_education #timeline .timeline_item .timeline_canvas {
+.section_education #timeline .timeline_item .timeline_canvas, .section_education #timeline .timeline_item .timeline_canvas_right {
   position: absolute;
   width: 45%;
+}
+.section_education #timeline .timeline_item .timeline_canvas_right {
+  right: 0;
 }
 .section_education #timeline .timeline_item .timeline_content {
   width: 45%;
@@ -328,7 +377,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 .section_education #timeline .timeline_item .timeline_last {
   width: 60%;
-  margin: 12rem auto auto auto;
+  margin: 9rem auto auto auto;
 }
 .section_education #timeline .timeline_item .timeline_content.right {
   float: right;
@@ -418,6 +467,9 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   }
   .section_education #timeline .timeline_item .timeline_icon {
     left: -12px;
+  }
+  .section_education #timeline .timeline_item .timeline_canvas, .section_education #timeline .timeline_item .timeline_canvas_right {
+    display: none;
   }
   .section_education #timeline .timeline_item .timeline_icon_last {
     top: inherit;

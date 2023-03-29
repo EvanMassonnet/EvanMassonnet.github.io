@@ -58,6 +58,7 @@ p {
   margin-right: 16px;
   font-size: 16px;
   font-weight: bold;
+  border: 3px solid $primaryColor;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
     box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
@@ -65,6 +66,10 @@ p {
   &:hover {
     background: $primaryColorDarken;
   }
+}
+.btn_cta_outline  {
+  background: none;
+
 }
 
 .ptb {
@@ -262,6 +267,7 @@ section {
   height: 100px;
   .night {
     transform: rotateZ(90deg);
+
     .shooting_star {
       position: absolute;
       left: 46%;
@@ -311,9 +317,92 @@ section {
         animation: shining 3000ms ease-in-out infinite;
         transform: translateX(50%) rotateZ(-45deg);
       }
+
+      
+
+      &:nth-child(2) {
+        animation-delay: 2000ms;
+        left: 46%;
+        top: calc(45% - 40px);
+        &::before,
+        &::after {
+          animation-delay: 2000ms;
+        }
+      }
+
+      
+      
+      &:nth-child(3) {
+        animation-delay: 1500ms;
+        left: 50%;
+        top: calc(50% + 40px);
+        &::before,
+        &::after {
+          animation-delay: 1500ms;
+        }
+      }
+
+      // @for $i from 2 through 6 {
+      //   &:nth-child(#{$i}) {
+      //     $delay: random(9999) + 0ms;
+      //     top: calc(50% - #{random(100) - 100px});
+      //     left: calc(50% - #{random(400) + 0px});
+      //     animation-delay: $delay;
+      //     // opacity: random(50) / 100 + 0.5;
+          
+      //     &::before,
+      //     &::after {
+      //       animation-delay: $delay;
+      //     }
+      //   }
+      // }
+    }
+    .shooting_star_purple {
+      background: linear-gradient(-45deg, #df5fff, rgba(0, 0, 255, 0));
+      border-radius: 999px;
+      filter: drop-shadow(0 0 6px #df5fff);
+      &::before {
+        background: linear-gradient(
+          -45deg,
+          rgba(0, 0, 255, 0),
+          #df5fff,
+          rgba(0, 0, 255, 0)
+        );
+      }
+      &::after {
+        background: linear-gradient(
+          -45deg,
+          rgba(0, 0, 255, 0),
+          #df5fff,
+          rgba(0, 0, 255, 0)
+        );
+      }
+    }
+    .shooting_star_green {
+      background: linear-gradient(-45deg, #3bffe5, rgba(0, 0, 255, 0));
+      border-radius: 999px;
+      filter: drop-shadow(0 0 6px #3bffe5);
+      &::before {
+        background: linear-gradient(
+          -45deg,
+          rgba(0, 0, 255, 0),
+          #3bffe5,
+          rgba(0, 0, 255, 0)
+        );
+      }
+      &::after {
+        background: linear-gradient(
+          -45deg,
+          rgba(0, 0, 255, 0),
+          #3bffe5,
+          rgba(0, 0, 255, 0)
+        );
+      }
     }
   }
-  
+  .night.night_large {
+    transform: rotateZ(45deg);
+  }
 }
 
 //Education Section
@@ -338,7 +427,7 @@ section {
     &:before {
       content: "";
       width: 3px;
-      height: 100%;
+      height: 73%;
       background: $cardBorderColor;
       left: 50%;
       top: 0;
@@ -350,8 +439,9 @@ section {
       display: table;
       width: 100%;
     }
+    
     .timeline_item {
-      margin-bottom: 12rem;
+      margin-bottom: 3rem;
       position: relative;
       .timeline_icon {
         background: $cardBgColor;
@@ -367,9 +457,12 @@ section {
       .timeline_icon_last {
         top: -43px;
       }
-      .timeline_canvas {
+      .timeline_canvas, .timeline_canvas_right  {
         position: absolute;
         width: 45%;
+      }
+      .timeline_canvas_right {
+        right: 0;
       }
       .timeline_content {
         width: 45%;
@@ -379,7 +472,7 @@ section {
       }
       .timeline_last {
         width: 60%;
-        margin: 12rem auto auto auto; 
+        margin: 9rem auto auto auto; 
       }
       .timeline_content.right {
         float: right;
@@ -437,6 +530,7 @@ section {
   .section_education #timeline .timeline_item .timeline_icon {
     left: 48.5%;
   }
+  
 }
 
 @media screen and (max-width: 867px) {
@@ -476,6 +570,9 @@ section {
         }
         .timeline_icon {
           left: -12px;
+        }
+        .timeline_canvas, .timeline_canvas_right {
+          display: none;
         }
         .timeline_icon_last {
           top: inherit;
