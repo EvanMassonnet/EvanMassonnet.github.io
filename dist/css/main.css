@@ -138,6 +138,8 @@ p {
 }
 
 .header {
+  height: calc(100vh + 190px);
+  max-height: 788px;
   background: url("../img/Stars.jpg"), #0f131f;
   background-size: contain;
   background-position: center top;
@@ -147,13 +149,13 @@ p {
   max-width: 1280px;
   display: flex;
   align-items: center;
-  padding: 11.4rem 3rem 0 3rem;
+  padding: 9rem 3rem 0 3rem;
   max-width: 1380px;
   margin: auto;
 }
 .header .header_container .header_content {
   color: #f4f4f4;
-  padding: 5.4rem 3rem 5.4rem 6rem;
+  padding: 5.4rem 3rem 0rem 6rem;
 }
 .header .header_container .header_content .cta_group {
   display: flex;
@@ -166,6 +168,10 @@ p {
   color: #828b99;
   padding: 0.6rem 0 3.2rem 0;
   max-width: 600px;
+}
+.header .header_container .header_canvas {
+  position: absolute;
+  left: 55%;
 }
 
 .transition {
@@ -362,11 +368,17 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .section_education #timeline .timeline_item .timeline_icon_last {
   top: -43px;
 }
-.section_education #timeline .timeline_item .timeline_canvas, .section_education #timeline .timeline_item .timeline_canvas_right, .section_education #timeline .timeline_item .timeline_canvas_left {
+.section_education #timeline .timeline_item .timeline_canvas,
+.section_education #timeline .timeline_item .timeline_canvas_right,
+.section_education #timeline .timeline_item .timeline_canvas_left {
   position: absolute;
   width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section_education #timeline .timeline_item .timeline_canvas_right {
+  top: -40px;
   right: 0;
 }
 .section_education #timeline .timeline_item .timeline_canvas_left {
@@ -421,8 +433,15 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 
 @media screen and (max-width: 1268px) {
+  .header {
+    height: auto;
+    max-height: none;
+  }
   .header .header_container {
     flex-direction: column;
+  }
+  .header .header_container .header_canvas {
+    position: initial;
   }
   section .cards_skill .card_skill_item {
     width: 50%;
@@ -471,7 +490,8 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .section_education #timeline .timeline_item .timeline_icon {
     left: -12px;
   }
-  .section_education #timeline .timeline_item .timeline_canvas, .section_education #timeline .timeline_item .timeline_canvas_right {
+  .section_education #timeline .timeline_item .timeline_canvas,
+  .section_education #timeline .timeline_item .timeline_canvas_right {
     display: none;
   }
   .section_education #timeline .timeline_item .timeline_icon_last {
@@ -482,18 +502,24 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   }
 }
 @media screen and (max-width: 500px) {
-  .header_content .cta_group {
+  .header .header_container {
+    padding: 5.4rem 0rem 0rem 0rem;
+  }
+  .header .header_container .header_content {
+    padding: 2.4rem 1rem 0rem 1rem;
+  }
+  .header .header_container .header_content .cta_group {
     flex-direction: column;
     gap: 16px;
   }
-  .header_content .cta_group .btn {
+  .header .header_container .header_content .cta_group .btn {
     margin: 0;
   }
-  .header_content .cta_group .btn.btn_cta,
-  .header_content .cta_group .btn_cta_outline {
+  .header .header_container .header_content .cta_group .btn.btn_cta,
+  .header .header_container .header_content .cta_group .btn_cta_outline {
     text-align: center;
   }
-  .header_canvas {
+  .header .header_container .header_canvas {
     transform: scale(0.7);
   }
 }
