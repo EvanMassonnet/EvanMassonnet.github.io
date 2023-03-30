@@ -457,12 +457,15 @@ section {
       .timeline_icon_last {
         top: -43px;
       }
-      .timeline_canvas, .timeline_canvas_right  {
+      .timeline_canvas, .timeline_canvas_right, .timeline_canvas_left  {
         position: absolute;
         width: 45%;
       }
       .timeline_canvas_right {
         right: 0;
+      }
+      .timeline_canvas_left {
+        left: 0;
       }
       .timeline_content {
         width: 45%;

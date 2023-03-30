@@ -362,12 +362,15 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .section_education #timeline .timeline_item .timeline_icon_last {
   top: -43px;
 }
-.section_education #timeline .timeline_item .timeline_canvas, .section_education #timeline .timeline_item .timeline_canvas_right {
+.section_education #timeline .timeline_item .timeline_canvas, .section_education #timeline .timeline_item .timeline_canvas_right, .section_education #timeline .timeline_item .timeline_canvas_left {
   position: absolute;
   width: 45%;
 }
 .section_education #timeline .timeline_item .timeline_canvas_right {
   right: 0;
+}
+.section_education #timeline .timeline_item .timeline_canvas_left {
+  left: 0;
 }
 .section_education #timeline .timeline_item .timeline_content {
   width: 45%;
