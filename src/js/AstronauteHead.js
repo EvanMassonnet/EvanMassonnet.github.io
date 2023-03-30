@@ -1,50 +1,38 @@
 
 import * as THREE from 'three';
-
-import Stats from 'three/addons/libs/stats.module.js';
-
-//import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
-
 let camera, scene, renderer;
-
-var astronaute_head, astronaute_arm;
-
-init();
-render();
+var astronaute_head;
 
 const createLights = () => {
 
-    // an ambient light modifies the global color of a scene and makes the shadows softer
     const ambientLight = new THREE.AmbientLight(0xccb8b4, 0.05);
     scene.add(ambientLight);
 
     const shadowLight = new THREE.DirectionalLight(0xffffff, 0);
     shadowLight.position.set(150, 150, 0);
-    //shadowLight.castShadow = true;
 
     const blueLight = new THREE.DirectionalLight(0x3ba0ff, 0.5);
     blueLight.position.set(5, -1, 0.5);
-    //blueLight.castShadow = true;
 
     const purpleLight = new THREE.DirectionalLight(0x803bff, 0.5);
     purpleLight.position.set(0, 1, -0.5);
-    //purpleLight.castShadow = true;
-    //scene.add(hemisphereLight);
-    //scene.add(shadowLight);
+
     scene.add(blueLight);
     scene.add(purpleLight);
     scene.add(ambientLight);
 };
 
+init();
+render();
 createLights();
 
 function init() {
 
     const container = document.getElementsByClassName('timeline_canvas_left')[0];
 
-    camera = new THREE.PerspectiveCamera(45, 1, 0.25, 20);
+    camera = new THREE.PerspectiveCamera(45, 300 / 300, 0.25, 20);
     camera.position.set(0, 0, 5);
 
     scene = new THREE.Scene();

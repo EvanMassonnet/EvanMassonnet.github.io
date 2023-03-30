@@ -3,7 +3,9 @@ import * as THREE from '../js/three.js/build/three.module.js';
 import { GLTFLoader } from '../js/three.js/examples/jsm/loaders/GLTFLoader.js';
 
 let camera, scene, renderer;
-var iss;
+let size = 500;
+let iss;
+
 
 
 
@@ -51,7 +53,7 @@ function init() {
     renderer = new THREE.WebGLRenderer({ antialias: true }, { alpha: true });
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(550, 550);
+    renderer.setSize(size, size);
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1;
     renderer.setAnimationLoop(animation);
@@ -64,9 +66,19 @@ function init() {
 
 function onWindowResize() {
 
+    
+    
+    if(window.innerWidth < 768){
+        size = 300;
+    }else if(window.innerWidth < 500){
+        size = 200;
+    }else{
+        size = window.innerWidth / 4;
+    }
+
     camera.aspect = 1
     camera.updateProjectionMatrix();
-    renderer.setSize(550, 550);
+    renderer.setSize(size, size);
 
     render();
 

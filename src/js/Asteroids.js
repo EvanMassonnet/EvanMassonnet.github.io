@@ -3,12 +3,14 @@ import { GLTFLoader } from '../js/three.js/examples/jsm/loaders/GLTFLoader.js';
 
 let camera, scene, renderer;
 
-var default_rock;
-var rocks = [];
-var rocks_x = [];
-var rocks_y = [];
-var rocks_speed = [];
+let default_rock;
+let rocks = [];
+let rocks_x = [];
+let rocks_y = [];
+let rocks_speed = [];
 const rock_count = 30;
+let minDistance = -70;
+let maxDistance = 70;
 
 const createLights = () => {
 
@@ -41,18 +43,22 @@ const createLights = () => {
 
 const positionAsteroids = () => {
     for (var i = 0; i < rock_count; i++) {
+        let dist =minDistance + i * (maxDistance - minDistance) / rock_count;
         //rocks[i].position.set((2 * Math.random() - 1) * 5, -1 + (2 * Math.random() - 1) * 0.5, (2 * Math.random() - 1) * 2);
-        rocks[i].position.set((2 * Math.random() - 1) * 30, -1 + (2 * Math.random() - 1) * 1, (2 * Math.random() - 1) * 3);
+        //rocks[i].position.set((2 * Math.random() - 1) * 30, -1 + (2 * Math.random() - 1) * 1, (2 * Math.random() - 1) * 3);
+        //rocks[i].position.set(minDistance + Math.random() * (maxDistance-minDistance),-1 + Math.random() * -2, Math.random()*-3);
+        rocks[i].position.set(dist,-2 + Math.random() * 4, Math.random()*-15);
         
-        if(Math.abs(rocks[rocks.length-1].position.x - rocks[i].position.x) <= 20) {
-            console.log("ada",Math.abs(rocks[rocks.length-1].position.x - rocks[i].position.x));
-            rocks[i].position.set((2 * Math.random() - 1) * 20, -1 + (2 * Math.random() - 1) * 1, (2 * Math.random() - 1) * 3);
-            console.log(i,rocks[i].position);
-        }
+        // if(Math.abs(rocks[rocks.length-1].position.x - rocks[i].position.x) <= 20) {
+        //     console.log("ada",Math.abs(rocks[rocks.length-1].position.x - rocks[i].position.x));
+        //     rocks[i].position.set((2 * Math.random() - 1) * 20, -1 + (2 * Math.random() - 1) * 1, (2 * Math.random() - 1) * 3);
+        //     console.log(i,rocks[i].position);
+        // }
 
-        //rocks[i].scale.set(0.3 + Math.random() * 0.05, 0.3 + Math.random() * 0.05, 0.3 + Math.random() * 0.05);
-        //rocks[i].scale.set(0.3 + Math.random() * 0.5, 0.2 + Math.random() * 0.5, 0.3 + Math.random() * 0.5);
-        //rocks[i].scale.set(0.3 +  0.5, 0.2 +  0.5, 0.3 + 0.5);
+        
+        let size = 0.8 + Math.random() * 1;
+        rocks[i].scale.set(size, size, size);
+        //rocks[i].scale.set(0.8 + Math.random() * 0.5, 0.8 + Math.random() * 0.5, 0.8 + Math.random() * 0.5);
 
     }
 };
@@ -65,9 +71,10 @@ function init() {
 
     const container = document.getElementsByClassName('transition')[0];
 
-    camera = new THREE.PerspectiveCamera(45, window.innerWidth / 200, 0.25, 20);
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / 200, 0.25, 200);
     //camera = new THREE.OrthographicCamera( -window.innerWidth, window.innerWidth, -window.innerHeight, window.innerHeight, 0.01, 200 );
-    camera.position.set(0, 0, 10);
+    camera.position.set(0, 10, 10);
+    camera.rotation.set(-0.5, 0, 0);
 
     scene = new THREE.Scene();
 
@@ -81,12 +88,10 @@ function init() {
 
         for (var i = 0; i < rock_count; i++) {
             var rock = default_rock.clone();
-            
             rock.rotation.set(Math.random() * 360, Math.random() * 360, Math.random() * 360);
             rocks.push(rock);
             rocks_x.push(Math.random() * 0.005);
             rocks_y.push(Math.random() * 0.005);
-            // rocks_speed.push(0.001 + Math.random() * 0.0012);
             rocks_speed.push(0.004 + Math.random() * 0.0012);
             scene.add(rock);
         }
@@ -137,11 +142,8 @@ function animation(time) {
 
         rocks[i].position.x += rocks_speed[i];
 
-        if (rocks[i].position.x > window.innerWidth / 50 ) {
-            console.log(window.innerWidth);
-            console.log(window.innerWidth / 50);
-            rocks[i].position.x = -40;
-            console.log(rocks[i].position.x);
+        if (rocks[i].position.x > maxDistance ) {
+            rocks[i].position.x = minDistance;
         }
     }
 
