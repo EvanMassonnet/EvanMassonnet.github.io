@@ -34,10 +34,10 @@
         }
       }
     </script>
-    <script type="module" src="src/js/ISS.js"></script>
-    <script type="module" src="src/js/Asteroids.js"></script>
-    <script type="module" src="src/js/AstronauteHead.js"></script>
-    <script type="module" src="src/js/AstronauteArm.js"></script>
+    <!-- <script type="module" src="src/js/ISS.js"></script>
+    <script type="module" src="src/js/Asteroids.js"></script> -->
+    <!-- <script type="module" src="src/js/AstronauteHead.js"></script>
+    <script type="module" src="src/js/AstronauteArm.js"></script> -->
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Evan Massonnet</title>
@@ -85,7 +85,7 @@
         <h2>Skills and Softwares</h2>
         <ul class="cards_skill">
           <li class="card_skill_item">
-            <div class="card_skill">
+            <div class="card card_skill">
               <h3>Coding</h3>
               <i class="fa fa-code shadow_purple"></i>
               <p>
@@ -103,7 +103,7 @@
             </div>
           </li>
           <li class="card_skill_item">
-            <div class="card_skill">
+            <div class="card card_skill">
               <i class="fa fa-display shadow_blue"></i>
               <h3>Softwares</h3>
               <p>
@@ -120,7 +120,7 @@
             </div>
           </li>
           <li class="card_skill_item">
-            <div class="card_skill">
+            <div class="card card_skill">
               <i class="fa fa-toolbox shadow_green"></i>
               <h3>Tools</h3>
               <p>
@@ -143,14 +143,12 @@
           <div class="shooting_star"></div>
         </div>
       </div>
-
       <section class="section_education">
         <h2>Education</h2>
         <div id="timeline">
           <div class="timeline_item">
             <div class="timeline_icon"></div>
-            <div class="timeline_canvas_right">
-            </div>
+            <div class="timeline_canvas_right"></div>
             <div class="timeline_content shadow_purple border_purple">
               <div class="timeline_card_info">
                 <span>2018 - 2020</span>
@@ -173,8 +171,7 @@
           </div>
           <div class="timeline_item">
             <div class="timeline_icon"></div>
-            <div class="timeline_canvas_left">
-            </div>
+            <div class="timeline_canvas_left"></div>
             <div class="timeline_content right shadow_blue border_blue">
               <div class="timeline_card_info">
                 <span>2018 - 2020</span>
@@ -197,7 +194,9 @@
           </div>
           <div class="timeline_item">
             <div class="timeline_icon timeline_icon_last"></div>
-            <div class="timeline_content timeline_last shadow_green border_green">
+            <div
+              class="timeline_content timeline_last shadow_green border_green"
+            >
               <div class="timeline_card_info">
                 <span>2018 - 2020</span>
                 <div>
@@ -219,7 +218,6 @@
           </div>
         </div>
       </section>
-
       <div class="transition_star">
         <div class="night night_large">
           <div class="shooting_star shooting_star_purple"></div>
@@ -227,6 +225,63 @@
           <div class="shooting_star shooting_star_green"></div>
         </div>
       </div>
+      <section class="section_association">
+        <h2>School association</h2>
+        <div class="association_container">
+          <div class="association_img">
+            <img src="dist/img/Xplore.png" width="400px" alt="" />
+            <a href="#" class="btn btn_cta">
+              Visit website
+              <i class="fa-solid fa-arrow-up-right-from-square"></i
+            ></a>
+          </div>
+          <div class="card">
+            <h3>EPFL Xplore</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Molestiae nulla, rerum soluta nihil doloribus vitae voluptate,
+              vel tempora totam illo voluptatibus esse aut! Facere ullam
+              consectetur quisquam, incidunt magnam quos?
+            </p>
+            <div class="association_card_info">
+              <div class="association_timeline">
+                <div class="association_timeline_icon"></div>
+                <div class="association_timeline_icon"></div>
+              </div>
+              <div class="association_card_row">
+                <div>
+                  <div class="association_card_container_date">
+                    <h3>Team leader</h3>
+                    <span>2020 - 2022</span>
+                  </div>   
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestiae nulla, rerum soluta nihil doloribus vitae voluptate,
+                    vel tempora totam illo voluptatibus esse aut! Facere ullam
+                    consectetur quisquam, incidunt magnam quos?
+                  </p>
+                </div>
+
+                <div>
+                  <div class="association_card_container_date">
+                    <h3>Team leader</h3>
+                    <span>2020 - 2022</span>
+                  </div>   
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Molestiae nulla, rerum soluta nihil doloribus vitae voluptate,
+                    vel tempora totam illo voluptatibus esse aut! Facere ullam
+                    consectetur quisquam, incidunt magnam quos?
+                  </p>
+                </div>
+
+              </div>
+              
+
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

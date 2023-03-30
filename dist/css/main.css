@@ -138,8 +138,8 @@ p {
 }
 
 .header {
-  height: calc(100vh + 190px);
-  max-height: 788px;
+  height: calc(100vh + 300px);
+  max-height: 800px;
   background: url("../img/Stars.jpg"), #0f131f;
   background-size: contain;
   background-position: center top;
@@ -187,6 +187,12 @@ section h2 {
   padding: 0 0 3rem 0;
   font-weight: 300;
 }
+section .card {
+  background: #161b22;
+  border: 1px solid #2c3239;
+  border-radius: var(--curve);
+  padding: 2rem;
+}
 section .cards_skill {
   display: flex;
   flex-wrap: wrap;
@@ -199,10 +205,6 @@ section .cards_skill .card_skill_item {
   width: 33.3%;
 }
 section .cards_skill .card_skill_item .card_skill {
-  background: #161b22;
-  border: 1px solid #2c3239;
-  border-radius: var(--curve);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -332,16 +334,14 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   margin: 30px auto;
   position: relative;
   padding: 0 10px;
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
 }
 .section_education #timeline:before {
   content: "";
-  width: 3px;
+  width: 4px;
   height: 73%;
   background: #2c3239;
   left: 50%;
-  top: 0;
+  top: 8px;
   position: absolute;
 }
 .section_education #timeline:after:not(:last-child) {
@@ -428,6 +428,63 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   font-weight: 300;
 }
 
+.section_association .association_container {
+  display: flex;
+  padding: 1rem 0 0 0;
+}
+.section_association .association_container .association_card_info {
+  padding: 2rem 0 0 0;
+  display: flex;
+  flex-direction: row;
+}
+.section_association .association_container .association_img {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section_association .association_container .association_timeline {
+  width: 9%;
+  margin: 30px auto;
+  position: relative;
+  padding: 0 45px 0 0;
+}
+.section_association .association_container .association_timeline:before {
+  content: "";
+  width: 3px;
+  height: 53%;
+  top: 6px;
+  background: #2c3239;
+  position: absolute;
+}
+.section_association .association_container .association_timeline .association_timeline_icon {
+  background: #161b22;
+  border: 1px solid #2c3239;
+  width: 27px;
+  height: 27px;
+  position: absolute;
+  top: -30px;
+  left: -12px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.section_association .association_container .association_timeline .association_timeline_icon:nth-child(2) {
+  top: 59%;
+  left: -12px;
+}
+.section_association .association_container .association_card_row {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+.section_association .association_container .association_card_row .association_card_container_date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.section_association .association_container .association_card_row .association_card_container_date span {
+  color: #828b99;
+}
+
 .placeholder {
   height: 2000px;
 }
@@ -495,7 +552,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
     left: -12px;
   }
   .section_education #timeline .timeline_item .timeline_canvas,
-  .section_education #timeline .timeline_item .timeline_canvas_right {
+  .section_education #timeline .timeline_item .timeline_canvas_right, .section_education #timeline .timeline_item .timeline_canvas_left {
     display: none;
   }
   .section_education #timeline .timeline_item .timeline_icon_last {
@@ -504,13 +561,17 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .section_education #timeline .timeline_item .timeline_last {
     margin: 0;
   }
+  .section_association .association_container {
+    flex-direction: column-reverse;
+    padding: 1rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .header .header_container {
     padding: 5.4rem 0rem 0rem 0rem;
   }
   .header .header_container .header_content {
-    padding: 2.4rem 1rem 0rem 1rem;
+    padding: 0rem 1rem 0rem 1rem;
   }
   .header .header_container .header_content .cta_group {
     flex-direction: column;
