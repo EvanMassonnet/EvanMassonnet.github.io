@@ -171,7 +171,7 @@ p {
 }
 .header .header_container .header_canvas {
   position: absolute;
-  left: 55%;
+  left: 58%;
 }
 
 .transition {
@@ -437,8 +437,8 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
     height: auto;
     max-height: none;
   }
-  .header .header_container {
-    flex-direction: column;
+  .header .header_container .header_content {
+    padding: 2.4rem 3rem 0rem 4rem;
   }
   .header .header_container .header_canvas {
     position: initial;
@@ -454,8 +454,12 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   }
 }
 @media screen and (max-width: 867px) {
+  .header {
+    background-size: cover;
+  }
   .header .header_container {
     padding: 5.4rem 0rem 3.4rem 0rem;
+    flex-direction: column-reverse;
   }
   .header .header_container .header_content {
     padding: 2.4rem 1rem 4.4rem 1rem;
@@ -518,9 +522,6 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .header .header_container .header_content .cta_group .btn.btn_cta,
   .header .header_container .header_content .cta_group .btn_cta_outline {
     text-align: center;
-  }
-  .header .header_container .header_canvas {
-    transform: scale(0.7);
   }
 }
 @keyframes bounce {
