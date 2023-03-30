@@ -6,37 +6,25 @@ let camera, scene, renderer;
 var iss;
 
 
-init();
-render();
+
 
 const createLights = () => {
+    const shadowLight = new THREE.DirectionalLight(0xccb8b4, 0.4);
+    shadowLight.position.set(0, 5, 10);
 
-
-    // an ambient light modifies the global color of a scene and makes the shadows softer
-    const ambientLight = new THREE.AmbientLight(0xccb8b4, 1);
-    scene.add(ambientLight);
-
-    // A directional light shines from a specific direction.
-    // It acts like the sun, that means that all the rays produced are parallel.
-    const shadowLight = new THREE.DirectionalLight(0xffffff, 0);
-
-    // Set the direction of the light
-    shadowLight.position.set(150, 150, 0);
-    //shadowLight.castShadow = true;
-
-    const burnerLightDown = new THREE.DirectionalLight(0xDE00FF, 0.2);
+    const burnerLightDown = new THREE.DirectionalLight(0xDE00FF, 0.01);
     burnerLightDown.position.set(0, -5, 0);
-    //burnerLightDown.castShadow = true;
 
-    const burnerLightTop = new THREE.DirectionalLight(0x2f63c8, 0.2);
+    const burnerLightTop = new THREE.DirectionalLight(0x2f63c8, 0.9);
     burnerLightTop.position.set(0, 5, 0);
 
     scene.add(shadowLight);
     scene.add(burnerLightDown);
     scene.add(burnerLightTop);
-    scene.add(ambientLight);
 };
 
+init();
+render();
 createLights();
 
 function init() {
@@ -96,8 +84,8 @@ function animation(time) {
         return;
     }
 
-    iss.rotation.y += 0.001;
-    iss.rotation.x += 0.003;
+    iss.rotation.y -= 0.001;
+    iss.rotation.x += 0.001;
 
     renderer.render(scene, camera);
 }
