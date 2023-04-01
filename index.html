@@ -39,6 +39,12 @@
     <script type="module" src="src/js/AstronauteHead.js"></script>
     <script type="module" src="src/js/AstronauteArm.js"></script>
 
+    <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
+    <link
+      href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css "
+      rel="stylesheet"
+    />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio Evan Massonnet</title>
   </head>
@@ -314,49 +320,143 @@
           </div>
         </div>
         <div class="association_container mt_8">
-            <div class="association_img width_100 association_planet flex_center">
-              <img src="dist/img/mars.png" width="520px" alt="" />
+          <div class="association_img width_100 association_planet flex_center">
+            <img src="dist/img/mars.png" width="520px" alt="" />
+            <div>
+              <div id="rotator"></div>
             </div>
+          </div>
           <div class="width_100">
             <div class="card associtation_card width_100">
               <div class="association_card_container_date">
                 <div class="card_icon_info">
-                  <h3>ERC</h3>
                   <div>
-                    <span>Poland</span>
-                    <i class="fa-solid fa-location-dot"></i>
+                    <i class="fa-solid fa-trophy fa-xl color_bronze"></i>
+                    <h3>3rd place</h3>
+                  </div>
+                  <div>
+                    <span>2021</span>
+                    <i class="fa-solid fa-calendar"></i>
                   </div>
                 </div>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-                nulla, rerum soluta nihil doloribus vitae voluptate, vel tempora
-                totam illo voluptatibus esse aut! Facere ullam consectetur
-                quisquam, incidunt magnam quos?
+                After only one year of preparation, the team placed 3rd out of
+                58 international teams at the ERC 2021. And this year we were
+                the best in two categories.
               </p>
+              <div class="association_distinction">
+                <div class="association_distinction_pair">
+                  <i class="fa-solid fa-medal fa-xl"></i>
+                  <span> Best team in Science </span>
+                </div>
+                <div class="association_distinction_pair">
+                  <i class="fa-solid fa-medal fa-xl"></i>
+                  <span> Best team in probing </span>
+                </div>
+              </div>
             </div>
             <div class="card associtation_card mt_4 width_100">
               <div class="association_card_container_date">
                 <div class="card_icon_info">
-                  <h3>ERC</h3>
                   <div>
-                    <span>Poland</span>
-                    <i class="fa-solid fa-location-dot"></i>
+                    <i class="fa-solid fa-trophy fa-xl color_silver"></i>
+                    <h3>2nd place</h3>
+                  </div>
+                  <div>
+                    <span>2022</span>
+                    <i class="fa-solid fa-calendar"></i>
                   </div>
                 </div>
               </div>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-                nulla, rerum soluta nihil doloribus vitae voluptate, vel tempora
-                totam illo voluptatibus esse aut! Facere ullam consectetur
-                quisquam, incidunt magnam quos?
+                After a year of software development and an intensive testing
+                session during the summer, the team was awarded the prestigious
+                Navigation Award at the competition for being the only team to
+                reach all 4 waypoints in autonomy, by night and on a flooded
+                terrain.
               </p>
+              <div class="association_distinction">
+                <div class="association_distinction_pair">
+                  <i class="fa-solid fa-medal fa-xl"></i>
+                  <span> Best team in navigation </span>
+                </div>
+              </div>
             </div>
           </div>
-
- 
+        </div>
+        <div class="association_container mt_8">
+          <div class="card associtation_card">
+            <div class="association_card_container_date">
+              <div class="card_icon_info">
+                <h3>ERC</h3>
+                <div>
+                  <span>Poland</span>
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+              nulla, rerum soluta nihil doloribus vitae voluptate, vel tempora
+              totam illo voluptatibus esse aut! Facere ullam consectetur
+              quisquam, incidunt magnam quos?
+            </p>
+          </div>
+          <div class="association_img flex_center ptb_1"></div>
         </div>
       </section>
+      <section class="section_association">
+        <h2>My work at Xplore</h2>
+        <div class="association_container">
+          <div class="card associtation_card">
+            <div class="association_card_container_date">
+              <div class="card_icon_info">
+                <h3>ERC</h3>
+                <div>
+                  <span>Poland</span>
+                  <i class="fa-solid fa-location-dot"></i>
+                </div>
+              </div>
+            </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+              nulla, rerum soluta nihil doloribus vitae voluptate, vel tempora
+              totam illo voluptatibus esse aut! Facere ullam consectetur
+              quisquam, incidunt magnam quos?
+            </p>
+          </div>
+
+          <div class="association_img flex_center ptb_1">
+            <div class="splide" aria-label="Splide Basic HTML Example">
+              <div class="splide__track">
+                <ul class="splide__list">
+                  <li class="association_img splide__slide">
+                    <img src="dist/img/Xplore.png" width="400px" alt="" />
+                  </li>
+                  <li class="association_img splide__slide">
+                    <img src="dist/img/Xplore.png" width="400px" alt="" />
+                  </li>
+                  <li class="association_img splide__slide">
+                    <img src="dist/img/Xplore.png" width="400px" alt="" />
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          var splide = new Splide(".splide", {
+            ype: "fade",
+            rewind: true,
+            slideSize: 400,
+          });
+          splide.mount();
+        });
+      </script>
     </main>
   </body>
 </html>

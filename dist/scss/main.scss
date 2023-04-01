@@ -114,6 +114,24 @@ p {
   box-shadow: 0px 0px 20px 10px rgba(59, 255, 229, 0.64);
 }
 
+.color_silver {
+  color: #fdfdfd;
+  border: 1px solid #b3cdd1;
+  border-radius: 50%;
+  padding: 25px 13px;
+  // background-image: linear-gradient(315deg, #1c7482 0%, #c1c5df 74%);
+  background-image: linear-gradient(315deg, #c1c5df 0%, #5b6395 74%);
+}
+
+.color_bronze {
+  color: #fdfdfd;
+  border: 1px solid #CD7F32;
+  border-radius: 50%;
+  padding: 25px 13px;
+  background-image: linear-gradient(315deg, #D58639 0%, #803F00 74%);
+}
+
+
 .main_nav {
   display: flex;
   justify-content: space-between;
@@ -568,8 +586,8 @@ section {
       position: relative;
       > img {
         position: absolute;
-        top: -25%;
-        left: -16%;
+        top: 0;
+        left: -10%;
       }
     }
     .width_100 {
@@ -614,6 +632,17 @@ section {
         h3 { 
           padding: 0;
         }
+      }
+    }
+    .association_distinction {
+      padding: 1.5rem 0 0 0rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      .association_distinction_pair {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
       }
     }
   }
@@ -826,6 +855,55 @@ section {
   100% {
     transform: rotate(405deg);
   }
+}
+
+
+#rotator {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  animation: rotations 80s linear infinite;
+  border-radius: 50%;
+  margin: 3rem;
+  top: 2rem;
+  left: 0; 
+  // border: 10px red solid ;
+}
+
+#rotator:before, #rotator:after {
+  position: absolute;
+  content: '';
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  animation: inherit;
+  animation-direction: reverse;
+}
+
+#rotator:before {
+  background-image: url(../img/ArgosBadge.png);
+  top: -3.25rem;
+  left: -3.25rem;
+  background-position: center;
+  background: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}
+
+#rotator:after {
+  background-image: url(../img/AstraBadge.png);
+  bottom: -3.25rem;
+  right: -3.25rem;
+  background-position: center;
+  background: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+@keyframes rotations {
+  to { transform: rotate(360deg) }
 }
 
 // @-webkit-keyframes tail {
