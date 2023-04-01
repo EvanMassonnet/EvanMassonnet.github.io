@@ -60,6 +60,10 @@ p {
   background: none;
 }
 
+.btn_square {
+  padding: 10px 12px;
+}
+
 .ptb_1 {
   padding: 1rem;
 }
@@ -76,6 +80,13 @@ p {
   padding: 5rem;
 }
 
+.mt_4 {
+  margin-top: 4rem;
+}
+.mt_8 {
+  margin-top: 8rem;
+}
+
 .shadow_blue {
   box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
 }
@@ -86,18 +97,6 @@ p {
 
 .shadow_green {
   box-shadow: 0px 0px 20px 10px rgba(59, 255, 229, 0.64);
-}
-
-.border_blue {
-  border: 1px solid rgb(59, 160, 255);
-}
-
-.border_purple {
-  border: 1px solid rgb(126, 59, 255);
-}
-
-.border_green {
-  border: 1px solid rgba(59, 255, 229, 0.64);
 }
 
 .main_nav {
@@ -192,6 +191,32 @@ section .card {
   border: 1px solid #2c3239;
   border-radius: var(--curve);
   padding: 2rem;
+}
+section .card .card_icon_info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 0rem 1rem 0;
+}
+section .card .card_icon_info > span {
+  color: #828b99;
+}
+section .card .card_icon_info div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+section .card .card_icon_info div span {
+  color: #e9e9e9;
+  font-size: 0.8rem;
+}
+section .border_blue {
+  border: 1px solid rgb(59, 160, 255);
+}
+section .border_purple {
+  border: 1px solid rgb(126, 59, 255);
+}
+section .border_green {
+  border: 1px solid rgba(59, 255, 229, 0.64);
 }
 section .cards_skill {
   display: flex;
@@ -331,14 +356,14 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 .section_education #timeline {
   width: 100%;
-  margin: 30px auto;
+  margin: 1rem auto;
   position: relative;
   padding: 0 10px;
 }
 .section_education #timeline:before {
   content: "";
   width: 4px;
-  height: 73%;
+  height: 72%;
   background: #2c3239;
   left: 50%;
   top: 8px;
@@ -386,9 +411,6 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 .section_education #timeline .timeline_item .timeline_content {
   width: 45%;
-  background: #161b22;
-  padding: 20px;
-  border-radius: var(--curve);
 }
 .section_education #timeline .timeline_item .timeline_last {
   width: 60%;
@@ -397,27 +419,11 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .section_education #timeline .timeline_item .timeline_content.right {
   float: right;
 }
-.section_education #timeline .timeline_item .timeline_card_info {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 0rem 1rem 0;
-}
-.section_education #timeline .timeline_item .timeline_card_info > span {
-  color: #828b99;
-}
-.section_education #timeline .timeline_item .timeline_card_info div {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.section_education #timeline .timeline_item .timeline_card_info div span {
-  color: #e9e9e9;
-  font-size: 0.8rem;
-}
 .section_education #timeline .timeline_item .timeline_card_tag {
   display: flex;
   gap: 0.3rem;
   padding: 0px 0rem 1rem 0;
+  flex-wrap: wrap;
 }
 .section_education #timeline .timeline_item .timeline_card_tag span {
   padding: 0.2rem 0.7rem;
@@ -428,9 +434,20 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   font-weight: 300;
 }
 
+.flex_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .section_association .association_container {
   display: flex;
   padding: 1rem 0 0 0;
+  width: 100%;
+}
+.section_association .association_container .associtation_card {
+  width: 47%;
 }
 .section_association .association_container .association_card_info {
   padding: 2rem 0 0 0;
@@ -438,9 +455,22 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   flex-direction: row;
 }
 .section_association .association_container .association_img {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 53%;
+}
+.section_association .association_container .association_img > img {
+  width: 100%;
+  height: auto;
+}
+.section_association .association_container .association_planet {
+  position: relative;
+}
+.section_association .association_container .association_planet > img {
+  position: absolute;
+  top: -25%;
+  left: -16%;
+}
+.section_association .association_container .width_100 {
+  width: 100%;
 }
 .section_association .association_container .association_timeline {
   width: 9%;
@@ -476,13 +506,8 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   flex-direction: column;
   gap: 3rem;
 }
-.section_association .association_container .association_card_row .association_card_container_date {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.section_association .association_container .association_card_row .association_card_container_date span {
-  color: #828b99;
+.section_association .association_container .association_card_container_date .card_icon_info h3 {
+  padding: 0;
 }
 
 .placeholder {
@@ -509,6 +534,16 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .section_education #timeline .timeline_item .timeline_icon {
     left: 48.5%;
   }
+  .section_association .association_container {
+    flex-direction: column-reverse;
+    padding: 1rem;
+  }
+  .section_association .association_container .association_img {
+    width: 100%;
+  }
+  .section_association .association_container .associtation_card {
+    width: 100%;
+  }
 }
 @media screen and (max-width: 867px) {
   .header {
@@ -534,7 +569,6 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
     left: 42%;
   }
   .section_education #timeline {
-    margin: 30px;
     padding: 0px;
     width: 90%;
   }
@@ -552,7 +586,8 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
     left: -12px;
   }
   .section_education #timeline .timeline_item .timeline_canvas,
-  .section_education #timeline .timeline_item .timeline_canvas_right, .section_education #timeline .timeline_item .timeline_canvas_left {
+  .section_education #timeline .timeline_item .timeline_canvas_right,
+  .section_education #timeline .timeline_item .timeline_canvas_left {
     display: none;
   }
   .section_education #timeline .timeline_item .timeline_icon_last {
@@ -561,17 +596,13 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .section_education #timeline .timeline_item .timeline_last {
     margin: 0;
   }
-  .section_association .association_container {
-    flex-direction: column-reverse;
-    padding: 1rem;
-  }
 }
 @media screen and (max-width: 500px) {
   .header .header_container {
-    padding: 5.4rem 0rem 0rem 0rem;
+    padding: 5.4rem 0 0 0;
   }
   .header .header_container .header_content {
-    padding: 0rem 1rem 0rem 1rem;
+    padding: 0 1rem 0 1rem;
   }
   .header .header_container .header_content .cta_group {
     flex-direction: column;
@@ -583,6 +614,12 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .header .header_container .header_content .cta_group .btn.btn_cta,
   .header .header_container .header_content .cta_group .btn_cta_outline {
     text-align: center;
+  }
+  section .cards_skill .card_skill_item {
+    padding: 1rem 0 1rem 0;
+  }
+  .section_association .association_container {
+    padding: 1rem 0 0 0;
   }
 }
 @keyframes bounce {

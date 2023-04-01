@@ -3,7 +3,6 @@ $primaryColor: #5254ca;
 $primaryColorDarken: #3c3d97;
 $cardBgColor: #161b22;
 $cardBorderColor: #2c3239;
-
 $paraColor: #828b99;
 $lightColor: #f4f4f4;
 $lightColorDarken: #e9e9e9;
@@ -47,9 +46,11 @@ h3 {
   padding: 0 0 1rem 0;
   font-weight: 600;
 }
+
 p {
   color: $paraColor;
 }
+
 .btn {
   background: $primaryColor;
   padding: 12px 28px;
@@ -70,6 +71,9 @@ p {
 .btn_cta_outline {
   background: none;
 }
+.btn_square {
+  padding: 10px 12px;
+}
 
 .ptb {
   &_1 {
@@ -89,6 +93,15 @@ p {
   }
 }
 
+.mt {
+  &_4 {
+    margin-top: 4rem;
+  }
+  &_8 {
+    margin-top: 8rem;
+  }
+}
+
 .shadow_blue {
   box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
 }
@@ -99,16 +112,6 @@ p {
 
 .shadow_green {
   box-shadow: 0px 0px 20px 10px rgba(59, 255, 229, 0.64);
-}
-
-.border_blue {
-  border: 1px solid rgba(59, 160, 255, 1);
-}
-.border_purple {
-  border: 1px solid rgba(126, 59, 255, 1);
-}
-.border_green {
-  border: 1px solid rgba(59, 255, 229, 0.64);
 }
 
 .main_nav {
@@ -218,6 +221,32 @@ section {
     border: 1px solid $cardBorderColor;
     border-radius: var(--curve);
     padding: 2rem;
+    .card_icon_info {
+      display: flex;
+      justify-content: space-between;
+      padding: 0px 0rem 1rem 0;
+      > span {
+        color: $paraColor;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        span {
+          color: $lightColorDarken;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+  .border_blue {
+    border: 1px solid rgba(59, 160, 255, 1);
+  }
+  .border_purple {
+    border: 1px solid rgba(126, 59, 255, 1);
+  }
+  .border_green {
+    border: 1px solid rgba(59, 255, 229, 0.64);
   }
   .cards_skill {
     display: flex;
@@ -422,13 +451,13 @@ section {
   }
   #timeline {
     width: 100%;
-    margin: 30px auto;
+    margin: 1rem auto;
     position: relative;
     padding: 0 10px;
     &:before {
       content: "";
       width: 4px;
-      height: 73%;
+      height: 72%;
       background: $cardBorderColor;
       left: 50%;
       top: 8px;
@@ -476,9 +505,9 @@ section {
       }
       .timeline_content {
         width: 45%;
-        background: $cardBgColor;
-        padding: 20px;
-        border-radius: var(--curve);
+        // background: $cardBgColor;
+        // padding: 20px;
+        // border-radius: var(--curve);
       }
       .timeline_last {
         width: 60%;
@@ -487,27 +516,12 @@ section {
       .timeline_content.right {
         float: right;
       }
-      .timeline_card_info {
-        display: flex;
-        justify-content: space-between;
-        padding: 0px 0rem 1rem 0;
-        > span {
-          color: $paraColor;
-        }
-        div {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          span {
-            color: $lightColorDarken;
-            font-size: 0.8rem;
-          }
-        }
-      }
+
       .timeline_card_tag {
         display: flex;
         gap: 0.3rem;
         padding: 0px 0rem 1rem 0;
+        flex-wrap: wrap;
         span {
           padding: 0.2rem 0.7rem;
           border: 1px solid $primaryColor;
@@ -522,19 +536,44 @@ section {
 }
 
 //Association Section
+
+.flex_center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .section_association {
   .association_container {
     display: flex;
     padding: 1rem 0 0 0;
+    width: 100%;
+    .associtation_card {
+      width: 47%;
+    }
     .association_card_info {
       padding: 2rem 0 0 0;
       display: flex;
       flex-direction: row;
     }
     .association_img {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 53%;
+      > img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .association_planet {
+      position: relative;
+      > img {
+        position: absolute;
+        top: -25%;
+        left: -16%;
+      }
+    }
+    .width_100 {
+      width: 100%;
     }
     .association_timeline {
       width: 9%;
@@ -556,12 +595,12 @@ section {
         height: 27px;
         position: absolute;
         top: -30px;
-        left: -12px;   
+        left: -12px;
         overflow: hidden;
         border-radius: 50%;
         &:nth-child(2) {
           top: 59%;
-          left: -12px;   
+          left: -12px;
         }
       }
     }
@@ -569,16 +608,21 @@ section {
       display: flex;
       flex-direction: column;
       gap: 3rem;
-      .association_card_container_date {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        span {
-          color: #828b99;
+    }
+    .association_card_container_date {
+      .card_icon_info {
+        h3 { 
+          padding: 0;
         }
       }
     }
   }
+  // .card_left {
+  //   width: 47%;
+  //   .association_img {
+  //     width: 53%;
+  //   }
+  // }
 }
 
 .placeholder {
@@ -607,6 +651,19 @@ section {
   .section_education #timeline .timeline_item .timeline_icon {
     left: 48.5%;
   }
+
+  .section_association {
+    .association_container {
+      flex-direction: column-reverse;
+      padding: 1rem;
+      .association_img {
+        width: 100%;
+      }
+      .associtation_card {
+        width: 100%;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 867px) {
@@ -634,7 +691,6 @@ section {
   }
   .section_education {
     #timeline {
-      margin: 30px;
       padding: 0px;
       width: 90%;
       &::before {
@@ -650,7 +706,8 @@ section {
           left: -12px;
         }
         .timeline_canvas,
-        .timeline_canvas_right, .timeline_canvas_left {
+        .timeline_canvas_right,
+        .timeline_canvas_left {
           display: none;
         }
         .timeline_icon_last {
@@ -662,21 +719,14 @@ section {
       }
     }
   }
-
-  .section_association {
-    .association_container {
-      flex-direction: column-reverse;
-      padding: 1rem;
-    }
-  }
 }
 
 @media screen and (max-width: 500px) {
   .header {
     .header_container {
-      padding: 5.4rem 0rem 0rem 0rem;
+      padding: 5.4rem 0 0 0;
       .header_content {
-        padding: 0rem 1rem 0rem 1rem;
+        padding: 0 1rem 0 1rem;
         .cta_group {
           flex-direction: column;
           gap: 16px;
@@ -690,6 +740,12 @@ section {
         }
       }
     }
+  }
+  section .cards_skill .card_skill_item {
+    padding: 1rem 0 1rem 0;
+  }
+  .section_association .association_container {
+    padding: 1rem 0 0 0;
   }
 }
 
