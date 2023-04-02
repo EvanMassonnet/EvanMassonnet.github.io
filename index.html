@@ -263,8 +263,8 @@
                 <div class="association_timeline_icon"></div>
               </div>
               <div class="association_card_row">
-                <div>
-                  <div class="association_card_container_date">
+                <div class="association_card_container_date">
+                  <div class="card_icon_info">
                     <h3>Team leader</h3>
                     <span>2020 - 2022</span>
                   </div>
@@ -277,8 +277,10 @@
                 </div>
                 <div>
                   <div class="association_card_container_date">
-                    <h3>Team leader</h3>
-                    <span>2020 - 2022</span>
+                    <div class="card_icon_info">
+                      <h3>Team leader</h3>
+                      <span>2020 - 2022</span>
+                    </div>
                   </div>
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -308,7 +310,7 @@
               totam illo voluptatibus esse aut! Facere ullam consectetur
               quisquam, incidunt magnam quos?
             </p>
-            <div class="association_img flex_center width_100">
+            <div class="flex_center mt_2">
               <a href="#" class="btn btn_cta">
                 Visit website
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
@@ -322,9 +324,7 @@
         <div class="association_container mt_8">
           <div class="association_img width_100 association_planet flex_center">
             <img src="dist/img/mars.png" width="520px" alt="" />
-            <div>
               <div id="rotator"></div>
-            </div>
           </div>
           <div class="width_100">
             <div class="card associtation_card width_100">
@@ -428,17 +428,23 @@
           </div>
 
           <div class="association_img flex_center ptb_1">
-            <div class="splide" aria-label="Splide Basic HTML Example">
+            <div class="splide" aria-label="Slideshow of differents capture of the application">
               <div class="splide__track">
                 <ul class="splide__list">
                   <li class="association_img splide__slide">
-                    <img src="dist/img/Xplore.png" width="400px" alt="" />
+                    <img src="dist/img/slider/Start_Rover.png" width="400px" alt="" />
                   </li>
                   <li class="association_img splide__slide">
-                    <img src="dist/img/Xplore.png" width="400px" alt="" />
+                    <img src="dist/img/slider/ManualTask.png" width="400px" alt="" />
                   </li>
                   <li class="association_img splide__slide">
-                    <img src="dist/img/Xplore.png" width="400px" alt="" />
+                    <img src="dist/img/slider/NavigationNav.png" width="400px" alt="" />
+                  </li>
+                  <li class="association_img splide__slide">
+                    <img src="dist/img/slider/ManualTask.png" width="400px" alt="" />
+                  </li>
+                  <li class="association_img splide__slide">
+                    <img src="dist/img/slider/Logslog.png" width="400px" alt="" />
                   </li>
                 </ul>
               </div>
@@ -452,7 +458,6 @@
           var splide = new Splide(".splide", {
             ype: "fade",
             rewind: true,
-            slideSize: 400,
           });
           splide.mount();
         });

@@ -80,6 +80,9 @@ p {
   padding: 5rem;
 }
 
+.mt_2 {
+  margin-top: 2rem;
+}
 .mt_4 {
   margin-top: 4rem;
 }
@@ -109,10 +112,10 @@ p {
 
 .color_bronze {
   color: #fdfdfd;
-  border: 1px solid #CD7F32;
+  border: 1px solid #cd7f32;
   border-radius: 50%;
   padding: 25px 13px;
-  background-image: linear-gradient(315deg, #D58639 0%, #803F00 74%);
+  background-image: linear-gradient(315deg, #d58639 0%, #803f00 74%);
 }
 
 .main_nav {
@@ -357,7 +360,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   background: linear-gradient(-45deg, rgba(0, 0, 255, 0), #3bffe5, rgba(0, 0, 255, 0));
 }
 .transition_star .night.night_large {
-  transform: rotateZ(45deg);
+  transform: rotateZ(45deg) translate(-90px, 35px);
 }
 
 .section_education #timeline .timeline_item:after,
@@ -461,6 +464,8 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   display: flex;
   padding: 1rem 0 0 0;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 .section_association .association_container .associtation_card {
   width: 47%;
@@ -482,7 +487,6 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 .section_association .association_container .association_planet > img {
   position: absolute;
-  top: 0;
   left: -10%;
 }
 .section_association .association_container .width_100 {
@@ -536,12 +540,61 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   gap: 0.5rem;
   align-items: center;
 }
+.section_association .splide .splide__pagination {
+  bottom: unset;
+}
+.section_association .splide .splide__arrow {
+  background-color: #161b22;
+  border: 1px solid #2c3239;
+}
+.section_association .splide .splide__arrow svg {
+  fill: #e9e9e9;
+}
+
+#rotator {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  animation: rotations 80s linear infinite;
+  border-radius: 50%;
+  margin: 3rem;
+}
+#rotator:before, #rotator:after {
+  position: absolute;
+  content: "";
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  animation: inherit;
+  animation-direction: reverse;
+}
+#rotator:before {
+  background-image: url(../img/ArgosBadge.png);
+  top: -3.25rem;
+  left: -3.25rem;
+  background-position: center;
+  background: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#rotator:after {
+  background-image: url(../img/AstraBadge.png);
+  bottom: -3.25rem;
+  right: -3.25rem;
+  background-position: center;
+  background: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 
 .placeholder {
   height: 2000px;
 }
 
 @media screen and (max-width: 1268px) {
+  .mt_8 {
+    margin-top: 2rem;
+  }
   .header {
     height: auto;
     max-height: none;
@@ -566,10 +619,20 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
     padding: 1rem;
   }
   .section_association .association_container .association_img {
+    max-width: 500px;
     width: 100%;
   }
   .section_association .association_container .associtation_card {
-    width: 100%;
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .section_association .association_container .association_planet {
+    position: relative;
+    margin-top: 8rem;
+  }
+  .section_association .splide {
+    padding: 0rem 0rem 1rem 0rem;
   }
 }
 @media screen and (max-width: 867px) {
@@ -623,6 +686,14 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .section_education #timeline .timeline_item .timeline_last {
     margin: 0;
   }
+  .section_association .association_container .associtation_card {
+    width: 100%;
+  }
+  .section_association .association_container .association_distinction {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
 }
 @media screen and (max-width: 500px) {
   .header .header_container {
@@ -647,6 +718,20 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   }
   .section_association .association_container {
     padding: 1rem 0 0 0;
+  }
+  .section_association .association_container #rotator {
+    width: 10rem;
+    height: 10rem;
+  }
+}
+@media screen and (max-width: 380px) {
+  .section_association .association_container {
+    padding: 1rem 0 0 0;
+  }
+  .section_association .association_container #rotator {
+    animation: none;
+    width: 8rem;
+    height: 8rem;
   }
 }
 @keyframes bounce {
@@ -717,47 +802,6 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
     transform: rotate(405deg);
   }
 }
-#rotator {
-  position: relative;
-  width: 15rem;
-  height: 15rem;
-  animation: rotations 80s linear infinite;
-  border-radius: 50%;
-  margin: 3rem;
-  top: 2rem;
-  left: 0;
-}
-
-#rotator:before, #rotator:after {
-  position: absolute;
-  content: "";
-  display: block;
-  height: 5rem;
-  width: 5rem;
-  animation: inherit;
-  animation-direction: reverse;
-}
-
-#rotator:before {
-  background-image: url(../img/ArgosBadge.png);
-  top: -3.25rem;
-  left: -3.25rem;
-  background-position: center;
-  background: cover;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-#rotator:after {
-  background-image: url(../img/AstraBadge.png);
-  bottom: -3.25rem;
-  right: -3.25rem;
-  background-position: center;
-  background: cover;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 @keyframes rotations {
   to {
     transform: rotate(360deg);

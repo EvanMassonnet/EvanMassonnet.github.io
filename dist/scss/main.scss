@@ -22,6 +22,7 @@ $secondBg: url("../img/Benford.JPG");
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  // box-shadow: 0 0 0 4px red inset;
 }
 
 html {
@@ -94,6 +95,9 @@ p {
 }
 
 .mt {
+  &_2 {
+    margin-top: 2rem;
+  }
   &_4 {
     margin-top: 4rem;
   }
@@ -125,12 +129,11 @@ p {
 
 .color_bronze {
   color: #fdfdfd;
-  border: 1px solid #CD7F32;
+  border: 1px solid #cd7f32;
   border-radius: 50%;
   padding: 25px 13px;
-  background-image: linear-gradient(315deg, #D58639 0%, #803F00 74%);
+  background-image: linear-gradient(315deg, #d58639 0%, #803f00 74%);
 }
-
 
 .main_nav {
   display: flex;
@@ -451,7 +454,8 @@ section {
     }
   }
   .night.night_large {
-    transform: rotateZ(45deg);
+    transform: rotateZ(45deg) translate(-90px, 35px);
+    
   }
 }
 
@@ -567,6 +571,8 @@ section {
     display: flex;
     padding: 1rem 0 0 0;
     width: 100%;
+    justify-content: center;
+    align-items: center;
     .associtation_card {
       width: 47%;
     }
@@ -586,7 +592,7 @@ section {
       position: relative;
       > img {
         position: absolute;
-        top: 0;
+        // top: 0;
         left: -10%;
       }
     }
@@ -629,7 +635,7 @@ section {
     }
     .association_card_container_date {
       .card_icon_info {
-        h3 { 
+        h3 {
           padding: 0;
         }
       }
@@ -652,13 +658,73 @@ section {
   //     width: 53%;
   //   }
   // }
+  .splide {
+    .splide__pagination {
+      bottom: unset;
+    }
+    .splide__arrow {
+      background-color: $cardBgColor;
+      border: 1px solid $cardBorderColor;
+      svg {
+        fill: $lightColorDarken;
+      }
+    }
+  }
 }
+
+#rotator {
+  position: relative;
+  width: 15rem;
+  height: 15rem;
+  animation: rotations 80s linear infinite;
+  border-radius: 50%;
+  margin: 3rem;
+  // top: 2rem;
+  // left: 0;
+  // border: 10px red solid ;
+  &:before,
+  &:after {
+    position: absolute;
+    content: "";
+    display: block;
+    height: 5rem;
+    width: 5rem;
+    animation: inherit;
+    animation-direction: reverse;
+  }
+
+  &:before {
+    background-image: url(../img/ArgosBadge.png);
+    top: -3.25rem;
+    left: -3.25rem;
+    background-position: center;
+    background: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &:after {
+    background-image: url(../img/AstraBadge.png);
+    bottom: -3.25rem;
+    right: -3.25rem;
+    background-position: center;
+    background: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
 
 .placeholder {
   height: 2000px;
 }
 
 @media screen and (max-width: 1268px) {
+  .mt {
+    &_8 {
+      margin-top: 2rem;
+    }
+  }
   .header {
     height: auto;
     max-height: none;
@@ -686,11 +752,21 @@ section {
       flex-direction: column-reverse;
       padding: 1rem;
       .association_img {
+        max-width: 500px;
         width: 100%;
       }
       .associtation_card {
-        width: 100%;
+        width: 80%;
+        margin-right: auto;
+        margin-left: auto;
       }
+      .association_planet {
+        position: relative;
+        margin-top: 8rem;
+      }
+    }
+    .splide {
+      padding: 0rem 0rem 1rem 0rem;
     }
   }
 }
@@ -748,6 +824,18 @@ section {
       }
     }
   }
+  .section_association {
+    .association_container {
+      .associtation_card {
+        width: 100%;
+      }
+      .association_distinction {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -775,6 +863,22 @@ section {
   }
   .section_association .association_container {
     padding: 1rem 0 0 0;
+    #rotator {
+      width: 10rem;
+      height: 10rem;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .section_association .association_container {
+    padding: 1rem 0 0 0;
+
+    #rotator {
+      animation: none;
+      width: 8rem;
+      height: 8rem;
+    }
   }
 }
 
@@ -858,52 +962,10 @@ section {
 }
 
 
-#rotator {
-  position: relative;
-  width: 15rem;
-  height: 15rem;
-  animation: rotations 80s linear infinite;
-  border-radius: 50%;
-  margin: 3rem;
-  top: 2rem;
-  left: 0; 
-  // border: 10px red solid ;
-}
-
-#rotator:before, #rotator:after {
-  position: absolute;
-  content: '';
-  display: block;
-  height: 5rem;
-  width: 5rem;
-  animation: inherit;
-  animation-direction: reverse;
-}
-
-#rotator:before {
-  background-image: url(../img/ArgosBadge.png);
-  top: -3.25rem;
-  left: -3.25rem;
-  background-position: center;
-  background: cover;
-  background-size: contain;
-  background-repeat: no-repeat;
-  
-}
-
-#rotator:after {
-  background-image: url(../img/AstraBadge.png);
-  bottom: -3.25rem;
-  right: -3.25rem;
-  background-position: center;
-  background: cover;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-
 @keyframes rotations {
-  to { transform: rotate(360deg) }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 // @-webkit-keyframes tail {
