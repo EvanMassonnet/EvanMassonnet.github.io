@@ -8,9 +8,24 @@ let rocks = [];
 let rocks_x = [];
 let rocks_y = [];
 let rocks_speed = [];
-const rock_count = 30;
-let minDistance = -70;
-let maxDistance = 70;
+
+let rock_count;
+let minDistance;
+let maxDistance;
+if(window.innerWidth < 500) {
+    minDistance = -20;
+    maxDistance = 20;
+    rock_count = 5;
+}else if(window.innerWidth < 768) {
+    minDistance = -50;
+    maxDistance = 50;
+    rock_count = 10;
+}else{
+    minDistance = -70;
+    maxDistance = 70;
+    rock_count = 30;
+}
+
 
 const createLights = () => {
 
@@ -47,7 +62,7 @@ const positionAsteroids = () => {
         //rocks[i].position.set((2 * Math.random() - 1) * 5, -1 + (2 * Math.random() - 1) * 0.5, (2 * Math.random() - 1) * 2);
         //rocks[i].position.set((2 * Math.random() - 1) * 30, -1 + (2 * Math.random() - 1) * 1, (2 * Math.random() - 1) * 3);
         //rocks[i].position.set(minDistance + Math.random() * (maxDistance-minDistance),-1 + Math.random() * -2, Math.random()*-3);
-        rocks[i].position.set(dist,-2 + Math.random() * 4, Math.random()*-15);
+        rocks[i].position.set(dist,-2 + Math.random() * 4, Math.random()*-5);
         
         // if(Math.abs(rocks[rocks.length-1].position.x - rocks[i].position.x) <= 20) {
         //     console.log("ada",Math.abs(rocks[rocks.length-1].position.x - rocks[i].position.x));

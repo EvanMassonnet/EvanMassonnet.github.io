@@ -50,6 +50,15 @@ function init() {
 
     });
 
+    
+    if(window.innerWidth < 500){
+        size = 200;
+    }else if(window.innerWidth < 768){
+        size = 300;
+    }else{
+        size = window.innerWidth / 4;
+    }
+
     renderer = new THREE.WebGLRenderer({ antialias: true }, { alpha: true });
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -66,15 +75,13 @@ function init() {
 
 function onWindowResize() {
 
-    
-    
-    // if(window.innerWidth < 768){
-    //     size = 300;
-    // }else if(window.innerWidth < 500){
-    //     size = 200;
-    // }else{
-    //     size = window.innerWidth / 4;
-    // }
+    if(window.innerWidth < 500){
+        size = 200;
+    }else if(window.innerWidth < 768){
+        size = 300;
+    }else{
+        size = window.innerWidth / 4;
+    }
 
     camera.aspect = 1
     camera.updateProjectionMatrix();
