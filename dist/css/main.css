@@ -194,6 +194,7 @@ p {
 
 .transition {
   overflow: hidden;
+  background: linear-gradient(0deg, rgba(14, 19, 31, 0) 0%, rgba(14, 19, 31, 0.5) 33%, rgba(14, 19, 31, 0.8) 50%, rgba(14, 19, 31, 0.5) 66%, rgba(14, 19, 31, 0) 100%);
 }
 
 main {
@@ -465,6 +466,9 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   justify-content: center;
 }
 
+.section_association {
+  padding-bottom: 0;
+}
 .section_association .association_container {
   display: flex;
   padding: 1rem 0 0 0;

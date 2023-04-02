@@ -228,6 +228,7 @@ p {
 //Asteroids
 .transition {
   overflow: hidden;
+  background: linear-gradient(0deg, rgba(14,19,31,0) 0%, rgba(14,19,31,0.50) 33%, rgba(14,19,31,0.80) 50%, rgba(14,19,31,0.50) 66%, rgba(14,19,31,0) 100%);
 }
 
 // .bg_stars {
@@ -593,6 +594,7 @@ section {
 }
 
 .section_association {
+  padding-bottom: 0;
   .association_container {
     display: flex;
     padding: 1rem 0 0 0;
@@ -868,6 +870,7 @@ section {
   .header {
     .header_container {
       padding: 5.4rem 0 0 0;
+
       .header_content {
         padding: 0 1rem 0 1rem;
         .cta_group {
