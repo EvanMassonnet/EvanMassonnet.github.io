@@ -606,12 +606,19 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .main_footer {
   text-align: center;
 }
+.main_footer h2 {
+  padding: 0 0 3rem 0;
+  font-weight: 300;
+}
+.main_footer > p {
+  font-size: small;
+}
 .main_footer .bio_container {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 1rem;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   justify-content: center;
 }
 .main_footer .bio_container img {
