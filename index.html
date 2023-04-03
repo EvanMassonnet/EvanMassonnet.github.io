@@ -52,8 +52,8 @@
         }
       }
     </script>
-    
-    <script type="module" src="src/js/ISS.js"></script>
+   
+   <script type="module" src="src/js/ISS.js"></script>
     <script type="module" src="src/js/Asteroids.js"></script>
     <script type="module" src="src/js/AstronauteHead.js"></script>
     <script type="module" src="src/js/AstronauteArm.js"></script>
@@ -106,7 +106,7 @@
       <div class="transition"></div>
     </header>
     <main>
-      <section class="bg_stars">
+      <section>
         <h2>Skills and Softwares</h2>
         <ul class="cards_skill">
           <li class="card_skill_item">
@@ -123,6 +123,7 @@
                 <i class="fa fa-css3 fa-2xl"></i>
                 <i class="fab fa-js-square fa-2xl"></i>
                 <i class="fa-brands fa-python fa-2xl"></i>
+                <img src="./dist/img/cSharp.png" width="30px" alt="">
               </div>
             </div>
           </li>
@@ -136,9 +137,9 @@
                 printed art build.
               </p>
               <div class="card_img">
-                <i class="fa fa-html5 fa-2xl"></i>
-                <i class="fa fa-css3 fa-2xl"></i>
-                <i class="fab fa-js-square fa-2xl"></i>
+                <i class="fa-brands fa-unity fa-2xl"></i>
+                <img src="./dist/img/SubstancePainter.png" width="30px" alt="">
+                <img src="./dist/img/SolidWorks.png" width="30px" alt="">
               </div>
             </div>
           </li>
@@ -152,9 +153,9 @@
                 Miro collaboration tools.
               </p>
               <div class="card_img">
-                <i class="fa fa-html5 fa-2xl"></i>
-                <i class="fa fa-css3 fa-2xl"></i>
-                <i class="fa-brands fa-unity fa-2xl"></i>
+                <img src="./dist/img/VSCode.png" width="30px" alt="">
+                <img src="./dist/img/Trello.png" width="30px" alt="">
+                <img src="./dist/img/GitHub.png" width="30px" alt="">
               </div>
             </div>
           </li>
@@ -444,7 +445,7 @@
                 </div> -->
               </div>
             </div>
-            <p>
+            <p class="mb_2">
               The backend is a mix between ROS2 and Django that uses channels and ASGI to refresh the web page in real time thanks to websockets. The data collected during the usage is stored in a Redis database. The frontend is developed with React and integrated with Django.
             </p>
           </div>
@@ -497,16 +498,46 @@
           </div>
         </div>
       </section>
-
-      <script>
-        document.addEventListener("DOMContentLoaded", function () {
-          var splide = new Splide(".splide", {
-            ype: "fade",
-            rewind: true,
-          });
-          splide.mount();
-        });
-      </script>
     </main>
+    <footer class="main_footer ptb_4">
+      <p>
+        Copyright © 2023 Evan Massonnet. All rights reserved.
+      </p>
+      <div class="bio_container">
+        <img src="./dist/img/EvanMassonnet.png" width="100px" alt="">
+        <p>
+          Computer science and mathematics student in Switzerland. 
+          I am looking for a first professional experience.
+        </p>
+
+      </div>
+        <div class="links_footer mt_2">
+          <a href="https://github.com/Guillaume-H-Skg"
+            ><i class="fab fa-github-square fa-3x"></i>
+            <p>Github</p>
+          </a>
+        </div>
+        <div class="links_footer mt_2">
+          <a href="mailto:humbertguillaume7@gmail.com"
+            ><i class="fas fa-envelope fa-3x"></i>
+            <p>Mail</p>
+          </a>
+        </div>
+        <div class="links_footer mt_2">
+          <a href="http://www.linkedin.com/in/guillaume-humbert-36931a226"
+            ><i class="fab fa-linkedin fa-3x"></i>
+            <p>Linkedin</p>
+          </a>
+        </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var splide = new Splide(".splide", {
+          ype: "fade",
+          rewind: true,
+        });
+        splide.mount();
+      });
+    </script>
   </body>
 </html>

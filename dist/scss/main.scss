@@ -108,6 +108,13 @@ p {
   }
 }
 
+.mb {
+  &_2 {
+    margin-bottom: 2rem;
+  }
+}
+
+
 .shadow_blue {
   box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
 }
@@ -257,6 +264,8 @@ main {
 }
 
 // Section Skill
+// filter: grayscale(100%) brightness(150%) contrast(100%);
+
 section {
   padding: 6rem;
   max-width: $webWidth;
@@ -320,7 +329,7 @@ section {
           display: flex;
           align-items: center;
           justify-content: space-around;
-          padding: 2rem 1rem 0 0;
+          padding: 2rem 0 0 0;
         }
         &:hover > i {
           animation: 1s ease-in infinite bounce;
@@ -749,6 +758,38 @@ section {
   height: 2000px;
 }
 
+.main_footer {
+  text-align: center;
+  .bio_container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    justify-content: center;
+    img {
+      border-radius: 50%;
+    }
+    p {
+      text-align: left;
+      max-width: 300px;
+    }
+  }
+  .links_footer {
+    i {
+      color: $primaryColor;
+    }
+
+    margin-top: 1rem;
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-direction: column;
+    padding: 1rem 3rem;
+  }
+}
+
+
 @media screen and (max-width: 1268px) {
   .mt {
     &_8 {
@@ -869,6 +910,11 @@ section {
 }
 
 @media screen and (max-width: 500px) {
+  .ptb {
+    &_4 {
+      padding: 1rem;
+    }
+  }
   .header {
     .header_container {
       padding: 5.4rem 0 0 0;
@@ -897,6 +943,12 @@ section {
     #rotator {
       width: 10rem;
       height: 10rem;
+    }
+  }
+  .main_footer {
+    .bio_container {
+      padding: 1rem 0 0 0 ;
+      flex-direction: column;
     }
   }
 }

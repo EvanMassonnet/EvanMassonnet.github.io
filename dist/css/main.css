@@ -90,6 +90,10 @@ p {
   margin-top: 8rem;
 }
 
+.mb_2 {
+  margin-bottom: 2rem;
+}
+
 .shadow_blue {
   box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
 }
@@ -265,7 +269,7 @@ section .cards_skill .card_skill_item .card_skill .card_img {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 2rem 1rem 0 0;
+  padding: 2rem 0 0 0;
 }
 section .cards_skill .card_skill_item .card_skill:hover > i {
   animation: 1s ease-in infinite bounce;
@@ -599,6 +603,36 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   height: 2000px;
 }
 
+.main_footer {
+  text-align: center;
+}
+.main_footer .bio_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  justify-content: center;
+}
+.main_footer .bio_container img {
+  border-radius: 50%;
+}
+.main_footer .bio_container p {
+  text-align: left;
+  max-width: 300px;
+}
+.main_footer .links_footer {
+  margin-top: 1rem;
+  display: inline-flex;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-direction: column;
+  padding: 1rem 3rem;
+}
+.main_footer .links_footer i {
+  color: #5254ca;
+}
+
 @media screen and (max-width: 1268px) {
   .mt_8 {
     margin-top: 2rem;
@@ -704,6 +738,9 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   }
 }
 @media screen and (max-width: 500px) {
+  .ptb_4 {
+    padding: 1rem;
+  }
   .header .header_container {
     padding: 5.4rem 0 0 0;
   }
@@ -730,6 +767,10 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   .section_association .association_container #rotator {
     width: 10rem;
     height: 10rem;
+  }
+  .main_footer .bio_container {
+    padding: 1rem 0 0 0;
+    flex-direction: column;
   }
 }
 @media screen and (max-width: 380px) {
