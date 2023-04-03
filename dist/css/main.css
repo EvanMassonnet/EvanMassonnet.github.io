@@ -466,9 +466,6 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   justify-content: center;
 }
 
-.section_association {
-  padding-bottom: 0;
-}
 .section_association .association_container {
   display: flex;
   padding: 1rem 0 0 0;
