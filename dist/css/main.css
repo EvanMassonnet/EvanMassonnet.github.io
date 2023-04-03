@@ -194,11 +194,13 @@ p {
 
 .transition {
   overflow: hidden;
-  background: linear-gradient(0deg, rgba(14, 19, 31, 0) 0%, rgba(14, 19, 31, 0.5) 33%, rgba(14, 19, 31, 0.8) 50%, rgba(14, 19, 31, 0.5) 66%, rgba(14, 19, 31, 0) 100%);
+  background: linear-gradient(0deg, rgba(13, 16, 21, 0) 0%, rgba(13, 16, 21, 0.55) 33%, rgba(13, 16, 21, 0.8) 50%, rgba(13, 16, 21, 0.55) 66%, rgba(13, 16, 21, 0) 100%);
 }
 
 main {
   background: url("../img/StarsVertical.jpg"), #0d1015;
+  background-repeat: repeat-y;
+  background-position: center top;
 }
 
 section {
@@ -286,7 +288,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 
 .transition_star {
   height: 100px;
-  background: linear-gradient(0deg, rgba(13, 16, 21, 0) 0%, rgba(13, 16, 21, 0.8463760504) 33%, rgb(13, 16, 21) 50%, rgba(13, 16, 21, 0.8463760504) 66%, rgba(13, 16, 21, 0) 100%);
+  background: linear-gradient(0deg, rgba(13, 16, 21, 0) 0%, rgba(13, 16, 21, 0.55) 33%, rgba(13, 16, 21, 0.8) 50%, rgba(13, 16, 21, 0.55) 66%, rgba(13, 16, 21, 0) 100%);
 }
 .transition_star .night {
   transform: rotateZ(90deg);
