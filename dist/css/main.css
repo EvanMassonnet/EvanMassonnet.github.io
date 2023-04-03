@@ -605,6 +605,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 
 .main_footer {
   text-align: center;
+  background: #0d1015;
 }
 .main_footer h2 {
   padding: 0 0 3rem 0;
