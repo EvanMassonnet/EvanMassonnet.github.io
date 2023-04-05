@@ -278,7 +278,7 @@ main {
 .bg_skill {
   background: $starsBgSkill2 no-repeat, #0f131f;
   background-position: center center;
-  background-size: 50%, auto, contain;
+  background-size: contain;
 }
 section {
   > .container_width {
