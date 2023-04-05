@@ -12,7 +12,14 @@ $sectionBg: #f2f2f2;
 $headerBg: url("../img/HeaderBg.jpg");
 $starsBg: url("../img/Stars.jpg");
 $starsBgVertical: url("../img/StarsVertical.jpg");
+$starsBgVertical2: url("../img/StarsVertical2.jpg");
+$starsBgSkill : url("../img/BgSkill.jpg");
+$starsBgSkill2 : url("../img/BgSkill2.jpg");
 
+$starsBgSmall_1: url("../img/BgStars/BgStar1.png");
+$starsBgSmall_2: url("../img/BgStars/BgStar2.png");
+$starsBgSmall_3: url("../img/BgStars/BgStar3.png");
+$starsBgSmall_4: url("../img/BgStars/BgStar4.png");
 
 :root {
   color-scheme: dark;
@@ -235,7 +242,9 @@ p {
 //Asteroids
 .transition {
   overflow: hidden;
-  background: linear-gradient(0deg, rgba(13,16,21,0) 0%, rgba(13,16,21,0.55) 33%, rgba(13,16,21,0.8) 50%, rgba(13,16,21,0.55) 66%, rgba(13,16,21,0) 100%);
+  background: linear-gradient(0deg, rgb(15, 19, 31) 0%, rgba(13, 16, 21, 0) 100%);
+
+  // background: linear-gradient(0deg, rgba(13,16,21,0) 0%, rgba(13,16,21,0.55) 33%, rgba(13,16,21,0.8) 50%, rgba(13,16,21,0.55) 66%, rgba(13,16,21,0) 100%);
 }
 
 // .bg_stars {
@@ -257,7 +266,8 @@ p {
 // }
 
 main {
-  background: $starsBgVertical, #0d1015;
+  // background: $starsBgVertical, #0d1015;
+  background:#0d1015;
   background-repeat: repeat-y;
   background-position: center top;
   // background-color: #0d1015;
@@ -265,11 +275,17 @@ main {
 
 // Section Skill
 // filter: grayscale(100%) brightness(150%) contrast(100%);
-
+.bg_skill {
+  background: $starsBgSkill2 no-repeat, #0f131f;
+  background-position: center center;
+  background-size: 50%, auto, contain;
+}
 section {
-  padding: 6rem;
-  max-width: $webWidth;
-  margin: auto;
+  > .container_width {
+    padding: 6rem;
+    max-width: $webWidth;
+    margin: auto;
+  }
   h2 {
     padding: 0 0 3rem 0;
     font-weight: 300;
@@ -359,7 +375,12 @@ section {
 //Transition Shooting Star
 .transition_star {
   height: 100px;
-  background: linear-gradient(0deg, rgba(13,16,21,0) 0%, rgba(13,16,21,0.55) 33%, rgba(13,16,21,0.8) 50%, rgba(13,16,21,0.55) 66%, rgba(13,16,21,0) 100%);
+
+  // background: linear-gradient(0deg, rgba(13,16,21,0) 0%, rgba(13,16,21,0.55) 33%, rgba(13,16,21,0.8) 50%, rgba(13,16,21,0.55) 66%, rgba(13,16,21,0) 100%);
+  &_bgSingle {
+    background: linear-gradient(0deg, rgb(13, 16, 21) 0%, rgb(15, 19, 31) 100%);
+  }
+  
   .night {
     transform: rotateZ(90deg);
 
@@ -499,6 +520,9 @@ section {
 
 //Education Section
 .section_education {
+  background: $starsBg no-repeat;
+  background-position: center center;
+  background-size: contain;
   #timeline .timeline_item:after,
   #timeline .timeline_item:before {
     content: "";
@@ -559,9 +583,15 @@ section {
       .timeline_canvas_right {
         top: -40px;
         right: 0;
+        background: $starsBgSmall_1;
+        background-size: cover;
+        background-position: center center;
       }
       .timeline_canvas_left {
         left: 0;
+        background: $starsBgSmall_2;
+        background-size: cover;
+        background-position: center center;
       }
       .timeline_content {
         width: 45%;
@@ -605,7 +635,9 @@ section {
 }
 
 .section_association {
-
+  background: $starsBgVertical2 no-repeat;
+  background-position: center center;
+  background-size: contain;
   .association_container {
     display: flex;
     padding: 1rem 0 0 0;
@@ -711,6 +743,13 @@ section {
   }
 }
 
+
+.association_work_bg {
+  background: $starsBgSmall_3 no-repeat;
+  background-position: center center;
+  background-size: contain;
+}
+
 #rotator {
   position: relative;
   width: 15rem;
@@ -753,14 +792,14 @@ section {
   }
 }
 
-
-.placeholder {
-  height: 2000px;
-}
-
 .main_footer {
   text-align: center;
   background: #0d1015;
+  background: $starsBgSkill no-repeat, #0f131f;
+  background-position: center;
+  > div {
+    backdrop-filter: blur(32px);
+  }
   h2 {
     padding: 0 0 3rem 0;
     font-weight: 300;
