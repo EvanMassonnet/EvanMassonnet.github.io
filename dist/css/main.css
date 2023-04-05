@@ -198,7 +198,6 @@ p {
 
 .transition {
   overflow: hidden;
-  background: linear-gradient(0deg, rgb(15, 19, 31) 0%, rgba(13, 16, 21, 0) 100%);
 }
 
 main {
@@ -208,7 +207,7 @@ main {
 }
 
 .bg_skill {
-  background: url("../img/BgSkill2.jpg") no-repeat, #0f131f;
+  background: url("../img/BgSkill2.jpg") no-repeat, #0d1015;
   background-position: center center;
   background-size: contain;
 }
@@ -300,7 +299,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   height: 100px;
 }
 .transition_star_bgSingle {
-  background: linear-gradient(0deg, rgb(13, 16, 21) 0%, rgb(15, 19, 31) 100%);
+  height: 100px;
 }
 .transition_star .night {
   transform: rotateZ(90deg);
@@ -384,7 +383,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 
 .section_education {
-  background: url("../img/Stars.jpg") no-repeat;
+  background: url("../img/Stars1.jpg") no-repeat;
   background-position: center center;
   background-size: contain;
 }
@@ -449,15 +448,9 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .section_education #timeline .timeline_item .timeline_canvas_right {
   top: -40px;
   right: 0;
-  background: url("../img/BgStars/BgStar1.png");
-  background-size: cover;
-  background-position: center center;
 }
 .section_education #timeline .timeline_item .timeline_canvas_left {
   left: 0;
-  background: url("../img/BgStars/BgStar2.png");
-  background-size: cover;
-  background-position: center center;
 }
 .section_education #timeline .timeline_item .timeline_content {
   width: 45%;

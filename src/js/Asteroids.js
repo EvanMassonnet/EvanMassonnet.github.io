@@ -23,7 +23,7 @@ if(window.innerWidth < 500) {
 }else{
     minDistance = -70;
     maxDistance = 70;
-    rock_count = 30;
+    rock_count = 3;
 }
 
 
