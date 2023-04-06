@@ -31,7 +31,7 @@ $starsBgSmall_4: url("../img/BgStars/BgStar4.png");
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-   //box-shadow: 0 0 0 4px red inset;
+  //box-shadow: 0 0 0 4px red inset;
 }
 
 html {
@@ -194,7 +194,7 @@ p {
 // Header
 .header {
   height: calc(100vh + 300px);
-  max-height: 800px;
+  max-height: 890px;
   background: $headerBg, #0d1015;
   background-size: contain;
   background-position: center top;
@@ -206,7 +206,7 @@ p {
     display: flex;
     align-items: center;
     // padding: 11.4rem 3rem 0 3rem;
-    padding: 9rem 3rem 0 3rem;
+    padding: 9rem 3rem 4rem 3rem;
     max-width: 1380px;
     margin: auto;
     .header_content {
@@ -898,10 +898,10 @@ section {
   .header {
     background-size: cover;
     .header_container {
-      padding: 5.4rem 0rem 3.4rem 0rem;
+      padding: 5.4rem 0 0 0;
       flex-direction: column-reverse;
       .header_content {
-        padding: 2.4rem 1rem 4.4rem 1rem;
+        padding: 2.4rem 1rem 0.4rem 1rem;
         .cta_title {
           font-size: 3rem;
         }

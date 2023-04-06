@@ -162,7 +162,7 @@ p {
 
 .header {
   height: calc(100vh + 300px);
-  max-height: 800px;
+  max-height: 890px;
   background: url("../img/HeaderBg.jpg"), #0d1015;
   background-size: contain;
   background-position: center top;
@@ -172,7 +172,7 @@ p {
   max-width: 1280px;
   display: flex;
   align-items: center;
-  padding: 9rem 3rem 0 3rem;
+  padding: 9rem 3rem 4rem 3rem;
   max-width: 1380px;
   margin: auto;
 }
@@ -716,11 +716,11 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
     background-size: cover;
   }
   .header .header_container {
-    padding: 5.4rem 0rem 3.4rem 0rem;
+    padding: 5.4rem 0 0 0;
     flex-direction: column-reverse;
   }
   .header .header_container .header_content {
-    padding: 2.4rem 1rem 4.4rem 1rem;
+    padding: 2.4rem 1rem 0.4rem 1rem;
   }
   .header .header_container .header_content .cta_title {
     font-size: 3rem;
