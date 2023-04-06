@@ -859,9 +859,13 @@ section {
 }
 
 .hidden {
-  opacity: 0.8;
-  transition: ease-out 2s;
+  opacity: 0.9;
+  transition: ease-out 1s;
   transition-delay: calc(200ms * var(--order));
+}
+
+.hiddenOpacity {
+  opacity: 0;
 }
 
 .hiddenLonger {
