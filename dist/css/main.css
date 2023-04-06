@@ -178,7 +178,7 @@ p {
 .header {
   height: calc(100vh + 300px);
   max-height: 890px;
-  background: url("../img/HeaderBg.jpg"), #0d1015;
+  background: url("../img/BgStars/HeaderBg.jpg"), #0d1015;
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
@@ -224,7 +224,7 @@ main {
 }
 
 .bg_skill {
-  background: url("../img/BgSkill2.jpg") no-repeat, #0d1015;
+  background: url("../img/BgStars/BgSkill.jpg") no-repeat, #0d1015;
   background-position: center center;
   background-size: contain;
 }
@@ -401,7 +401,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 
 .section_education {
-  background: url("../img/Stars1.jpg") no-repeat;
+  background: url("../img/BgStars/Stars.jpg") no-repeat;
   background-position: center center;
   background-size: contain;
 }
@@ -503,7 +503,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 
 .section_association {
-  background: url("../img/StarsVertical2.jpg");
+  background: url("../img/BgStars/StarsVertical.jpg");
   background-position: center center;
   background-size: contain;
   background-repeat: space;
@@ -644,7 +644,7 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 .main_footer {
   text-align: center;
   background: #0d1015;
-  background: url("../img/BgSkill.jpg") no-repeat, #0f131f;
+  background: url("../img/BgStars/BgFooter.jpg") no-repeat, #0f131f;
   background-position: center;
 }
 .main_footer > div {

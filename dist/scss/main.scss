@@ -9,17 +9,12 @@ $lightColorDarken: #e9e9e9;
 $darkColor: #01050a;
 $sectionBg: #f2f2f2;
 
-$headerBg: url("../img/HeaderBg.jpg");
-$starsBg: url("../img/Stars1.jpg");
-$starsBgVertical: url("../img/StarsVertical.jpg");
-$starsBgVertical2: url("../img/StarsVertical2.jpg");
-$starsBgSkill: url("../img/BgSkill.jpg");
-$starsBgSkill2: url("../img/BgSkill2.jpg");
-
-$starsBgSmall_1: url("../img/BgStars/BgStar1.png");
-$starsBgSmall_2: url("../img/BgStars/BgStar2.png");
-$starsBgSmall_3: url("../img/BgStars/BgStar3.png");
-$starsBgSmall_4: url("../img/BgStars/BgStar4.png");
+$headerBg: url("../img/BgStars/HeaderBg.jpg");
+$starsBg: url("../img/BgStars/Stars.jpg");
+$starsBgVertical: url("../img/BgStars/StarsVertical.jpg");
+$starsBgFooter: url("../img/BgStars/BgFooter.jpg");
+$starsBgSkill: url("../img/BgStars/BgSkill.jpg");
+$starsBgSmall: url("../img/BgStars/BgStar3.png");
 
 :root {
   color-scheme: dark;
@@ -42,19 +37,23 @@ html {
 body {
   font-family: "Inter", sans-serif;
 }
+
 a {
   text-decoration: none;
   color: $primaryColor;
 }
+
 strong {
   //color: hsl(276.92deg 16.62% 63.17%);
   // color: hsl(239deg 17.77% 46.13%);
   color: hsl(239deg 12.31% 58.69%);
   font-weight: 600;
 }
+
 ul {
   list-style-type: none;
 }
+
 h2 {
   text-align: center;
   > span {
@@ -300,7 +299,7 @@ main {
 // filter: grayscale(100%) brightness(150%) contrast(100%);
 .bg_skill {
   // #0f131f
-  background: $starsBgSkill2 no-repeat, #0d1015;
+  background: $starsBgSkill no-repeat, #0d1015;
   background-position: center center;
   background-size: contain;
 }
@@ -660,7 +659,7 @@ section {
 }
 
 .section_association {
-  background: $starsBgVertical2;
+  background: $starsBgVertical;
   background-position: center center;
   background-size: contain;
   background-repeat: space;
@@ -770,7 +769,7 @@ section {
 }
 
 .association_work_bg {
-  background: $starsBgSmall_3 no-repeat;
+  background: $starsBgSmall no-repeat;
   background-position: center center;
   background-size: contain;
 }
@@ -820,7 +819,7 @@ section {
 .main_footer {
   text-align: center;
   background: #0d1015;
-  background: $starsBgSkill no-repeat, #0f131f;
+  background: $starsBgFooter no-repeat, #0f131f;
   background-position: center;
   > div {
     backdrop-filter: blur(32px);
@@ -865,7 +864,6 @@ section {
   opacity: 0;
   transition: ease-out 2s;
   transition-delay: calc(200ms * var(--order));
-
 }
 
 .hiddenLonger {
@@ -893,7 +891,6 @@ section {
   transform: translateX(25%);
 }
 
-
 .hiddenTop {
   filter: blur(3px);
   transform: translateY(-100%);
@@ -909,14 +906,11 @@ section {
   transform: translateY(+25%);
 }
 
-
 .play {
   transform: translateX(0);
   filter: blur(0);
   opacity: 1;
 }
-
-
 
 @media screen and (max-width: 1268px) {
   .mt {
