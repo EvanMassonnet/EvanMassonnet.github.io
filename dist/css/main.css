@@ -486,9 +486,10 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
 }
 
 .section_association {
-  background: url("../img/StarsVertical2.jpg") no-repeat;
+  background: url("../img/StarsVertical2.jpg");
   background-position: center center;
   background-size: contain;
+  background-repeat: space;
 }
 .section_association .association_container {
   display: flex;

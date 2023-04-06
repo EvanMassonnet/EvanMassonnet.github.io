@@ -638,9 +638,11 @@ section {
 }
 
 .section_association {
-  background: $starsBgVertical2 no-repeat;
+  
+  background: $starsBgVertical2;
   background-position: center center;
   background-size: contain;
+  background-repeat: space;
   .association_container {
     display: flex;
     padding: 1rem 0 0 0;
