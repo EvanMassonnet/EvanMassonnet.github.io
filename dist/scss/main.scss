@@ -859,7 +859,7 @@ section {
 }
 
 .hidden {
-  opacity: 0;
+  opacity: 0.8;
   transition: ease-out 2s;
   transition-delay: calc(200ms * var(--order));
 }
@@ -870,37 +870,32 @@ section {
 }
 
 .hiddenLeftReduce {
-  filter: blur(10px);
+  filter: blur(1px);
   transform: translateX(-10%);
 }
 
 .hiddenRightReduce {
-  filter: blur(10px);
+  filter: blur(1px);
   transform: translateX(+10%);
 }
 
 .hiddenLeftNoBlur {
-  filter: blur(5px);
+  filter: blur(1px);
   transform: translateX(-25%);
 }
 
 .hiddenRightNoBlur {
-  filter: blur(5px);
+  filter: blur(1px);
   transform: translateX(25%);
 }
 
 .hiddenTop {
-  filter: blur(3px);
+  filter: blur(1px);
   transform: translateY(-100%);
 }
 
-.hiddenTopReduce {
-  filter: blur(3px);
-  transform: translateY(-25%);
-}
-
 .hiddenBottomNoBlur {
-  filter: blur(5px);
+  filter: blur(1px);
   transform: translateY(+25%);
 }
 
