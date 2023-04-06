@@ -864,6 +864,10 @@ section .cards_skill .card_skill_item .card_skill .fa-toolbox {
   section .cards_skill .card_skill_item {
     padding: 1rem 0 1rem 0;
   }
+  .transition_star {
+    position: relative;
+    z-index: 10;
+  }
   .section_association .association_container {
     padding: 1rem 0 0 0;
   }
