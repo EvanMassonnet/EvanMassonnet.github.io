@@ -13,8 +13,8 @@ $headerBg: url("../img/HeaderBg.jpg");
 $starsBg: url("../img/Stars1.jpg");
 $starsBgVertical: url("../img/StarsVertical.jpg");
 $starsBgVertical2: url("../img/StarsVertical2.jpg");
-$starsBgSkill : url("../img/BgSkill.jpg");
-$starsBgSkill2 : url("../img/BgSkill2.jpg");
+$starsBgSkill: url("../img/BgSkill.jpg");
+$starsBgSkill2: url("../img/BgSkill2.jpg");
 
 $starsBgSmall_1: url("../img/BgStars/BgStar1.png");
 $starsBgSmall_2: url("../img/BgStars/BgStar2.png");
@@ -46,12 +46,34 @@ a {
   text-decoration: none;
   color: $primaryColor;
 }
+strong {
+  //color: hsl(276.92deg 16.62% 63.17%);
+  // color: hsl(239deg 17.77% 46.13%);
+  color: hsl(239deg 12.31% 58.69%);
+  font-weight: 600;
+}
 ul {
   list-style-type: none;
 }
 h2 {
   text-align: center;
+  > span {
+    border: 2px solid;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-image-source: linear-gradient(
+      90deg,
+      rgb(13, 16, 21) 0%,
+      rgb(82, 84, 202) 50%,
+      rgb(13, 16, 21) 100%
+    );
+    border-image-slice: 1;
+    /* border-radius: 50%; */
+    padding: 0.8rem;
+  }
 }
+
 h3 {
   text-align: left;
   padding: 0 0 1rem 0;
@@ -121,7 +143,6 @@ p {
     margin-bottom: 2rem;
   }
 }
-
 
 .shadow_blue {
   box-shadow: 0px 0px 20px 10px rgba(59, 160, 255, 0.64);
@@ -203,6 +224,7 @@ p {
     // width: 100%;
     // height:100%;
     max-width: $webWidth;
+    overflow: hidden;
     display: flex;
     align-items: center;
     // padding: 11.4rem 3rem 0 3rem;
@@ -268,7 +290,7 @@ p {
 
 main {
   // background: $starsBgVertical, #0d1015;
-  background:#0d1015;
+  background: #0d1015;
   background-repeat: repeat-y;
   background-position: center top;
   // background-color: #0d1015;
@@ -287,6 +309,7 @@ section {
     padding: 6rem;
     max-width: $webWidth;
     margin: auto;
+    overflow: hidden;
   }
   h2 {
     padding: 0 0 3rem 0;
@@ -383,7 +406,7 @@ section {
     height: 100px;
     // background: linear-gradient(0deg, rgb(13, 16, 21) 0%, rgb(15, 19, 31) 100%);
   }
-  
+
   .night {
     transform: rotateZ(90deg);
 
@@ -517,7 +540,6 @@ section {
   }
   .night.night_large {
     transform: rotateZ(45deg) translate(-90px, 35px);
-    
   }
 }
 
@@ -638,7 +660,6 @@ section {
 }
 
 .section_association {
-  
   background: $starsBgVertical2;
   background-position: center center;
   background-size: contain;
@@ -748,7 +769,6 @@ section {
   }
 }
 
-
 .association_work_bg {
   background: $starsBgSmall_3 no-repeat;
   background-position: center center;
@@ -817,7 +837,7 @@ section {
     flex-direction: row;
     align-items: center;
     gap: 1rem;
-    padding: 0 2rem 2rem 2rem ;
+    padding: 0 2rem 2rem 2rem;
     justify-content: center;
     img {
       border-radius: 50%;
@@ -840,6 +860,62 @@ section {
     padding: 1rem 3rem;
   }
 }
+
+.hidden {
+  opacity: 0;
+  transition: ease-out 2s;
+  transition-delay: calc(200ms * var(--order));
+
+}
+
+.hiddenLonger {
+  transition: ease-out 3s;
+  transition-delay: calc(500ms * var(--order));
+}
+
+.hiddenLeftReduce {
+  filter: blur(10px);
+  transform: translateX(-10%);
+}
+
+.hiddenRightReduce {
+  filter: blur(10px);
+  transform: translateX(+10%);
+}
+
+.hiddenLeftNoBlur {
+  filter: blur(5px);
+  transform: translateX(-25%);
+}
+
+.hiddenRightNoBlur {
+  filter: blur(5px);
+  transform: translateX(25%);
+}
+
+
+.hiddenTop {
+  filter: blur(3px);
+  transform: translateY(-100%);
+}
+
+.hiddenTopReduce {
+  filter: blur(3px);
+  transform: translateY(-25%);
+}
+
+.hiddenBottomNoBlur {
+  filter: blur(5px);
+  transform: translateY(+25%);
+}
+
+
+.play {
+  transform: translateX(0);
+  filter: blur(0);
+  opacity: 1;
+}
+
 
 
 @media screen and (max-width: 1268px) {
@@ -912,7 +988,7 @@ section {
     > .container_width {
       padding: 6rem 1rem;
     }
-    
+
     .cards_skill .card_skill_item {
       width: 100%;
     }
@@ -1002,7 +1078,7 @@ section {
   }
   .main_footer {
     .bio_container {
-      padding: 1rem 0 0 0 ;
+      padding: 1rem 0 0 0;
       flex-direction: column;
     }
   }
@@ -1098,7 +1174,6 @@ section {
     transform: rotate(405deg);
   }
 }
-
 
 @keyframes rotations {
   to {

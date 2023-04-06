@@ -39,6 +39,8 @@
       crossorigin="anonymous"
     ></script>
 
+    <script defer src="src/js/App.js"></script>
+
     <script
       async
       src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"
@@ -52,14 +54,11 @@
         }
       }
     </script>
-  
     <script type="module" src="src/js/ISS.js"></script>
     <script type="module" src="src/js/Asteroids.js"></script>
-
     <script type="module" src="src/js/AstronauteHead.js"></script>
     <script type="module" src="src/js/AstronauteArm.js"></script>
     <script type="module" src="src/js/Astra.js"></script>
-
     <script src=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js "></script>
     <link
       href=" https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css "
@@ -89,36 +88,52 @@
     </nav> -->
     <header class="header">
       <div class="header_container">
-        <div class="header_content">
+        <div class="header_content hidden hiddenLeftReduce">
           <h1 class="cta_title">Evan Massonnet</h1>
           <p class="cta_catch">
-            I am a computer science student with a multidisciplinary background
-            in mathematics and economics. Currently learning entrepreneurship
-            and management. Used to working in a team, looking for a new
-            intellectual challenge.
+            I am a <strong>computer science student</strong> with a
+            multidisciplinary background in <strong>mathematics</strong> and
+            <strong>economics</strong> . Currently learning
+            <strong>entrepreneurship</strong> and <strong>management</strong> .
+            Used to working in a <strong>team</strong> , looking for a new
+            <strong>intellectual challenge</strong> .
           </p>
           <div class="cta_group">
-            <a href="#skill" class="btn btn_cta"> Show more </a>
-            <a href="#contact" class="btn btn_cta_outline"> Contact Me</a>
+            <a
+              href="#skill"
+              class="btn btn_cta hidden hiddenLeftNoBlur"
+              style="--order: 4"
+            >
+              Show more
+            </a>
+            <a
+              href="#contact"
+              class="btn btn_cta_outline hidden hiddenRightNoBlur"
+              style="--order: 4"
+            >
+              Contact Me</a
+            >
           </div>
         </div>
-        <div class="header_canvas"></div>
+        <div class="header_canvas hidden hiddenLonger"></div>
       </div>
-      <div class="transition"></div>
+      <div class="transition hidden hiddenLonger"></div>
     </header>
     <main>
-      <section class="bg_skill" id="skill">
+      <section class="bg_skill hidden hiddenLonger" id="skill">
         <div class="container_width">
-          <h2>Skills and Softwares</h2>
+          <h2 class="hidden hiddenLonger"><span>Skills and Softwares</span></h2>
           <ul class="cards_skill">
-            <li class="card_skill_item">
+            <li class="card_skill_item hidden hiddenLeftNoBlur">
               <div class="card card_skill">
                 <h3>Coding</h3>
                 <i class="fa fa-code shadow_purple"></i>
                 <p>
-                  Experienced in Python and Java. Used to code with C# for game
-                  making. Knowledge in Html / CSS /Javascript. Proficiency in
-                  ROS2, Django framework.
+                  Experienced in <strong>Python</strong> and
+                  <strong>Java</strong>. Used to code with
+                  <strong>C#</strong> for game making. Knowledge in
+                  <strong>Html / CSS /Javascript</strong>. Proficiency in
+                  <strong>ROS2, Django framework</strong>.
                 </p>
                 <div class="card_img">
                   <i class="fa fa-html5 fa-2xl"></i>
@@ -129,14 +144,15 @@
                 </div>
               </div>
             </li>
-            <li class="card_skill_item">
+            <li class="card_skill_item hidden hiddenBottomNoBlur">
               <div class="card card_skill">
                 <i class="fa fa-display shadow_blue"></i>
                 <h3>Softwares</h3>
                 <p>
-                  Bulding game with Unity, Blender, Substance painter. Creation
-                  of mechanical part in Solidworks for many school project and
-                  3D printed art build.
+                  Bulding game with <strong>Unity</strong>,
+                  <strong>Blender</strong>, <strong>Substance painter</strong>.
+                  Creation of mechanical part in <strong>Solidworks</strong> for
+                  many school project and 3D printed <strong>art build</strong>.
                 </p>
                 <div class="card_img">
                   <i class="fa-brands fa-unity fa-2xl"></i>
@@ -149,14 +165,16 @@
                 </div>
               </div>
             </li>
-            <li class="card_skill_item">
+            <li class="card_skill_item hidden hiddenRightNoBlur">
               <div class="card card_skill">
                 <i class="fa fa-toolbox shadow_green"></i>
                 <h3>Tools</h3>
                 <p>
-                  Extensive use of VSCode, JetBrains IDEs. Good practices with
-                  Github's versionning tools. Able to work in team using Trello
-                  or Miro collaboration tools.
+                  Extensive use of <strong>VSCode</strong>,
+                  <strong>JetBrains</strong> IDEs. Good practices with
+                  <strong>Github's </strong>versionning tools. Able to work in
+                  team using <strong>Trello</strong> or
+                  <strong>Miro</strong> collaboration tools.
                 </p>
                 <div class="card_img">
                   <img src="./dist/img/VSCode.png" width="30px" alt="" />
@@ -168,17 +186,20 @@
           </ul>
         </div>
       </section>
-      <div class="transition_star transition_star_bgSingle ">
+      <div class="transition_star transition_star_bgSingle hidden hiddenTop">
         <div class="night">
           <div class="shooting_star"></div>
         </div>
       </div>
-      <section class="section_education bg_stars_vertical">
+      <section class="section_education bg_stars_vertical hidden hiddenLonger">
         <div class="container_width">
-          <h2>Education</h2>
+          <h2><span>Education</span></h2>
           <div id="timeline">
-            <div class="timeline_item">
-              <div class="timeline_icon"></div>
+            <div class="timeline_item hidden hiddenLeftReduce">
+              <div
+                class="timeline_icon hidden hiddenTop"
+                style="--order: 7"
+              ></div>
               <div class="timeline_canvas_right"></div>
               <div class="timeline_content card shadow_purple border_purple">
                 <div class="card_icon_info">
@@ -194,14 +215,15 @@
                   ><span>Computer science</span>
                 </div>
                 <p>
-                  Preparatory class for the French Grandes Ecoles at the Lycée
-                  Fabert, 2 years of intensive courses in mathematics, physics
-                  and theoretical computer science.
+                  <strong>Preparatory class</strong> for the
+                  <strong>French Grandes Ecoles</strong> at the Lycée Fabert,
+                  <strong>2 years</strong> of intensive courses in mathematics,
+                  physics and <strong>theoretical computer science</strong>.
                 </p>
               </div>
             </div>
-            <div class="timeline_item">
-              <div class="timeline_icon"></div>
+            <div class="timeline_item hidden hiddenRightReduce">
+              <div class="timeline_icon hidden" style="--order: 7"></div>
               <div class="timeline_canvas_left"></div>
               <div class="timeline_content card right shadow_blue border_blue">
                 <div class="card_icon_info">
@@ -216,14 +238,18 @@
                   <span>Maths</span><span>Economics</span>
                 </div>
                 <p>
-                  Course of mathematics applied to the economy at the University
-                  of Lorraine, research work on Benforde's law applied to tax
-                  and electoral fraud.
+                  <strong>Course of mathematics</strong> applied to the economy
+                  at the <strong>University of Lorraine</strong>, research work
+                  on <strong>Benforde's law</strong> applied to tax and
+                  electoral fraud.
                 </p>
               </div>
             </div>
-            <div class="timeline_item">
-              <div class="timeline_icon timeline_icon_last"></div>
+            <div class="timeline_item hidden hiddenBottomNoBlur">
+              <div
+                class="timeline_icon timeline_icon_last hidden hiddenBottomNoBlur"
+                style="--order: 7"
+              ></div>
               <div
                 class="timeline_content card timeline_last shadow_green border_green"
               >
@@ -240,47 +266,62 @@
                   ><span>Computer science</span>
                 </div>
                 <p>
-                  Faculty of Computer Science of the EPFL, Second year.
-                  Participates in the Innosuisse business concept training
-                  course.
+                  <strong>Faculty of Computer Science</strong> of the
+                  <strong>EPFL</strong>, second year. Participates in the
+                  <strong>Innosuisse</strong> business concept training course.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div class="transition_star">
+      <div class="transition_star hidden hiddenLonger">
         <div class="night night_large">
           <div class="shooting_star shooting_star_purple"></div>
           <div class="shooting_star"></div>
           <div class="shooting_star shooting_star_green"></div>
         </div>
       </div>
-      <section class="section_association">
+      <section class="section_association hidden hiddenLonger">
         <div class="container_width">
-          <h2>School association</h2>
+          <h2><span>School association</span></h2>
           <div class="association_container">
-            <div class="association_img flex_center">
+            <div class="association_img flex_center hidden hiddenLeftNoBlur">
               <img src="dist/img/Xplore.png" width="520px" alt="" />
               <div>
-                <a href="https://epfl-xplore.ch/" class="btn btn_cta">
+                <a
+                  href="https://epfl-xplore.ch/"
+                  class="btn btn_cta hidden hiddenLeftNoBlur"
+                  style="--order: 4"
+                >
                   Visit website
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
-                <a href="https://fr.linkedin.com/company/epfl-xplore" class="btn btn_cta btn_cta_outline btn_square">
+                <a
+                  href="https://fr.linkedin.com/company/epfl-xplore"
+                  class="btn btn_cta btn_cta_outline btn_square hidden hiddenLeftNoBlur"
+                  style="--order: 4"
+                >
                   <i class="fa-brands fa-linkedin-in"></i>
                 </a>
-                <a href="https://www.instagram.com/epfl_xplore/" class="btn btn_cta btn_cta_outline btn_square">
+                <a
+                  href="https://www.instagram.com/epfl_xplore/"
+                  class="btn btn_cta btn_cta_outline btn_square hidden hiddenLeftNoBlur"
+                  style="--order: 4"
+                >
                   <i class="fa-brands fa-instagram"></i>
                 </a>
               </div>
             </div>
-            <div class="card associtation_card">
+            <div class="card associtation_card hidden hiddenRightNoBlur">
               <h3>EPFL Xplore</h3>
               <p>
-                EPFL Xplore is a robotic student association from EPFL whose aim
-                is to develop rovers to participate in Mars Society competitions
-                in Poland and in the United States.
+                <strong>EPFL Xplore</strong> is a
+                <strong>robotic student</strong> association from EPFL whose aim
+                is to develop <strong>rovers</strong> to participate in
+                <strong>Mars Society competitions</strong> in
+                <strong>Poland</strong> and in <strong>United States</strong>the
+                .
               </p>
               <div class="association_card_info">
                 <div class="association_timeline">
@@ -294,9 +335,12 @@
                       <span>2022 - 2023</span>
                     </div>
                     <p>
-                      Team leader of the control station subsystem. The goal is
-                      to develop a web application allowing to control the rover
-                      remotely by several people at the same time.
+                      <strong>Team leader</strong> of the
+                      <strong>control station</strong> subsystem. The goal is to
+                      develop a <strong>web application</strong> allowing to
+                      <strong>control</strong> the rover
+                      <strong>remotely</strong> by several people at the same
+                      time.
                     </p>
                   </div>
                   <div>
@@ -307,9 +351,11 @@
                       </div>
                     </div>
                     <p>
-                      I was in charge of creating a prototype for the
-                      competition in the United States. I was mainly working on
-                      the control of the motors and wireless connections.
+                      I was in charge of creating a
+                      <strong>prototype</strong> for the competition in the
+                      <strong>United States</strong>. I was mainly working on
+                      the <strong>control</strong> of the motors and
+                      <strong>wireless</strong> connections.
                     </p>
                   </div>
                 </div>
@@ -317,7 +363,7 @@
             </div>
           </div>
           <div class="association_container mt_2">
-            <div class="card associtation_card">
+            <div class="card associtation_card hidden hiddenLeftNoBlur">
               <div class="association_card_container_date">
                 <div class="card_icon_info">
                   <h3>European Rover Challenge</h3>
@@ -328,31 +374,41 @@
                 </div>
               </div>
               <p>
-                The ERC is a robotics and space event organized by the European
-                Space Foundation and Mars Society Polska. It takes place once a
-                year in September in Kielce, Poland. In 2019, it welcomed 56
-                Competing Teams from 16 countries and 6 continents.
+                The <strong>ERC</strong> is a robotics and space
+                <strong>event</strong> organized by the
+                <strong>European Space Foundation</strong> and Mars Society
+                Polska. It takes place once a year in September in Kielce,
+                Poland. In 2019, it welcomed
+                <strong>56 Competing Teams</strong> from
+                <strong>16 countries</strong> and <strong>6 continents</strong>.
               </p>
               <div class="flex_center mt_2">
-                <a href="https://roverchallenge.eu/en/main-page/" class="btn btn_cta">
+                <a
+                  href="https://roverchallenge.eu/en/main-page/"
+                  class="btn btn_cta"
+                >
                   Visit website
                   <i class="fa-solid fa-arrow-up-right-from-square"></i>
                 </a>
               </div>
             </div>
-            <div class="association_img flex_center ptb_1">
+            <div
+              class="association_img flex_center ptb_1 hidden hiddenRightReduce"
+            >
               <div class="rover_canvas"></div>
             </div>
           </div>
           <div class="association_container mt_4">
             <div
-              class="association_img width_100 association_planet flex_center"
+              class="association_img width_100 association_planet flex_center hidden hiddenLeftNoBlur"
             >
               <img src="dist/img/mars.png" width="520px" alt="" />
               <div id="rotator"></div>
             </div>
             <div class="width_100">
-              <div class="card associtation_card width_100">
+              <div
+                class="card associtation_card width_100 hidden hiddenRightReduce"
+              >
                 <div class="association_card_container_date">
                   <div class="card_icon_info">
                     <div>
@@ -366,9 +422,11 @@
                   </div>
                 </div>
                 <p>
-                  After only one year of preparation, the team placed 3rd out of
-                  58 international teams at the ERC 2021. And this year we were
-                  the best in two categories.
+                  After only <strong>one year</strong> of preparation, the team
+                  placed <strong>3rd</strong> out of
+                  <strong>58</strong> international teams at the ERC
+                  <strong>2021</strong>. And this year we were the best in
+                  <strong>two categories</strong>.
                 </p>
                 <div class="association_distinction">
                   <div class="association_distinction_pair">
@@ -381,7 +439,9 @@
                   </div>
                 </div>
               </div>
-              <div class="card associtation_card mt_4 width_100">
+              <div
+                class="card associtation_card mt_4 width_100 hidden hiddenRightReduce"
+              >
                 <div class="association_card_container_date">
                   <div class="card_icon_info">
                     <div>
@@ -395,11 +455,13 @@
                   </div>
                 </div>
                 <p>
-                  After a year of software development and an intensive testing
+                  After <strong>year</strong> a of
+                  <strong>software development</strong> and an intensive testing
                   session during the summer, the team was awarded the
-                  prestigious Navigation Award at the competition for being the
-                  only team to reach all 4 waypoints in autonomy, by night and
-                  on a flooded terrain.
+                  prestigious <strong>Navigation Award</strong> at the
+                  competition for being the only team to reach all
+                  <strong>4 waypoints</strong> in autonomy, by night and on a
+                  <strong>flooded terrain</strong>.
                 </p>
                 <div class="association_distinction">
                   <div class="association_distinction_pair">
@@ -412,11 +474,13 @@
           </div>
         </div>
       </section>
-      <section class="section_association association_work_bg">
+      <section
+        class="section_association association_work_bg hidden hiddenLonger"
+      >
         <div class="container_width">
-          <h2>My work at Xplore</h2>
+          <h2><span>My work at Xplore</span></h2>
           <div class="association_container">
-            <div class="card associtation_card">
+            <div class="card associtation_card hidden hiddenLeftReduce">
               <div class="association_card_container_date">
                 <div class="card_icon_info">
                   <h3>Control station App</h3>
@@ -427,10 +491,12 @@
                 </div>
               </div>
               <p>
-                The objective is to develop a web application to control the
-                rover remotely up to 100m and display information in real time
-                (cameras, lidar, drones state, ...). The code will soon be
-                available on Github !
+                <strong>The objective</strong> is to develop a
+                <strong>web application</strong> to control the rover remotely
+                up to <strong>100m</strong> and display information
+                <strong>in real time</strong> (cameras, lidar, drones state,
+                ...). The code will soon be available on
+                <strong>Github</strong> !
               </p>
               <div class="association_card_container_date">
                 <div class="card_icon_info mt_2">
@@ -442,15 +508,20 @@
                 </div>
               </div>
               <p class="mb_2">
-                The backend is a mix between ROS2 and Django that uses channels
-                and ASGI to refresh the web page in real time thanks to
-                websockets. The data collected during the usage is stored in a
-                Redis database. The frontend is developed with React and
-                integrated with Django.
+                The <strong>backend</strong> is a mix between
+                <strong>ROS2</strong> and <strong>Django</strong> that uses
+                channels and ASGI to refresh the web page in
+                <strong>real time</strong> thanks to
+                <strong>websockets</strong>. The data collected during the usage
+                is stored in a <strong>Redis database</strong>. The frontend is
+                developed with <strong>React</strong> and integrated with
+                <strong>Django</strong>.
               </p>
             </div>
 
-            <div class="association_img flex_center ptb_1">
+            <div
+              class="association_img flex_center ptb_1 hidden hiddenRightReduce"
+            >
               <div
                 class="splide"
                 aria-label="Slideshow of differents capture of the application"
@@ -500,46 +571,45 @@
         </div>
       </section>
     </main>
-    <footer class="main_footer" id="contact">
+    <footer class="main_footer hidden hiddenLonger" id="contact">
       <div class="ptb_4">
         <h2>Contact</h2>
         <div class="bio_container">
-          <img src="./dist/img/me.png" width="100px" alt="" />
-          <p>
-            Computer science and mathematics student in Switzerland. I am looking
-            for a first professional experience.
+          <img
+            class="hidden hiddenLeftReduce"
+            src="./dist/img/me.png"
+            width="100px"
+            alt=""
+          />
+          <p class="hidden hiddenRightReduce">
+            <strong>Computer science</strong> and
+            <strong>mathematics</strong> student in
+            <strong>Switzerland</strong>. I am looking for a
+            <strong>first</strong> professional experience.
           </p>
         </div>
-        <div class="links_footer mt_2">
+        <div class="links_footer mt_2 hidden hiddenRightReduce">
           <a href="https://github.com/EvanMassonnet"
             ><i class="fab fa-github-square fa-3x"></i>
             <p>Github</p>
           </a>
         </div>
-        <div class="links_footer mt_2">
+        <div class="links_footer mt_2 hidden hiddenBottomNoBlur">
           <a href="mailto:evanmassonnet@gmail.com"
             ><i class="fas fa-envelope fa-3x"></i>
             <p>Mail</p>
           </a>
         </div>
-        <div class="links_footer mt_2">
+        <div class="links_footer mt_2 hidden hiddenLeftReduce">
           <a href="http://www.linkedin.com/in/evan-massonnet"
             ><i class="fab fa-linkedin fa-3x"></i>
             <p>Linkedin</p>
           </a>
         </div>
-        <p class="mt_2">Copyright © 2023 Evan Massonnet. All rights reserved.</p>
+        <p class="mt_2">
+          Copyright © 2023 Evan Massonnet. All rights reserved.
+        </p>
       </div>
-
     </footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        var splide = new Splide(".splide", {
-          ype: "fade",
-          rewind: true,
-        });
-        splide.mount();
-      });
-    </script>
   </body>
 </html>
