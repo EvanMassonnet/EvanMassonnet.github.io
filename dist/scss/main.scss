@@ -31,11 +31,12 @@ $starsBgSmall_4: url("../img/BgStars/BgStar4.png");
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // box-shadow: 0 0 0 4px red inset;
+   //box-shadow: 0 0 0 4px red inset;
 }
 
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -906,7 +907,10 @@ section {
     }
   }
   section {
-    padding: 6rem 1rem;
+    > .container_width {
+      padding: 6rem 1rem;
+    }
+    
     .cards_skill .card_skill_item {
       width: 100%;
     }
