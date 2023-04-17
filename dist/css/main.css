@@ -179,7 +179,7 @@ p {
 .header {
   height: calc(100vh + 300px);
   max-height: 890px;
-  background: url("../img/BgStars/HeaderBg.jpg"), #0d1015;
+  background: url("../img/BgStars/HeaderBg2.jpg"), #0d1015;
   background-size: contain;
   background-position: center top;
   background-repeat: no-repeat;
